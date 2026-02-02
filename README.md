@@ -65,7 +65,7 @@ This project requires a local LLM server (LMStudio) running:
 
 ### Input Files
 
-- **Bibliography**: `facero-bibtex-Feb-2026.bib` - Your BibTeX file from ADS or similar
+- **Bibliography**: `my-bibtex-Feb-2026.bib` - Your BibTeX file from ADS or similar
 - **Ignored Keywords**: `ignored-keywords.txt` - One keyword per line to filter out
 
 ## 🚀 Usage
@@ -115,7 +115,7 @@ python generate_reading_list.py
 arxiv-reader/
 ├── arxiv_scorer.py              # Main script
 ├── requirements.txt             # Python dependencies
-├── facero-bibtex-Feb-2026.bib  # Your bibliography
+├── my-bibtex-Feb-2026.bib       # Your bibliography
 ├── ignored-keywords.txt         # Keywords to filter
 ├── research_persona.txt         # Generated AI persona (cached)
 ├── regenerate_index.py          # Standalone index generator
@@ -163,7 +163,7 @@ Edit the constants in `arxiv_scorer.py`:
 LMSTUDIO_BASE_URL = "http://localhost:1234/v1"
 CHAT_MODEL = "mistralai/ministral-3-3b"
 EMBEDDING_MODEL = "text-embedding-nomic-embed-text-v1.5"
-BIBLIOGRAPHY_FILE = "facero-bibtex-Feb-2026.bib"
+BIBLIOGRAPHY_FILE = "my-bibtex-Feb-2026.bib"
 IGNORED_KEYWORDS_FILE = "ignored-keywords.txt"
 TOP_K_CANDIDATES = 30  # Number of papers to re-score with LLM
 ```
