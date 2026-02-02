@@ -14,7 +14,7 @@ from datetime import datetime
 LMSTUDIO_BASE_URL = "http://localhost:1234/v1"
 CHAT_MODEL = "mistralai/ministral-3-3b"
 EMBEDDING_MODEL = "text-embedding-nomic-embed-text-v1.5"
-BIBLIOGRAPHY_FILE = "facero-bibtex-Feb-2026.bib"
+BIBLIOGRAPHY_FILE = "my-bibtex-Feb-2026.bib"
 PERSONA_FILE = "research_persona.txt"
 IGNORED_KEYWORDS_FILE = "ignored-keywords.txt"
 TOP_K_CANDIDATES = 30  # Number of top papers to re-score with LLM
