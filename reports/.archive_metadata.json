@@ -1,0 +1,44 @@
+{
+  "2026-01": {
+    "processed_date": "2026-02-02T21:05:23.819293",
+    "total_papers": 478,
+    "filtered_papers": 340,
+    "top_matches": 30,
+    "excluded_keywords": 138
+  },
+  "2025-12": {
+    "processed_date": "2026-02-02T21:44:12.101138",
+    "total_papers": 584,
+    "filtered_papers": 409,
+    "top_matches": 30,
+    "excluded_keywords": 175
+  },
+  "2025-11": {
+    "processed_date": "2026-02-02T22:37:22.832825",
+    "total_papers": 438,
+    "filtered_papers": 298,
+    "top_matches": 30,
+    "excluded_keywords": 140
+  },
+  "2025-10": {
+    "processed_date": "2026-02-02T22:54:27.843461",
+    "total_papers": 595,
+    "filtered_papers": 430,
+    "top_matches": 30,
+    "excluded_keywords": 165
+  },
+  "2025-09": {
+    "processed_date": "2026-02-02T22:58:12.843503",
+    "total_papers": 607,
+    "filtered_papers": 424,
+    "top_matches": 30,
+    "excluded_keywords": 183
+  },
+  "2025-08": {
+    "processed_date": "2026-02-02T23:18:16.324085",
+    "total_papers": 444,
+    "filtered_papers": 304,
+    "top_matches": 30,
+    "excluded_keywords": 140
+  }
+}
