@@ -12,6 +12,13 @@ import argparse
 import json
 from datetime import datetime
 
+# Force unbuffered output
+try:
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(line_buffering=True)
+except Exception:
+    pass  # Fallback for older Python versions or weird environments
+
 # --- LLM Configuration ---
 LMSTUDIO_BASE_URL = "http://localhost:1234/v1"
 CHAT_MODEL = "mistralai/ministral-3-3b"
@@ -415,6 +422,10 @@ def score_papers_hybrid(user_bib, arxiv_papers):
     top_candidates = valid_papers[:TOP_K_CANDIDATES]
     
     log(f"\nTop {len(top_candidates)} candidates selected for LLM re-scoring based on vector similarity.")
+    
+    # Enrich only the top candidates with API data (Summary, Authors)
+    # This saves massive amounts of API calls
+    enrich_papers_with_api(top_candidates)
     
     # 5. LLM Re-Scoring
     user_persona = generate_user_persona(user_bib)
@@ -1323,9 +1334,6 @@ def process_month(month_year=None):
     arxiv_url = f"{ARXIV_BASE_URL}/{month_year}?skip=0&show=2000"
     all_papers = fetch_arxiv_postings(arxiv_url)
     
-    # Enrich with API (Authors, Summary)
-    enrich_papers_with_api(all_papers)
-    
     if not all_papers:
         log("No ArXiv papers found.")
         return
@@ -1343,7 +1351,8 @@ def process_month(month_year=None):
         return
     
     filtered_papers = len(all_papers)
-        
+    
+    
     # 3. Score
     results = score_papers_hybrid(bib_entries, all_papers)
     
