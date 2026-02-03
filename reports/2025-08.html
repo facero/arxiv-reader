@@ -1,813 +1,717 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArXiv Report - August 2025</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-
-        .nav {
-            text-align: center;
-            margin-bottom: 20px;
-            padding: 15px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #3498db;
-            font-weight: 500;
-        }
-
-        .nav a:hover {
-            text-decoration: underline;
-        }
-
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 5px;
-        }
-
-        .subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .stats {
-            text-align: center;
-            margin-bottom: 30px;
-            padding: 15px;
-            background: #ecf0f1;
-            border-radius: 8px;
-        }
-
-        .stats span {
-            margin: 0 15px;
-            font-size: 0.9em;
-        }
-
-        .paper {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin-bottom: 20px;
-            border-left: 5px solid #3498db;
-            transition: transform 0.2s;
-        }
-
-        .paper:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-        }
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 10px;
-        }
-
-        .score-badge {
-            background-color: #3498db;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-weight: bold;
-            font-size: 1.1em;
-        }
-
-        .title {
-            font-size: 1.3em;
-            margin: 0;
-        }
-
-        .title a {
-            text-decoration: none;
-            color: #2c3e50;
-        }
-
-        .title a:hover {
-            color: #3498db;
-        }
-
-        .meta {
-            font-size: 0.9em;
-            color: #7f8c8d;
-            margin-top: 10px;
-            border-top: 1px solid #eee;
-            padding-top: 10px;
-        }
-
-        .details {
-            display: flex;
-            gap: 20px;
-        }
-
-        .metric {
-            background: #f0f2f5;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.85em;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="nav">
-        <a href="index.html">📚 Archive Home</a>
-        <a href="reading_list.html"
-            style="background: #e74c3c; color: white; padding: 8px 15px; border-radius: 5px; margin-left: 10px;">📖
-            Reading List (<span id="readingListCount">0</span>)</a>
-    </div>
-    <h1>ArXiv Relevance Report</h1>
-    <div class="subtitle">August 2025 - High Energy Astrophysics</div>
-    <div class="stats">
-        <span>📊 <b>30</b> Top Matches</span>
-    </div>
-
-    <div class="paper" style="border-left-color: #2ecc71" id="paper-2508.21644">
-        <div class="header">
-            <h2 class="title"><a href="https://arxiv.org/abs/2508.21644" target="_blank">1. Deciphering the gamma-ray
-                    emission in the Cygnus region</a></h2>
-            <div class="score-badge" style="background-color: #2ecc71"
-                title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.75 × 100 + 98) / 2 = 86.7">86.7
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ArXiv Report - August 2025</title>
+        <style>
+            body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; color: #333; }
+            .nav { text-align: center; margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+            .nav a { margin: 0 15px; text-decoration: none; color: #3498db; font-weight: 500; }
+            .nav a:hover { text-decoration: underline; }
+            h1 { text-align: center; color: #2c3e50; margin-bottom: 5px; }
+            .subtitle { text-align: center; color: #666; margin-bottom: 20px; }
+            .stats { text-align: center; margin-bottom: 30px; padding: 15px; background: #ecf0f1; border-radius: 8px; }
+            .stats span { margin: 0 15px; font-size: 0.9em; }
+            .paper { background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); padding: 20px; margin-bottom: 20px; border-left: 5px solid #3498db; transition: transform 0.2s; }
+            .paper:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.15); }
+            .header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+            .score-badge { background-color: #3498db; color: white; padding: 5px 10px; border-radius: 15px; font-weight: bold; font-size: 1.1em; }
+            .title { font-size: 1.3em; margin: 0; }
+            .title a { text-decoration: none; color: #2c3e50; }
+            .title a:hover { color: #3498db; }
+            .meta { font-size: 0.9em; color: #7f8c8d; margin-top: 10px; border-top: 1px solid #eee; padding-top: 10px; }
+            .details { display: flex; gap: 20px; }
+            .metric { background: #f0f2f5; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; }
+        </style>
+    </head>
+    <body>
+        <div class="nav">
+            <a href="index.html">📚 Archive Home</a>
+            <a href="reading_list.html" style="background: #e74c3c; color: white; padding: 8px 15px; border-radius: 5px; margin-left: 10px;">📖 Reading List (<span id="readingListCount">0</span>)</a>
+        </div>
+        <h1>ArXiv Relevance Report</h1>
+        <div class="subtitle">August 2025 - High Energy Astrophysics</div>
+        <div class="stats">
+            <span>📊 <b>25</b> Top Matches</span>
+        </div>
+    
+        <div class="paper" style="border-left-color: #2ecc71" id="paper-2508.18999">
+            <div class="header">
+                <h2 class="title"><a href="https://arxiv.org/abs/2508.18999" target="_blank">1. Detection of Diffuse Radio Emission inside the Supernova Remnant G338.3-0.0 associated with the Gamma-ray Source HESS J1640-465</a></h2>
+                <div class="score-badge" style="background-color: #2ecc71" title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.84 × 100 + 98) / 2 = 90.9">90.9</div>
+            </div>
+            
+            <div style="margin-bottom: 10px; color: #555; font-style: italic;">
+                Moaz Abdelmaguid, Joseph Gelfand, Jason Alford
+            </div>
+            
+            <details style="margin-bottom: 15px;">
+                <summary style="cursor: pointer; color: #3498db; font-weight: 500;">Abstract</summary>
+                <p style="margin-top: 5px; line-height: 1.5; color: #444;">We report the discovery of diffuse radio emission within SNR G338.3-0.0 using new MeerKAT observations at 816 MHz and 1.4 GHz. The radio emission spatially overlaps with the X-ray pulsar wind nebula (PWN) powered by PSR J1640-4631 and the GeV/TeV gamma-ray source HESS J1640-465. The morphology of this radio emission is centrally peaked and its extent is well-contained within the SNR shell. A lack of mid- and far-infrared counterparts and the absence of catalogued H II regions argues against a thermal origin, while the morphology and radial profile are suggestive of a PWN origin powered by PSR J1640-4631. Under this assumption, we use a one-zone, time dependant model to reproduce the size and broadband (radio, X-ray, and gamma-rays) spectral energy distribution of the PWN. The modelling and broadband properties of this PWN suggests it is currently interacting with the reverse shock within its host SNR. This evolutionary stage is associated with particles escaping the PWN and entering the ISM, suggesting this object may be an important source of Galactic PeV e+/e-</p>
+            </details>
+            
+            <div class="meta">
+                <div class="details">
+                    <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.84</b></span>
+                    <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>98</b></span>
+                    <span class="metric"><a href="https://arxiv.org/abs/2508.18999" target="_blank">View on ArXiv</a></span>
+                    <button class="add-to-reading-list" onclick="addToReadingList('2508.18999', 'Detection of Diffuse Radio Emission inside the Supernova Remnant G338.3-0.0 associated with the Gamma-ray Source HESS J1640-465', 'https://arxiv.org/abs/2508.18999', 90.9, '2025-08')" title="Add to Reading List">
+                        📖 Add to List
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="meta">
-            <div class="details">
-                <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.75</b></span>
-                <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>98</b></span>
-                <span class="metric"><a href="https://arxiv.org/abs/2508.21644" target="_blank">View on ArXiv</a></span>
-                <button class="add-to-reading-list"
-                    onclick="addToReadingList('2508.21644', 'Deciphering the gamma-ray emission in the Cygnus region', 'https://arxiv.org/abs/2508.21644', 86.7, '2025-08')"
-                    title="Add to Reading List">
-                    📖 Add to List
-                </button>
+        
+        <div class="paper" style="border-left-color: #2ecc71" id="paper-2508.07660">
+            <div class="header">
+                <h2 class="title"><a href="https://arxiv.org/abs/2508.07660" target="_blank">2. X-ray studies of PSR J1838$-$0655 and its wind nebula associated with HESS J1837$-$069 and 1LHAASO J1837$-$0654u</a></h2>
+                <div class="score-badge" style="background-color: #2ecc71" title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.84 × 100 + 95) / 2 = 89.6">89.6</div>
+            </div>
+            
+            <div style="margin-bottom: 10px; color: #555; font-style: italic;">
+                Minseo Park, Jaegeun Park, Chanho Kim, Hongjun An
+            </div>
+            
+            <details style="margin-bottom: 15px;">
+                <summary style="cursor: pointer; color: #3498db; font-weight: 500;">Abstract</summary>
+                <p style="margin-top: 5px; line-height: 1.5; color: #444;">We analyzed X-ray data from Chandra, XMM-Newton, NICER, and NuSTAR to characterize the properties of the pulsar PSR J1838$-$0655 and its pulsar wind nebula (PWN) associated with HESS J1837$-$069. Based on 5.5 years of NICER monitoring, we detected a glitch around MJD 59300, characterized by a fractional frequency jump of approximately $2\times 10^{-6}$. We constructed semi-phase-coherent timing solutions for pre- and post-glitch epochs, allowing for phase alignment of multi-instrument data and a subsequent measurement of the pulsed spectrum of the pulsar. This analysis confirmed previously-reported spectral curvature and revealed a peak energy of $73^{+85}_{-26}$ keV in the pulsar's spectral energy distribution (SED), based on a logpar model fit of the pulsed spectrum. We discuss these findings within the framework of pulsar magnetospheric emission scenarios. The PWN's X-ray spectrum is well-described by a power law with a photon index of $2.1\pm0.3$, softer than previously-reported measurements. We also characterized the X-ray emission from another extended X-ray source AX J1837.3$-$0652 within the extent of HESS J1837$-$069. Based on the spatial and spectral properties of these X-ray sources, we propose a leptonic emission scenario for HESS J1837$-$069 and demonstrate its feasibility through SED modeling. Finally, we discuss the implications of our model results and alternative scenarios for the gamma-ray emission.</p>
+            </details>
+            
+            <div class="meta">
+                <div class="details">
+                    <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.84</b></span>
+                    <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>95</b></span>
+                    <span class="metric"><a href="https://arxiv.org/abs/2508.07660" target="_blank">View on ArXiv</a></span>
+                    <button class="add-to-reading-list" onclick="addToReadingList('2508.07660', 'X-ray studies of PSR J1838$-$0655 and its wind nebula associated with HESS J1837$-$069 and 1LHAASO J1837$-$0654u', 'https://arxiv.org/abs/2508.07660', 89.6, '2025-08')" title="Add to Reading List">
+                        📖 Add to List
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="paper" style="border-left-color: #2ecc71" id="paper-2508.20048">
-        <div class="header">
-            <h2 class="title"><a href="https://arxiv.org/abs/2508.20048" target="_blank">2. Constraining the TeV
-                    gamma-ray emission of SN 2024bch, a possible type IIn-L from a red supergiant progenitor.
-                    Multiwavelength observations and analysis of the progenitor</a></h2>
-            <div class="score-badge" style="background-color: #2ecc71"
-                title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (1.00 × 100 + 72) / 2 = 85.9">85.9
+        
+        <div class="paper" style="border-left-color: #2ecc71" id="paper-2508.14476">
+            <div class="header">
+                <h2 class="title"><a href="https://arxiv.org/abs/2508.14476" target="_blank">3. High-resolution Radio Study of Pulsar Wind Nebula MSH 15-52 and Supernova Remnant RCW 89</a></h2>
+                <div class="score-badge" style="background-color: #2ecc71" title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.77 × 100 + 98) / 2 = 87.5">87.5</div>
+            </div>
+            
+            <div style="margin-bottom: 10px; color: #555; font-style: italic;">
+                S. Zhang, C. -Y. Ng, N. Bucciantini
+            </div>
+            
+            <details style="margin-bottom: 15px;">
+                <summary style="cursor: pointer; color: #3498db; font-weight: 500;">Abstract</summary>
+                <p style="margin-top: 5px; line-height: 1.5; color: #444;">We present high-resolution radio observations of the pulsar wind nebula (PWN) MSH15-52, which is renowned for its distinctive hand-like shape, and its associated supernova remnant RCW 89. Using the Australia Telescope Compact Array (ATCA), we obtained 3 and 6,cm radio maps with a resolution of 2 arcsec. These unveil small-scale radio features in the system and allow a direct comparison with the arcsecond-resolution X-ray images. We find that the radio emission is composed of a complex filamentary structure. In particular, there is a bar-like feature across the central pulsar B1509-58 in the inner PWN, and the radio sheath wrapping around the pulsar also appears to be made up of filaments. Some prominent X-ray features are not detected in radio, including the one-sided jet in the south and the finger-like structures in the north. These indicates turn over of the particle distribution at low energies in these regions. For RCW 89, the radio emission well coincides with both the X-ray knots and the Hα filaments. The high polarization fraction shows that the emission is synchrotron in nature, but it extends well beyond the sharp boundary of the non-thermal X-ray emission, which is difficult to explain.</p>
+            </details>
+            
+            <div class="meta">
+                <div class="details">
+                    <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.77</b></span>
+                    <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>98</b></span>
+                    <span class="metric"><a href="https://arxiv.org/abs/2508.14476" target="_blank">View on ArXiv</a></span>
+                    <button class="add-to-reading-list" onclick="addToReadingList('2508.14476', 'High-resolution Radio Study of Pulsar Wind Nebula MSH 15-52 and Supernova Remnant RCW 89', 'https://arxiv.org/abs/2508.14476', 87.5, '2025-08')" title="Add to Reading List">
+                        📖 Add to List
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="meta">
-            <div class="details">
-                <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>1.00</b></span>
-                <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>72</b></span>
-                <span class="metric"><a href="https://arxiv.org/abs/2508.20048" target="_blank">View on ArXiv</a></span>
-                <button class="add-to-reading-list"
-                    onclick="addToReadingList('2508.20048', 'Constraining the TeV gamma-ray emission of SN 2024bch, a possible type IIn-L from a red supergiant progenitor. Multiwavelength observations and analysis of the progenitor', 'https://arxiv.org/abs/2508.20048', 85.9, '2025-08')"
-                    title="Add to Reading List">
-                    📖 Add to List
-                </button>
+        
+        <div class="paper" style="border-left-color: #2ecc71" id="paper-2508.21644">
+            <div class="header">
+                <h2 class="title"><a href="https://arxiv.org/abs/2508.21644" target="_blank">4. Deciphering the gamma-ray emission in the Cygnus region</a></h2>
+                <div class="score-badge" style="background-color: #2ecc71" title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.75 × 100 + 98) / 2 = 86.7">86.7</div>
+            </div>
+            
+            <div style="margin-bottom: 10px; color: #555; font-style: italic;">
+                L. Haerer, T. Vieu, F. Schulze, C. J. K. Larkin, B. Reville
+            </div>
+            
+            <details style="margin-bottom: 15px;">
+                <summary style="cursor: pointer; color: #3498db; font-weight: 500;">Abstract</summary>
+                <p style="margin-top: 5px; line-height: 1.5; color: #444;">The Cygnus region is a vast star-forming complex harbouring a population of powerful objects, including massive star clusters and associations, Wolf-Rayet stars, pulsars, and supernova remnants. The multi-wavelength picture is far from understood, in particular the recent LHAASO detection of multi-degree scale diffuse gamma-ray emission up to PeV energies. We aim to model the broadband gamma-ray data, discriminating plausible scenarios amongst all candidate accelerators. We consider in particular relic hadronic emission from a supernova remnant expanding in a low-density environment and inverse Compton emission from stellar-wind termination shocks in the Cygnus OB2 stellar association. We first estimate the maximum particle energy from a 3D hydrodynamical simulation of the supernova remnant scenario. The transport equation is then solved numerically to determine the radial distribution of non-thermal protons and electrons. In order to compute synthetic gamma-ray spectra and emission maps, we develop a 3D model of the gas distribution. This includes, firstly, a HI component with a low-density superbubble around Cygnus OB2 and, secondly, molecular clouds lying at the edge of the superbubble and in the foreground. We find that a powerful, ~50 kyr-old supernova remnant can account for both the morphology and spectrum from 10 TeV-PeV. At PeV energies, the microquasar Cygnus X-3 and diffuse Galactic cosmic rays might also contribute to the flux. Below about 10 TeV, hadronic models are incompatible with the expected existence of a superbubble centred on Cygnus OB2. Instead, the spectrum is well fitted with inverse Compton emission from electrons accelerated at stellar-wind termination shocks in Cygnus OB2 in line with existing multi-wavelength limits.</p>
+            </details>
+            
+            <div class="meta">
+                <div class="details">
+                    <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.75</b></span>
+                    <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>98</b></span>
+                    <span class="metric"><a href="https://arxiv.org/abs/2508.21644" target="_blank">View on ArXiv</a></span>
+                    <button class="add-to-reading-list" onclick="addToReadingList('2508.21644', 'Deciphering the gamma-ray emission in the Cygnus region', 'https://arxiv.org/abs/2508.21644', 86.7, '2025-08')" title="Add to Reading List">
+                        📖 Add to List
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="paper" style="border-left-color: #2ecc71" id="paper-2508.01934">
-        <div class="header">
-            <h2 class="title"><a href="https://arxiv.org/abs/2508.01934" target="_blank">3. HAWC, VERITAS, Fermi-LAT and
-                    XMM-Newton follow-up observations of the unidentified ultra-high-energy gamma-ray source LHAASO
-                    J2108+5157</a></h2>
-            <div class="score-badge" style="background-color: #2ecc71"
-                title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.76 × 100 + 93) / 2 = 84.3">84.3
+        
+        <div class="paper" style="border-left-color: #2ecc71" id="paper-2508.01934">
+            <div class="header">
+                <h2 class="title"><a href="https://arxiv.org/abs/2508.01934" target="_blank">5. HAWC, VERITAS, Fermi-LAT and XMM-Newton follow-up observations of the unidentified ultra-high-energy gamma-ray source LHAASO J2108+5157</a></h2>
+                <div class="score-badge" style="background-color: #2ecc71" title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.76 × 100 + 92) / 2 = 83.8">83.8</div>
+            </div>
+            
+            <div style="margin-bottom: 10px; color: #555; font-style: italic;">
+                 The VERITAS collaboration, C. B. Adams, P. Bangale, W. Benbow, J. H. Buckley
+            </div>
+            
+            <details style="margin-bottom: 15px;">
+                <summary style="cursor: pointer; color: #3498db; font-weight: 500;">Abstract</summary>
+                <p style="margin-top: 5px; line-height: 1.5; color: #444;">We report observations of the ultra-high-energy gamma-ray source LHAASO J2108$+$5157, utilizing VERITAS, HAWC, Fermi-LAT, and XMM-Newton. VERITAS has collected $\sim$ 40 hours of data that we used to set ULs to the emission above 200 GeV. The HAWC data, collected over $\sim 2400$ days, reveal emission between 3 and 146 TeV, with a significance of $7.5~σ$, favoring an extended source model. The best-fit spectrum measured by HAWC is characterized by a simple power-law with a spectral index of $2.45\pm0.11_{stat}$. Fermi-LAT analysis finds a point source with a very soft spectrum in the LHAASO J2108+5157 region, consistent with the 4FGL-DR3 catalog results. The XMM-Newton analysis yields a null detection of the source in the 2 - 7 keV band. The broadband spectrum can be interpreted as a pulsar and a pulsar wind nebula system, where the GeV gamma-ray emission originates from an unidentified pulsar, and the X-ray and TeV emission is attributed to synchrotron radiation and inverse Compton scattering of electrons accelerated within a pulsar wind nebula. In this leptonic scenario, our X-ray upper limit provides a stringent constraint on the magnetic field, which is $\lesssim 1.5\ μ$G.</p>
+            </details>
+            
+            <div class="meta">
+                <div class="details">
+                    <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.76</b></span>
+                    <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>92</b></span>
+                    <span class="metric"><a href="https://arxiv.org/abs/2508.01934" target="_blank">View on ArXiv</a></span>
+                    <button class="add-to-reading-list" onclick="addToReadingList('2508.01934', 'HAWC, VERITAS, Fermi-LAT and XMM-Newton follow-up observations of the unidentified ultra-high-energy gamma-ray source LHAASO J2108+5157', 'https://arxiv.org/abs/2508.01934', 83.8, '2025-08')" title="Add to Reading List">
+                        📖 Add to List
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="meta">
-            <div class="details">
-                <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.76</b></span>
-                <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>93</b></span>
-                <span class="metric"><a href="https://arxiv.org/abs/2508.01934" target="_blank">View on ArXiv</a></span>
-                <button class="add-to-reading-list"
-                    onclick="addToReadingList('2508.01934', 'HAWC, VERITAS, Fermi-LAT and XMM-Newton follow-up observations of the unidentified ultra-high-energy gamma-ray source LHAASO J2108+5157', 'https://arxiv.org/abs/2508.01934', 84.3, '2025-08')"
-                    title="Add to Reading List">
-                    📖 Add to List
-                </button>
+        
+        <div class="paper" style="border-left-color: #f39c12" id="paper-2508.14397">
+            <div class="header">
+                <h2 class="title"><a href="https://arxiv.org/abs/2508.14397" target="_blank">6. Constraining Common Envelope Evolution in Binary Neutron Star Formation with Combined Galactic and Gravitational-Wave Observations</a></h2>
+                <div class="score-badge" style="background-color: #f39c12" title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.77 × 100 + 80) / 2 = 78.6">78.6</div>
+            </div>
+            
+            <div style="margin-bottom: 10px; color: #555; font-style: italic;">
+                Zhiwei Chen, Jihui Zhang, Youjun Lu, Jifeng Liu, Changwen Zeng
+            </div>
+            
+            <details style="margin-bottom: 15px;">
+                <summary style="cursor: pointer; color: #3498db; font-weight: 500;">Abstract</summary>
+                <p style="margin-top: 5px; line-height: 1.5; color: #444;">Binary neutron stars (BNSs) are among the most interesting sources for multimessenger studies. A number of recently discovered BNSs in the Milky Way by radio telescopes have added new information to the parameter distribution of the Galactic BNSs. The scarcity of BNS mergers during the O4 run of the LIGO-Virgo-Kagra (LVK) suggests a BNS local merger rate six times lower than the previous constraint obtained by O1-O3 runs. With these new multimessenger observations, in this letter, we adopt the compact binary population synthesis model and Bayesian analysis to constrain the formation and evolution of BNSs, especially the common envelope (CE) evolution. We find that it is required: (1) a fraction ($f_{\rm HG}\sim0.8$) but not all of the Hertzsprung gap donors merged with their companions in the CE stage, in order to simultaneously explain the low BNS merger rate density and the existence of the short-orbital-period ($\lesssim 1$ day) Galactic BNSs, different from either all ($f_{\rm HG}=1$) or none ($f_{\rm HG}=0$) adopted in previous studies; (2) a large CE ejection efficiency $α$ ($\sim 5$), in order to explain the existence of the long-orbital-period ($\gtrsim 10$ day) Galactic BNSs.</p>
+            </details>
+            
+            <div class="meta">
+                <div class="details">
+                    <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.77</b></span>
+                    <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>80</b></span>
+                    <span class="metric"><a href="https://arxiv.org/abs/2508.14397" target="_blank">View on ArXiv</a></span>
+                    <button class="add-to-reading-list" onclick="addToReadingList('2508.14397', 'Constraining Common Envelope Evolution in Binary Neutron Star Formation with Combined Galactic and Gravitational-Wave Observations', 'https://arxiv.org/abs/2508.14397', 78.6, '2025-08')" title="Add to Reading List">
+                        📖 Add to List
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="paper" style="border-left-color: #2ecc71" id="paper-2508.02526">
-        <div class="header">
-            <h2 class="title"><a href="https://arxiv.org/abs/2508.02526" target="_blank">4. A Comprehensive Analysis of
-                    X-ray Sources in Terzan 5 Using Chandra Observations</a></h2>
-            <div class="score-badge" style="background-color: #2ecc71"
-                title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.73 × 100 + 92) / 2 = 82.7">82.7
+        
+        <div class="paper" style="border-left-color: #f39c12" id="paper-2508.12721">
+            <div class="header">
+                <h2 class="title"><a href="https://arxiv.org/abs/2508.12721" target="_blank">7. Runaway stars and the Galactic supernova remnant landscape: non-thermal emission and observational evidence</a></h2>
+                <div class="score-badge" style="background-color: #f39c12" title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.78 × 100 + 75) / 2 = 76.3">76.3</div>
+            </div>
+            
+            <div style="margin-bottom: 10px; color: #555; font-style: italic;">
+                Rowan Batzofin, Kathrin Egberts, Dominique M. -A. Meyer, Constantin Steppa
+            </div>
+            
+            <details style="margin-bottom: 15px;">
+                <summary style="cursor: pointer; color: #3498db; font-weight: 500;">Abstract</summary>
+                <p style="margin-top: 5px; line-height: 1.5; color: #444;">Context. A significant fraction (~30%) of massive stars in our Galaxy are moving supersonically through the interstellar medium, which strongly governs their location at the time they end their lives, e.g. die as a supernova and give birth to a supernova remnant (SNR). These dead stellar environments accelerate particles, emitting by non-thermal mechanisms up to the TeV range, and they are considered as a major contributor to the very-high-energy band of the local cosmic-ray spectrum. Aims. This study investigates the effect of the runaway motion of supernova progenitors on the spatial distribution of SNRs in the Milky Way and how this influences the deduced properties of the population. Methods. We construct Galactic populations of SNRs by Monte Carlo simulation, taking into account the bulk motion and the evolution history of their progenitor stars once ejected from their parent clusters. The gamma-ray domain emission of each population is then calculated, to be compared with the High Energy Stereoscopic System (H.E.S.S.) Galactic Plane Survey. Results. We find that including the runaway motion of supernova progenitors strongly modifies the detectability of the simulated emission of their remnants in the very-high-energy band. Particularly, our best fit model using a Reid Milky Way model for core-collapse supernova progenitors requires 33% of massive runaway stars, which is close to the known fraction of runaway high-mass stars, to be in accordance with the H.E.S.S. Galactic Plane Survey data. Conclusions. Our results show that the runaway nature of supernova progenitors must be taken into account in the study of the Galactic population of SNRs within the H.E.S.S. Galactic Plane Survey and the forthcoming Galactic Plane Survey of the Cherenkov Telescope Array Observatory, as it is a governing factor of the detectability of non-thermal emission of their subsequent SNRs.</p>
+            </details>
+            
+            <div class="meta">
+                <div class="details">
+                    <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.78</b></span>
+                    <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>75</b></span>
+                    <span class="metric"><a href="https://arxiv.org/abs/2508.12721" target="_blank">View on ArXiv</a></span>
+                    <button class="add-to-reading-list" onclick="addToReadingList('2508.12721', 'Runaway stars and the Galactic supernova remnant landscape: non-thermal emission and observational evidence', 'https://arxiv.org/abs/2508.12721', 76.3, '2025-08')" title="Add to Reading List">
+                        📖 Add to List
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="meta">
-            <div class="details">
-                <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.73</b></span>
-                <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>92</b></span>
-                <span class="metric"><a href="https://arxiv.org/abs/2508.02526" target="_blank">View on ArXiv</a></span>
-                <button class="add-to-reading-list"
-                    onclick="addToReadingList('2508.02526', 'A Comprehensive Analysis of X-ray Sources in Terzan 5 Using Chandra Observations', 'https://arxiv.org/abs/2508.02526', 82.7, '2025-08')"
-                    title="Add to Reading List">
-                    📖 Add to List
-                </button>
+        
+        <div class="paper" style="border-left-color: #f39c12" id="paper-2508.20048">
+            <div class="header">
+                <h2 class="title"><a href="https://arxiv.org/abs/2508.20048" target="_blank">8. Constraining the TeV gamma-ray emission of SN 2024bch, a possible type IIn-L from a red supergiant progenitor. Multiwavelength observations and analysis of the progenitor</a></h2>
+                <div class="score-badge" style="background-color: #f39c12" title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (1.00 × 100 + 32) / 2 = 65.9">65.9</div>
+            </div>
+            
+            <div style="margin-bottom: 10px; color: #555; font-style: italic;">
+                The CTAO-LST Project,  :, K. Abe, S. Abe, A. Abhishek
+            </div>
+            
+            <details style="margin-bottom: 15px;">
+                <summary style="cursor: pointer; color: #3498db; font-weight: 500;">Abstract</summary>
+                <p style="margin-top: 5px; line-height: 1.5; color: #444;">We present very high-energy optical photometry and spectroscopic observations of SN 2024bch in the nearby galaxy NGC 3206 (\sim 20 Mpc). We used gamma-ray observations performed with the first Large-Sized Telescope (LST-1) of the Cherenkov Telescope Array Observatory (CTAO) and optical observations with the Liverpool Telescope (LT) combined with data from public repositories to evaluate the general properties of the event and the progenitor star. No significant emission above the LST-1 energy threshold for this observation (\sim 100 GeV) was detected in the direction of SN 2024bch, and we computed an integral upper limit on the photon flux of F_γ(>100 GeV) \le 3.61 \times 10^{-12} cm^{-2} s^{-1} based on six nonconsecutive nights of observations with the LST-1, between 16 and 38 days after the explosion. Employing a general model for the gamma-ray flux emission, we found an upper limit on the mass-loss-rate to wind-velocity ratio of \dot M/u_{w} \le 10^{-4} \frac{M_\odot}{yr}\frac{s}{km}, although gamma-gamma absorption could potentially have skewed this estimation, effectively weakening our constraint. From spectro-photometric observations we found progenitor parameters of M_{pr} = 11 - 20 M_\odot and R_{pr} = 531 \pm 125 R_\odot. Finally, using archival images from the Hubble Space Telescope, we constrained the luminosity of the progenitor star to log(L_{pr}/L_\odot) \le 4.82 and its effective temperature to T_{pr} \le 4000 K. Our results suggest that SN 2024bch is a type IIn-L supernova that originated from a progenitor star consistent with a red supergiant. We show how the correct estimation of the mass-loss history of a supernova will play a major role in future multiwavelength observations.</p>
+            </details>
+            
+            <div class="meta">
+                <div class="details">
+                    <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>1.00</b></span>
+                    <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>32</b></span>
+                    <span class="metric"><a href="https://arxiv.org/abs/2508.20048" target="_blank">View on ArXiv</a></span>
+                    <button class="add-to-reading-list" onclick="addToReadingList('2508.20048', 'Constraining the TeV gamma-ray emission of SN 2024bch, a possible type IIn-L from a red supergiant progenitor. Multiwavelength observations and analysis of the progenitor', 'https://arxiv.org/abs/2508.20048', 65.9, '2025-08')" title="Add to Reading List">
+                        📖 Add to List
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="paper" style="border-left-color: #2ecc71" id="paper-2508.18999">
-        <div class="header">
-            <h2 class="title"><a href="https://arxiv.org/abs/2508.18999" target="_blank">5. Detection of Diffuse Radio
-                    Emission inside the Supernova Remnant G338.3-0.0 associated with the Gamma-ray Source HESS
-                    J1640-465</a></h2>
-            <div class="score-badge" style="background-color: #2ecc71"
-                title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.84 × 100 + 78) / 2 = 80.9">80.9
+        
+        <div class="paper" style="border-left-color: #f39c12" id="paper-2508.08750">
+            <div class="header">
+                <h2 class="title"><a href="https://arxiv.org/abs/2508.08750" target="_blank">9. Challenging a binary neutron star merger interpretation of GW230529</a></h2>
+                <div class="score-badge" style="background-color: #f39c12" title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.76 × 100 + 50) / 2 = 62.8">62.8</div>
+            </div>
+            
+            <div style="margin-bottom: 10px; color: #555; font-style: italic;">
+                Ivan Markin, Anna Puecher, Mattia Bulla, Tim Dietrich
+            </div>
+            
+            <details style="margin-bottom: 15px;">
+                <summary style="cursor: pointer; color: #3498db; font-weight: 500;">Abstract</summary>
+                <p style="margin-top: 5px; line-height: 1.5; color: #444;">GW230529_181500 represented the first gravitational-wave detection with one of the component objects' mass inferred to lie in the previously hypothesized mass gap between the heaviest neutron stars and the lightest observed black holes. Given the expected maximum mass values for neutron stars, this object was identified as a black hole, and, with the secondary component being a neutron star, the detection was classified as a neutron star-black hole merger. However, due to the low signal-to-noise ratio and the known waveform degeneracy between the spin and mass ratio in the employed gravitational-wave models, GW230529_181500 could also be interpreted as a merger of two heavy ($\gtrsim 2 \mathrm{M}_\odot$) neutron stars with high spins. We investigate the distinguishability of these scenarios by performing parameter estimation on simulated signals obtained from numerical-relativity waveforms for both neutron star-black hole and binary neutron star systems, with parameters consistent with GW230529_181500, and comparing them to the analysis of the real event data. We find that GW230529_181500 is more likely to have originated from a neutron star-black hole merger, though the possibility of a binary neutron star origin can not be ruled out. Moreover, we use the simulation data to estimate the signatures of potential electromagnetic counterparts emitted by the systems. We find them to be too dim to be located by current wide-field surveys if only the dynamical ejecta is considered, and detectable by the Vera C. Rubin Observatory during the first two days after merger if one accounts for additional disk wind ejecta.</p>
+            </details>
+            
+            <div class="meta">
+                <div class="details">
+                    <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.76</b></span>
+                    <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>50</b></span>
+                    <span class="metric"><a href="https://arxiv.org/abs/2508.08750" target="_blank">View on ArXiv</a></span>
+                    <button class="add-to-reading-list" onclick="addToReadingList('2508.08750', 'Challenging a binary neutron star merger interpretation of GW230529', 'https://arxiv.org/abs/2508.08750', 62.8, '2025-08')" title="Add to Reading List">
+                        📖 Add to List
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="meta">
-            <div class="details">
-                <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.84</b></span>
-                <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>78</b></span>
-                <span class="metric"><a href="https://arxiv.org/abs/2508.18999" target="_blank">View on ArXiv</a></span>
-                <button class="add-to-reading-list"
-                    onclick="addToReadingList('2508.18999', 'Detection of Diffuse Radio Emission inside the Supernova Remnant G338.3-0.0 associated with the Gamma-ray Source HESS J1640-465', 'https://arxiv.org/abs/2508.18999', 80.9, '2025-08')"
-                    title="Add to Reading List">
-                    📖 Add to List
-                </button>
+        
+        <div class="paper" style="border-left-color: #f39c12" id="paper-2508.20952">
+            <div class="header">
+                <h2 class="title"><a href="https://arxiv.org/abs/2508.20952" target="_blank">10. Very high-energy gamma-ray and neutrino emission from hadronic interaction in compact binary millisecond pulsars</a></h2>
+                <div class="score-badge" style="background-color: #f39c12" title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.77 × 100 + 45) / 2 = 60.9">60.9</div>
+            </div>
+            
+            <div style="margin-bottom: 10px; color: #555; font-style: italic;">
+                Vittoria Vecchiotti, Manuel Linares
+            </div>
+            
+            <details style="margin-bottom: 15px;">
+                <summary style="cursor: pointer; color: #3498db; font-weight: 500;">Abstract</summary>
+                <p style="margin-top: 5px; line-height: 1.5; color: #444;">Blackwidow and redback systems are millisecond pulsars in compact orbits with ultra-light and low-mass companions, respectively, collectively known as ``spider pulsars". In such systems, an intrabinary shock can form between the pulsar and the companion winds, serving as a site for particle acceleration and associated non-thermal emission. Assuming that protons can be extracted from the neutron star surface and accelerated at the intrabinary shock and/or within the pulsar wind, we model the very high-energy gamma-ray and neutrino emissions ($0.1-10^3$~TeV) produced through interactions with the companion wind and the companion star. We first calculate the high-energy emissions using an optimistic combination of parameters to maximize the gamma-ray and neutrino fluxes. We find that, for energetic spider pulsars with a spin-down power $\gtrsim 10^{35}\rm erg\, s^{-1}$ and a magnetic field of $\sim 10^{3}\, \rm G$ in the companion region, the gamma-ray emission could be detectable as point sources by CTA and LHAASO, while the neutrino emission could be detectable by the future TRIDENT detector. Finally, we build a synthetic population of these systems, compute the cumulative neutrino flux expected from spider pulsars, and compare it with the Galactic neutrino diffuse emission measured by IceCube. We find that, under realistic assumptions on the fraction of the spin-down power converted into protons, the contribution of spiders to the diffuse Galactic neutrino flux is negligible.</p>
+            </details>
+            
+            <div class="meta">
+                <div class="details">
+                    <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.77</b></span>
+                    <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>45</b></span>
+                    <span class="metric"><a href="https://arxiv.org/abs/2508.20952" target="_blank">View on ArXiv</a></span>
+                    <button class="add-to-reading-list" onclick="addToReadingList('2508.20952', 'Very high-energy gamma-ray and neutrino emission from hadronic interaction in compact binary millisecond pulsars', 'https://arxiv.org/abs/2508.20952', 60.9, '2025-08')" title="Add to Reading List">
+                        📖 Add to List
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="paper" style="border-left-color: #f39c12" id="paper-2508.07660">
-        <div class="header">
-            <h2 class="title"><a href="https://arxiv.org/abs/2508.07660" target="_blank">6. X-ray studies of PSR
-                    J1838$-$0655 and its wind nebula associated with HESS J1837$-$069 and 1LHAASO J1837$-$0654u</a></h2>
-            <div class="score-badge" style="background-color: #f39c12"
-                title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.84 × 100 + 72) / 2 = 78.1">78.1
+        
+        <div class="paper" style="border-left-color: #f39c12" id="paper-2508.02656">
+            <div class="header">
+                <h2 class="title"><a href="https://arxiv.org/abs/2508.02656" target="_blank">11. Optical and near-infrared nebular-phase spectroscopy of SN 2024ggi: constraints on the structure of the inner ejecta, progenitor mass, and dust</a></h2>
+                <div class="score-badge" style="background-color: #f39c12" title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.81 × 100 + 32) / 2 = 56.6">56.6</div>
+            </div>
+            
+            <div style="margin-bottom: 10px; color: #555; font-style: italic;">
+                Emilio Hueichapán, Régis Cartier, Jose L. Prieto, Carlos Contreras, Aleksandar Cikota
+            </div>
+            
+            <details style="margin-bottom: 15px;">
+                <summary style="cursor: pointer; color: #3498db; font-weight: 500;">Abstract</summary>
+                <p style="margin-top: 5px; line-height: 1.5; color: #444;">We present optical and near-infrared (NIR) spectroscopic observations of the nearby Type II supernova SN\,2024ggi from 250 and 581 days after the explosion. Comparing the evolution of the [\ion{O}{1}] at 6300, 6363 \textÅ doublet normalized to the continuum with spectral models from the literature, we estimate a progenitor star zero-age main-sequence mass ($M_{\mathrm{ZAMS}}$) of $\approx 14$ M$_\odot$. This value is consistent with $M_{\mathrm{ZAMS}}$ reported in the literature from independent methodologies. The nebular spectra are used to study the structure of the inner ejecta. The broad H$α$ line has a full-width at half maximum (FWHM) of $\simeq 3900$ km s$^{-1}$, with small deviations from a symmetric Gaussian profile centred at zero velocity, and the [\ion{O}{1}] doublet is blue-shifted by $\approx -940$ km s$^{-1}$. In the NIR, the nebular spectra reveal double-peaked emission features of \ion{Mg}{1} and [\ion{Fe}{2}] lines between +250 and +319 days, suggesting a bipolar distribution of intermediate mass and iron peak elements in the line-of-sight. Such a double-peaked feature in these NIR lines has not been previously reported. No corresponding asymmetries are observed in the hydrogen lines, suggesting that the asymmetry is mostly confined to intermediate mass and iron peak elements in the innermost core of the supernova ejecta. Additionally, we detect first-overtone carbon monoxide (CO) emission at 2.3,$μ$m between 250 and 319 days, and a blueshift in the emission lines of H$α$, [\ion{O}{1}], \ion{Mg}{1}], and [\ion{Fe}{2}] in the +581 day optical spectrum, consistent with dust formation in the ejecta.</p>
+            </details>
+            
+            <div class="meta">
+                <div class="details">
+                    <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.81</b></span>
+                    <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>32</b></span>
+                    <span class="metric"><a href="https://arxiv.org/abs/2508.02656" target="_blank">View on ArXiv</a></span>
+                    <button class="add-to-reading-list" onclick="addToReadingList('2508.02656', 'Optical and near-infrared nebular-phase spectroscopy of SN 2024ggi: constraints on the structure of the inner ejecta, progenitor mass, and dust', 'https://arxiv.org/abs/2508.02656', 56.6, '2025-08')" title="Add to Reading List">
+                        📖 Add to List
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="meta">
-            <div class="details">
-                <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.84</b></span>
-                <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>72</b></span>
-                <span class="metric"><a href="https://arxiv.org/abs/2508.07660" target="_blank">View on ArXiv</a></span>
-                <button class="add-to-reading-list"
-                    onclick="addToReadingList('2508.07660', 'X-ray studies of PSR J1838$-$0655 and its wind nebula associated with HESS J1837$-$069 and 1LHAASO J1837$-$0654u', 'https://arxiv.org/abs/2508.07660', 78.1, '2025-08')"
-                    title="Add to Reading List">
-                    📖 Add to List
-                </button>
+        
+        <div class="paper" style="border-left-color: #f39c12" id="paper-2508.01428">
+            <div class="header">
+                <h2 class="title"><a href="https://arxiv.org/abs/2508.01428" target="_blank">12. SN 2024gy: Multi-epoch Spectroscopic Features Suggestive of Delayed Detonation in a Type Ia Supernova</a></h2>
+                <div class="score-badge" style="background-color: #f39c12" title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.80 × 100 + 30) / 2 = 55.2">55.2</div>
+            </div>
+            
+            <div style="margin-bottom: 10px; color: #555; font-style: italic;">
+                Liping Li, Zhenyu Wang, Jialian Liu, Yu Pan, Alexei V. Filippenko
+            </div>
+            
+            <details style="margin-bottom: 15px;">
+                <summary style="cursor: pointer; color: #3498db; font-weight: 500;">Abstract</summary>
+                <p style="margin-top: 5px; line-height: 1.5; color: #444;">We present photometric and spectroscopic observations of SN 2024gy, a Type Ia supernova (SN Ia) exhibiting high-velocity features (HVFs) in its early-time spectra. This SN reaches a peak $B$-band magnitude of $-19.25 \pm 0.29$ mag and subsequently declines by $Δm_{15}(B) \approx 1.12$ mag, consistent with the luminosity-width relation characteristic of normal SNe Ia. Based on the peak thermal luminosity of $(1.2 \pm 0.3) \times 10^{43}$ erg s$^{-1}$, we estimate that $0.57 \pm 0.14~\rm M_{\odot}$ of $^{56}$Ni was synthesized during the explosion. Our dense early spectral monitoring revealed significant velocity disparities within the ejecta. Notably, absorption features from the Ca II near-infrared triplet were observed at velocities exceeding 25,000 km s$^{-1}$, while the Si II $λ$6355 line velocity at the same epoch was significantly lower at $\sim$ 16,000 km s$^{-1}$. This velocity disparity likely reflects distinct ionization states of intermediate-mass elements in the outermost layers. The prominent Ca II HVFs may originate from ionization suppression within the highest-velocity ejecta, potentially indicative of minimal hydrogen mixing in a delayed-detonation explosion scenario. Additionally, the Ni/Fe ratio derived from the nebular spectrum of SN 2024gy provides further support for this model.</p>
+            </details>
+            
+            <div class="meta">
+                <div class="details">
+                    <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.80</b></span>
+                    <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>30</b></span>
+                    <span class="metric"><a href="https://arxiv.org/abs/2508.01428" target="_blank">View on ArXiv</a></span>
+                    <button class="add-to-reading-list" onclick="addToReadingList('2508.01428', 'SN 2024gy: Multi-epoch Spectroscopic Features Suggestive of Delayed Detonation in a Type Ia Supernova', 'https://arxiv.org/abs/2508.01428', 55.2, '2025-08')" title="Add to Reading List">
+                        📖 Add to List
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="paper" style="border-left-color: #f39c12" id="paper-2508.09333">
-        <div class="header">
-            <h2 class="title"><a href="https://arxiv.org/abs/2508.09333" target="_blank">7. Impact of thermal effects on
-                    prompt-collapse binary neutron star mergers</a></h2>
-            <div class="score-badge" style="background-color: #f39c12"
-                title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.77 × 100 + 75) / 2 = 75.8">75.8
+        
+        <div class="paper" style="border-left-color: #f39c12" id="paper-2508.15435">
+            <div class="header">
+                <h2 class="title"><a href="https://arxiv.org/abs/2508.15435" target="_blank">13. Radio Observations of a Candidate Redback Millisecond Pulsar: 1FGL J0523.5-2529</a></h2>
+                <div class="score-badge" style="background-color: #f39c12" title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.75 × 100 + 35) / 2 = 54.8">54.8</div>
+            </div>
+            
+            <div style="margin-bottom: 10px; color: #555; font-style: italic;">
+                O. A. Johnson, E. F. Keane, D. J. McKenna, H. Qiu, S. J. Swihart
+            </div>
+            
+            <details style="margin-bottom: 15px;">
+                <summary style="cursor: pointer; color: #3498db; font-weight: 500;">Abstract</summary>
+                <p style="margin-top: 5px; line-height: 1.5; color: #444;">Redback pulsars are a subclass of millisecond pulsar system with a low-mass non-degenerate companion star being ablated by the pulsar. They are of interest due to the insights they can provide for late-stage pulsar evolution during the recycling process. J0523.5-2529 is one such candidate where redback-like emission has been seen at multiple wavelengths except radio. It is a system with a binary orbit of 16.5 hours and a low-mass non-degenerate companion of approximately 0.8 solar masses. The aim of this work was to conduct follow-up radio observations to search for any exhibited radio pulsar emission from J0523.5-2529. This work employs a periodicity and single burst search across 74 percent of the system's orbital phase using a total of 34.5 hours of observations. Observations were carried out using the Murriyang Telescope at Parkes and the Robert C. Byrd Green Bank Telescope (GBT). Despite extensive orbital phase coverage, no periodic or single-pulse radio emission was detected above a signal-to-noise threshold of 7. A comprehensive search for radio pulsations from J0523.5-2529 using Parkes and GBT yielded no significant emission, likely due to intrinsic faintness, scattering, or eclipses by the companion's outflow. The results demonstrate the elusiveness of the pulsar component in some redback systems and highlight the need for multi-wavelength follow-up and higher-frequency radio observations to constrain the source nature and binary dynamics.</p>
+            </details>
+            
+            <div class="meta">
+                <div class="details">
+                    <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.75</b></span>
+                    <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>35</b></span>
+                    <span class="metric"><a href="https://arxiv.org/abs/2508.15435" target="_blank">View on ArXiv</a></span>
+                    <button class="add-to-reading-list" onclick="addToReadingList('2508.15435', 'Radio Observations of a Candidate Redback Millisecond Pulsar: 1FGL J0523.5-2529', 'https://arxiv.org/abs/2508.15435', 54.8, '2025-08')" title="Add to Reading List">
+                        📖 Add to List
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="meta">
-            <div class="details">
-                <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.77</b></span>
-                <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>75</b></span>
-                <span class="metric"><a href="https://arxiv.org/abs/2508.09333" target="_blank">View on ArXiv</a></span>
-                <button class="add-to-reading-list"
-                    onclick="addToReadingList('2508.09333', 'Impact of thermal effects on prompt-collapse binary neutron star mergers', 'https://arxiv.org/abs/2508.09333', 75.8, '2025-08')"
-                    title="Add to Reading List">
-                    📖 Add to List
-                </button>
+        
+        <div class="paper" style="border-left-color: #f39c12" id="paper-2508.15295">
+            <div class="header">
+                <h2 class="title"><a href="https://arxiv.org/abs/2508.15295" target="_blank">14. Contribution of Globular Clusters to Diffuse Gamma-ray Emission from Galactic Plane</a></h2>
+                <div class="score-badge" style="background-color: #f39c12" title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.77 × 100 + 30) / 2 = 53.3">53.3</div>
+            </div>
+            
+            <div style="margin-bottom: 10px; color: #555; font-style: italic;">
+                Jiayin He, Houdun Zeng, Yi Zhang, Xiaoyuan Huang, Qiang Yuan
+            </div>
+            
+            <details style="margin-bottom: 15px;">
+                <summary style="cursor: pointer; color: #3498db; font-weight: 500;">Abstract</summary>
+                <p style="margin-top: 5px; line-height: 1.5; color: #444;">The diffuse Galactic $γ$-ray emission (DGE) provides a valuable probe for investigating the cosmic ray propagation and interactions within our Galactic environment. Recent observations have demonstrated systematic excesses of DGE compared with the conventional cosmic-ray propagation model predictions. While $γ$-ray emissions have been detected in a subset of globular clusters, their undetected populations may significantly contribute to the DGE. Motivated by this possibility, we present a comprehensive assessment of potential contributions from unresolved globular clusters to the DGE. In our analysis, a nonparametric method is employed to estimate the luminosity function and spatial distribution function of globular clusters using the Fermi-LAT fourth source catalog (4FGL) combined with a reference globular cluster catalog. Based on these distributions, we calculate the cumulative contribution of unresolved globular cluster populations to the DGE observed by Fermi-LAT and the Large High Altitude Air Shower Observatory (LHAASO). Our results reveal that globular clusters account for only $\sim$2\% of the DGE at the TeV range, and smaller than $1\%$ in the GeV regime, which is effectively negligible.</p>
+            </details>
+            
+            <div class="meta">
+                <div class="details">
+                    <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.77</b></span>
+                    <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>30</b></span>
+                    <span class="metric"><a href="https://arxiv.org/abs/2508.15295" target="_blank">View on ArXiv</a></span>
+                    <button class="add-to-reading-list" onclick="addToReadingList('2508.15295', 'Contribution of Globular Clusters to Diffuse Gamma-ray Emission from Galactic Plane', 'https://arxiv.org/abs/2508.15295', 53.3, '2025-08')" title="Add to Reading List">
+                        📖 Add to List
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="paper" style="border-left-color: #f39c12" id="paper-2508.03807">
-        <div class="header">
-            <h2 class="title"><a href="https://arxiv.org/abs/2508.03807" target="_blank">8. The First Radio-Bright
-                    Off-Nuclear TDE 2024tvd Reveals the Fastest-Evolving Double-Peaked Radio Emission</a></h2>
-            <div class="score-badge" style="background-color: #f39c12"
-                title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.74 × 100 + 75) / 2 = 74.7">74.7
+        
+        <div class="paper" style="border-left-color: #f39c12" id="paper-2508.14570">
+            <div class="header">
+                <h2 class="title"><a href="https://arxiv.org/abs/2508.14570" target="_blank">15. MUSE Observations Reveal Optical Coronal Iron Lines from Shock Emission in Supernova Remnant 0540-69.3</a></h2>
+                <div class="score-badge" style="background-color: #f39c12" title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.76 × 100 + 30) / 2 = 53.0">53.0</div>
+            </div>
+            
+            <div style="margin-bottom: 10px; color: #555; font-style: italic;">
+                L. Tenhu, J. Larsson, P. Lundqvist, I. Saathoff, J. D. Lyman
+            </div>
+            
+            <details style="margin-bottom: 15px;">
+                <summary style="cursor: pointer; color: #3498db; font-weight: 500;">Abstract</summary>
+                <p style="margin-top: 5px; line-height: 1.5; color: #444;">We investigate the optical shock emission from the Large Magellanic Cloud supernova remnant 0540-69.3 (SNR 0540) using MUSE integral-field-unit data from the VLT. The observations cover the spectral range 4650-9300 $Å$ and provide a $1\times1$ arcmin$^{2}$ field of view, encompassing nearly the entire remnant. We analyse the spatial and spectral properties of shock-related emission lines, and identify clumpy optical shock emission e.g. from [S II] $λλ$6716,6731 doublet and the coronal [Fe XIV] $λ$5303 line (typically at radial velocities $\lesssim|100|$ km s$^{-1}$ and $\lesssim|170|$ km s$^{-1}$, respectively). These features trace the blast-wave shell seen in previous X-ray studies. Post-shock electron density estimates, based on the [S II]-line ratio, reveal spatial variation, with the highest densities ($\sim10^4$ cm$^{-3}$) in the bright knots in the west, and lower densities ($\sim3\times10^3$ cm$^{-3}$) in the east. The density in the north (southwest) appears significantly lower (higher) but remains unconstrained due to limited signal. We also estimate blast-wave shock velocities using the [Fe XIV] $λ$5303/[Fe XI] $λ$7892 ratio, finding low velocities ($\sim400$ km s$^{-1}$), consistent with previous studies. All these results support the scenario that the blast wave is interacting with the surrounding interstellar medium, particularly in the western regions. Additionally, we detect four unidentified emission lines, $\sim$2000-3000 km s$^{-1}$ south from the pulsar in transverse velocity, but their origin remains unclear. Possible explanations, including Fe lines from a high-velocity ejecta clump, all present challenges. Our findings highlight the complex nature of the circum- and interstellar medium surrounding SNR 0540.</p>
+            </details>
+            
+            <div class="meta">
+                <div class="details">
+                    <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.76</b></span>
+                    <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>30</b></span>
+                    <span class="metric"><a href="https://arxiv.org/abs/2508.14570" target="_blank">View on ArXiv</a></span>
+                    <button class="add-to-reading-list" onclick="addToReadingList('2508.14570', 'MUSE Observations Reveal Optical Coronal Iron Lines from Shock Emission in Supernova Remnant 0540-69.3', 'https://arxiv.org/abs/2508.14570', 53.0, '2025-08')" title="Add to Reading List">
+                        📖 Add to List
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="meta">
-            <div class="details">
-                <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.74</b></span>
-                <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>75</b></span>
-                <span class="metric"><a href="https://arxiv.org/abs/2508.03807" target="_blank">View on ArXiv</a></span>
-                <button class="add-to-reading-list"
-                    onclick="addToReadingList('2508.03807', 'The First Radio-Bright Off-Nuclear TDE 2024tvd Reveals the Fastest-Evolving Double-Peaked Radio Emission', 'https://arxiv.org/abs/2508.03807', 74.7, '2025-08')"
-                    title="Add to Reading List">
-                    📖 Add to List
-                </button>
+        
+        <div class="paper" style="border-left-color: #f39c12" id="paper-2508.10573">
+            <div class="header">
+                <h2 class="title"><a href="https://arxiv.org/abs/2508.10573" target="_blank">16. Constraints on the progenitor and explosion of SN 2024ggi in harmony with pre-explosion detection and hydrodynamic simulations</a></h2>
+                <div class="score-badge" style="background-color: #f39c12" title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.81 × 100 + 20) / 2 = 50.4">50.4</div>
+            </div>
+            
+            <div style="margin-bottom: 10px; color: #555; font-style: italic;">
+                Amar Aryan, Erin Higgins, Matt Nicholl, Ting-Wan Chen, Yu-Hsuan Liu
+            </div>
+            
+            <details style="margin-bottom: 15px;">
+                <summary style="cursor: pointer; color: #3498db; font-weight: 500;">Abstract</summary>
+                <p style="margin-top: 5px; line-height: 1.5; color: #444;">Supernova (SN) 2024ggi is a nearby Type II SN discovered by ATLAS, showing early flash-ionization features. The pre-explosion images reveal a red supergiant (RSG) progenitor with an initial mass of 10-17 M$_\odot$. In the present work, we perform detailed hydrodynamic modeling to refine and put robust constraints on the progenitor and explosion parameters of SN 2024ggi. Among the progenitor models in our study, the pre-SN properties of the 11 M$_{\odot}$ match the pre-explosion detected progenitor well. However, we find it difficult to completely rule out the 10 M$_{\odot}$ and 12 M$_{\odot}$ models. Thus, we provide a constraint of 11$^{+1}_{-1}$ M$_{\odot}$ on the initial mass of the progenitor. To match the observed bolometric light curve and velocity evolution of SN 2024ggi, the favored model with an initial mass of 11 M$_{\odot}$ has a pre-SN radius of 800 R$_{\odot}$. This model requires an explosion energy of [0.7-0.8]$\times$10$^{51}$ erg, nickel mass of 0.049 M$_{\odot}$, ejecta mass of 9.1 M$_{\odot}$, and an amount of $\sim$ 0.5 M$_{\odot}$ of steady-wind CSM extended up to $\sim1.2\times10^{14}$ cm resulting from an eruptive mass-loss rate of 1.0 M$_{\odot}$ yr$^{-1}$. We also incorporate the accelerated-wind CSM scenario, which suggests a mass-loss rate of 1.0$\times10^{-2}$ M$_{\odot}$ yr$^{-1}$ and a CSM mass of $\sim$ 0.7 M$_{\odot}$ extended up to $\sim1.1\times10^{14}$ cm. This mass-loss rate falls within the range constrained observationally. Additionally, due to the constraint of 11$^{+1}_{-1}$ M$_{\odot}$ on the initial mass, the range of pre-SN radius and ejecta mass would be [690-900] R$_{\odot}$, and [8.2-9.6] M$_{\odot}$, respectively.</p>
+            </details>
+            
+            <div class="meta">
+                <div class="details">
+                    <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.81</b></span>
+                    <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>20</b></span>
+                    <span class="metric"><a href="https://arxiv.org/abs/2508.10573" target="_blank">View on ArXiv</a></span>
+                    <button class="add-to-reading-list" onclick="addToReadingList('2508.10573', 'Constraints on the progenitor and explosion of SN 2024ggi in harmony with pre-explosion detection and hydrodynamic simulations', 'https://arxiv.org/abs/2508.10573', 50.4, '2025-08')" title="Add to Reading List">
+                        📖 Add to List
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="paper" style="border-left-color: #f39c12" id="paper-2508.11077">
-        <div class="header">
-            <h2 class="title"><a href="https://arxiv.org/abs/2508.11077" target="_blank">9. Explosions of pulsating red
-                    supergiants: a natural pathway for the diversity of Type II-P/L supernovae</a></h2>
-            <div class="score-badge" style="background-color: #f39c12"
-                title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.73 × 100 + 75) / 2 = 74.1">74.1
+        
+        <div class="paper" style="border-left-color: #e74c3c" id="paper-2508.02652">
+            <div class="header">
+                <h2 class="title"><a href="https://arxiv.org/abs/2508.02652" target="_blank">17. PSR J0614-3329: A NICER case for Strange Quark Stars</a></h2>
+                <div class="score-badge" style="background-color: #e74c3c" title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.74 × 100 + 25) / 2 = 49.5">49.5</div>
+            </div>
+            
+            <div style="margin-bottom: 10px; color: #555; font-style: italic;">
+                Swarnim Shirke, Rajesh Maiti, Debarati Chatterjee
+            </div>
+            
+            <details style="margin-bottom: 15px;">
+                <summary style="cursor: pointer; color: #3498db; font-weight: 500;">Abstract</summary>
+                <p style="margin-top: 5px; line-height: 1.5; color: #444;">Precise measurements of neutron star masses and radii by the NICER mission impose important constraints on the nuclear equation of state. The most recent NICER measurement of PSR J0614-3329 reported an equatorial radius of $R_{eq} = 10.29^{+1.01}_{-0.86}$ km for a mass of $M = 1.44^{+0.06}_{-0.07} M_{\odot}$. Considering all the NICER measurements to date, we find substantial evidence using Bayesian hypothesis ranking for strange quark stars over physically motivated models of neutron stars compatible with this low radius. This provides a strong case for quark matter in neutron stars and also for the possible existence of strange quark stars, a consequence of the Bodmer-Witten hypothesis, suggesting that they could be considered among the population of compact stars during analyses of astrophysical data. Using a wide sample of equations of state, we report the nucleonic equations of state that best fit current observations and rule out one model of strange quark matter.</p>
+            </details>
+            
+            <div class="meta">
+                <div class="details">
+                    <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.74</b></span>
+                    <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>25</b></span>
+                    <span class="metric"><a href="https://arxiv.org/abs/2508.02652" target="_blank">View on ArXiv</a></span>
+                    <button class="add-to-reading-list" onclick="addToReadingList('2508.02652', 'PSR J0614-3329: A NICER case for Strange Quark Stars', 'https://arxiv.org/abs/2508.02652', 49.5, '2025-08')" title="Add to Reading List">
+                        📖 Add to List
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="meta">
-            <div class="details">
-                <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.73</b></span>
-                <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>75</b></span>
-                <span class="metric"><a href="https://arxiv.org/abs/2508.11077" target="_blank">View on ArXiv</a></span>
-                <button class="add-to-reading-list"
-                    onclick="addToReadingList('2508.11077', 'Explosions of pulsating red supergiants: a natural pathway for the diversity of Type II-P/L supernovae', 'https://arxiv.org/abs/2508.11077', 74.1, '2025-08')"
-                    title="Add to Reading List">
-                    📖 Add to List
-                </button>
+        
+        <div class="paper" style="border-left-color: #e74c3c" id="paper-2508.10698">
+            <div class="header">
+                <h2 class="title"><a href="https://arxiv.org/abs/2508.10698" target="_blank">18. Investigating the Impact of Higher-Order Phase Transitions in Binary Neutron-Star Mergers</a></h2>
+                <div class="score-badge" style="background-color: #e74c3c" title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.78 × 100 + 20) / 2 = 48.9">48.9</div>
+            </div>
+            
+            <div style="margin-bottom: 10px; color: #555; font-style: italic;">
+                P. Hammond, A. Clevinger, M. Albino, V. Dexheimer, S. Bernuzzi
+            </div>
+            
+            <details style="margin-bottom: 15px;">
+                <summary style="cursor: pointer; color: #3498db; font-weight: 500;">Abstract</summary>
+                <p style="margin-top: 5px; line-height: 1.5; color: #444;">In this paper we investigate quark deconfinement in neutrons stars and their mergers, focusing on the effects of higher orders for the phase transition between hadronic and quark matter. The different descriptions we use to describe matter microscopically contain varying particle degrees of freedom, including nucleons, hyperons, Delta baryons, and light and strange quarks. We use tabulated equations of state from the CompOSE database in which the quark deconfinement phase transition is described as being first-order, and then smooth it out by introducing a percolation, replacing the single first-order phase transition with two transitions of second or third order. We then perform binary neutron-star merger simulations using these new equations of st ate, focusing on groups of binaries with the same single-star mass, radius, and tidal deformability, but different equations of state. We go on to discuss differences in their evolution, and the ramifications for interpreting future gravitational wave observations and the potential to learn about dense matter.</p>
+            </details>
+            
+            <div class="meta">
+                <div class="details">
+                    <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.78</b></span>
+                    <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>20</b></span>
+                    <span class="metric"><a href="https://arxiv.org/abs/2508.10698" target="_blank">View on ArXiv</a></span>
+                    <button class="add-to-reading-list" onclick="addToReadingList('2508.10698', 'Investigating the Impact of Higher-Order Phase Transitions in Binary Neutron-Star Mergers', 'https://arxiv.org/abs/2508.10698', 48.9, '2025-08')" title="Add to Reading List">
+                        📖 Add to List
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="paper" style="border-left-color: #f39c12" id="paper-2508.02652">
-        <div class="header">
-            <h2 class="title"><a href="https://arxiv.org/abs/2508.02652" target="_blank">10. PSR J0614-3329: A NICER
-                    case for Strange Quark Stars</a></h2>
-            <div class="score-badge" style="background-color: #f39c12"
-                title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.74 × 100 + 70) / 2 = 72.0">72.0
+        
+        <div class="paper" style="border-left-color: #e74c3c" id="paper-2508.10105">
+            <div class="header">
+                <h2 class="title"><a href="https://arxiv.org/abs/2508.10105" target="_blank">19. The X-ray Source Population of the Metal-Rich Globular Cluster NGC 6528</a></h2>
+                <div class="score-badge" style="background-color: #e74c3c" title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.75 × 100 + 20) / 2 = 47.3">47.3</div>
+            </div>
+            
+            <div style="margin-bottom: 10px; color: #555; font-style: italic;">
+                Bernard Leal, Kwangmin Oh, Jay Strader, Steve E. Zepf, Kristen Dage
+            </div>
+            
+            <details style="margin-bottom: 15px;">
+                <summary style="cursor: pointer; color: #3498db; font-weight: 500;">Abstract</summary>
+                <p style="margin-top: 5px; line-height: 1.5; color: #444;">We present the first study of the X-ray sources in one of the most metal-rich globular clusters in the Galaxy, NGC 6528. Using relatively deep (66 ksec) archival imaging from the Chandra X-ray Observatory, we identify 18 sources within the half-light radius of the cluster, all in the range $L_X \sim 10^{31}$-$10^{32}$erg s$^{-1}$ (0.5-7 keV). By combining these data with photometry from the Hubble Space Telescope and other sources, we classify the X-ray sources as a likely mix of cataclysmic variables and active binaries, though one or more of the brighter objects could be a quiescent low-mass X-ray binary. For this cluster, it appears that the X-ray binary-enhancing effects of high metallicity are outweighed by the cluster's advanced dynamical evolution, leading to a relatively modest X-ray source population.</p>
+            </details>
+            
+            <div class="meta">
+                <div class="details">
+                    <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.75</b></span>
+                    <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>20</b></span>
+                    <span class="metric"><a href="https://arxiv.org/abs/2508.10105" target="_blank">View on ArXiv</a></span>
+                    <button class="add-to-reading-list" onclick="addToReadingList('2508.10105', 'The X-ray Source Population of the Metal-Rich Globular Cluster NGC 6528', 'https://arxiv.org/abs/2508.10105', 47.3, '2025-08')" title="Add to Reading List">
+                        📖 Add to List
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="meta">
-            <div class="details">
-                <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.74</b></span>
-                <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>70</b></span>
-                <span class="metric"><a href="https://arxiv.org/abs/2508.02652" target="_blank">View on ArXiv</a></span>
-                <button class="add-to-reading-list"
-                    onclick="addToReadingList('2508.02652', 'PSR J0614-3329: A NICER case for Strange Quark Stars', 'https://arxiv.org/abs/2508.02652', 72.0, '2025-08')"
-                    title="Add to Reading List">
-                    📖 Add to List
-                </button>
+        
+        <div class="paper" style="border-left-color: #e74c3c" id="paper-2508.03807">
+            <div class="header">
+                <h2 class="title"><a href="https://arxiv.org/abs/2508.03807" target="_blank">20. The First Radio-Bright Off-Nuclear TDE 2024tvd Reveals the Fastest-Evolving Double-Peaked Radio Emission</a></h2>
+                <div class="score-badge" style="background-color: #e74c3c" title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.74 × 100 + 20) / 2 = 47.2">47.2</div>
+            </div>
+            
+            <div style="margin-bottom: 10px; color: #555; font-style: italic;">
+                Itai Sfaradi, Raffaella Margutti, Ryan Chornock, Kate D. Alexander, Brian D. Metzger
+            </div>
+            
+            <details style="margin-bottom: 15px;">
+                <summary style="cursor: pointer; color: #3498db; font-weight: 500;">Abstract</summary>
+                <p style="margin-top: 5px; line-height: 1.5; color: #444;">We present the first multi-epoch broadband radio and millimeter monitoring of an off-nuclear TDE using the VLA, ALMA, ATA, AMI-LA, and the SMA. The off-nuclear TDE 2024tvd exhibits double-peaked radio light curves and the fastest evolving radio emission observed from a TDE to date. With respect to the optical discovery date, the first radio flare rises faster than $F_{\rm ν} \sim t^{9}$ at $Δt = 88-131$ days, and then decays as fast as $F_{\rm ν} \sim t^{-6}$. The emergence of a second radio flare is observed at $Δt \approx 194$ days with an initial fast rise of $F_{\rm ν} \sim t^{18}$, and an optically thin decline of $F_{\rm ν} \sim t ^{-12}$. We interpret these observations in the context of a self-absorbed and free-free absorbed synchrotron spectrum, while accounting for both synchrotron and external inverse-Compton cooling. We find that a single prompt outflow cannot easily explain these observations and it is likely that either there is only one outflow that was launched at $Δt \sim 80$ days, or two distinct outflows, with the second launched at $Δt \sim 170-190$ days. The nature of these outflows, whether sub-, mildly-, or ultra-relativistic, is still unclear, and we explore these different scenarios. Finally, we find a temporal coincidence between the launch time of the first radio-emitting outflow and the onset of a power-law component in the X-ray spectrum, attributed to inverse-Compton scattering of thermal photons.</p>
+            </details>
+            
+            <div class="meta">
+                <div class="details">
+                    <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.74</b></span>
+                    <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>20</b></span>
+                    <span class="metric"><a href="https://arxiv.org/abs/2508.03807" target="_blank">View on ArXiv</a></span>
+                    <button class="add-to-reading-list" onclick="addToReadingList('2508.03807', 'The First Radio-Bright Off-Nuclear TDE 2024tvd Reveals the Fastest-Evolving Double-Peaked Radio Emission', 'https://arxiv.org/abs/2508.03807', 47.2, '2025-08')" title="Add to Reading List">
+                        📖 Add to List
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="paper" style="border-left-color: #f39c12" id="paper-2508.15636">
-        <div class="header">
-            <h2 class="title"><a href="https://arxiv.org/abs/2508.15636" target="_blank">11. Main and interpulse
-                    interaction in PSRs J1842+0358 and J1926+0737: evidence for interpole communication</a></h2>
-            <div class="score-badge" style="background-color: #f39c12"
-                title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.73 × 100 + 65) / 2 = 69.0">69.0
+        
+        <div class="paper" style="border-left-color: #e74c3c" id="paper-2508.08553">
+            <div class="header">
+                <h2 class="title"><a href="https://arxiv.org/abs/2508.08553" target="_blank">21. Optical emission from luminous and very soft X-ray sources in nearby galaxies: testing the scenario of edge-on supercritical accretion systems</a></h2>
+                <div class="score-badge" style="background-color: #e74c3c" title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.74 × 100 + 20) / 2 = 46.8">46.8</div>
+            </div>
+            
+            <div style="margin-bottom: 10px; color: #555; font-style: italic;">
+                Xiaohong Tang, Hua Feng
+            </div>
+            
+            <details style="margin-bottom: 15px;">
+                <summary style="cursor: pointer; color: #3498db; font-weight: 500;">Abstract</summary>
+                <p style="margin-top: 5px; line-height: 1.5; color: #444;">Supercritical accretion onto compact objects is expected to drive optically thick winds, resulting in observed X-ray emission as a function of viewing angle. However, their optical emission, either from the outer accretion disk or companion surface tends to be nearly isotropic. Based on a sample of luminous and very soft X-ray sources that are argued to be supercritical accretion systems viewed close to edge-on, we identified the optical counterparts for some of them and compared the optical properties with those of ultraluminous X-ray sources (ULXs), which are supposed to be supercritical accretion systems viewed close to face-on. The optical luminosity is found in a wide range, with the absolute visual magnitude ranging from dimmer than -1.2 in some sources to about -7 in one case. Most sources show a power-law like spectrum while four of them display a blackbody shape. One of them shows an optical spectrum resembling a B type main sequence, suggesting that it may be a Be white dwarf system. Strong variability in flux at timescales as short as 10 days are revealed, indicating that some of these sources are powered by accretion onto compact objects. These suggest that the luminous and very soft X-ray sources in nearby galaxies have a diverse population, and some of them are indeed consistent with emission from supercritical accretion, with consistent optical magnitudes and colors. Future optical spectroscopic observations are needed to further constrain their natures.</p>
+            </details>
+            
+            <div class="meta">
+                <div class="details">
+                    <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.74</b></span>
+                    <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>20</b></span>
+                    <span class="metric"><a href="https://arxiv.org/abs/2508.08553" target="_blank">View on ArXiv</a></span>
+                    <button class="add-to-reading-list" onclick="addToReadingList('2508.08553', 'Optical emission from luminous and very soft X-ray sources in nearby galaxies: testing the scenario of edge-on supercritical accretion systems', 'https://arxiv.org/abs/2508.08553', 46.8, '2025-08')" title="Add to Reading List">
+                        📖 Add to List
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="meta">
-            <div class="details">
-                <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.73</b></span>
-                <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>65</b></span>
-                <span class="metric"><a href="https://arxiv.org/abs/2508.15636" target="_blank">View on ArXiv</a></span>
-                <button class="add-to-reading-list"
-                    onclick="addToReadingList('2508.15636', 'Main and interpulse interaction in PSRs J1842+0358 and J1926+0737: evidence for interpole communication', 'https://arxiv.org/abs/2508.15636', 69.0, '2025-08')"
-                    title="Add to Reading List">
-                    📖 Add to List
-                </button>
+        
+        <div class="paper" style="border-left-color: #e74c3c" id="paper-2508.10994">
+            <div class="header">
+                <h2 class="title"><a href="https://arxiv.org/abs/2508.10994" target="_blank">22. The Type II SN 2025pht in NGC 1637: A Red Supergiant with Carbon-rich Circumstellar Dust as the First JWST Detection of a Supernova Progenitor Star</a></h2>
+                <div class="score-badge" style="background-color: #e74c3c" title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.83 × 100 + 5) / 2 = 43.9">43.9</div>
+            </div>
+            
+            <div style="margin-bottom: 10px; color: #555; font-style: italic;">
+                Charles D. Kilpatrick, Aswin Suresh, Kyle W. Davis, Maria R. Drout, Ryan J. Foley
+            </div>
+            
+            <details style="margin-bottom: 15px;">
+                <summary style="cursor: pointer; color: #3498db; font-weight: 500;">Abstract</summary>
+                <p style="margin-top: 5px; line-height: 1.5; color: #444;">We present follow-up imaging and spectroscopy and pre-explosion imaging of supernova (SN) 2025pht located in NGC 1637 at 12 Mpc. Our spectroscopy shows that SN 2025pht is a Type II SN with broad lines of hydrogen and with minimal line-of-sight extinction inferred from Na I D absorption. NGC 1637 was the target of several epochs of Hubble Space Telescope (HST) and James Webb Space Telescope (JWST) imaging covering the site of SN 2025pht from 31 to 0.7 yr prior to discovery. Using a follow-up HST image of SN 2025pht aligned to these data, we demonstrate that there is a credible progenitor candidate detected in multiple epochs of HST imaging and in JWST imaging from 1.3-8.7 microns, the first JWST counterpart to a SN and the longest wavelength detection of a SN progenitor star. Fitting this source to red supergiant (RSG) spectral-energy distributions (SEDs), we show that it is consistent with a log(L/Lsun) = 5.0 RSG heavily reddened by circumstellar dust. The JWST photometry enable strong constraints on the nature of the circumstellar medium, and we find that the SED favors graphite-rich dust and an optical circumstellar extinction of Av = 5.3 mag as opposed to silicate-rich dust. We discuss the implications of a pre-SN RSG enshrouded in carbon-rich dust and this finding for the overall population of progenitor stars to Type II SN as well as the future of SN progenitor star discovery with JWST.</p>
+            </details>
+            
+            <div class="meta">
+                <div class="details">
+                    <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.83</b></span>
+                    <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>5</b></span>
+                    <span class="metric"><a href="https://arxiv.org/abs/2508.10994" target="_blank">View on ArXiv</a></span>
+                    <button class="add-to-reading-list" onclick="addToReadingList('2508.10994', 'The Type II SN 2025pht in NGC 1637: A Red Supergiant with Carbon-rich Circumstellar Dust as the First JWST Detection of a Supernova Progenitor Star', 'https://arxiv.org/abs/2508.10994', 43.9, '2025-08')" title="Add to Reading List">
+                        📖 Add to List
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="paper" style="border-left-color: #f39c12" id="paper-2508.20952">
-        <div class="header">
-            <h2 class="title"><a href="https://arxiv.org/abs/2508.20952" target="_blank">12. Very high-energy gamma-ray
-                    and neutrino emission from hadronic interaction in compact binary millisecond pulsars</a></h2>
-            <div class="score-badge" style="background-color: #f39c12"
-                title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.77 × 100 + 58) / 2 = 67.4">67.4
+        
+        <div class="paper" style="border-left-color: #e74c3c" id="paper-2508.11756">
+            <div class="header">
+                <h2 class="title"><a href="https://arxiv.org/abs/2508.11756" target="_blank">23. Late-time Hubble Space Telescope Ultraviolet Spectra of SN 2023ixf and SN 2024ggi Show Ongoing Interaction with Circumstellar Material</a></h2>
+                <div class="score-badge" style="background-color: #e74c3c" title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.74 × 100 + 5) / 2 = 39.6">39.6</div>
+            </div>
+            
+            <div style="margin-bottom: 10px; color: #555; font-style: italic;">
+                K. Azalee Bostroem, Stefano Valenti, David J. Sand, Jeniveve Pearson, Manisha Shrestha
+            </div>
+            
+            <details style="margin-bottom: 15px;">
+                <summary style="cursor: pointer; color: #3498db; font-weight: 500;">Abstract</summary>
+                <p style="margin-top: 5px; line-height: 1.5; color: #444;">We present far- and near-ultraviolet (UV) spectra of the Type II supernovae (SNe) SN~2023ixf from days 199 to 722 and SN~2024ggi at days 41 and 232. Both supernovae show broad, blueshifted, and asymmetric UV emission lines with an initial maximum velocity of $\sim9000\,km\,s^{-1}$ and narrow unresolved emission in CIV. We compare the optical and UV emission-line profiles, showing that they evolve from two distinct velocity profiles to a single profile tracing the UV emission. We interpret this as shock power from interaction with circumstellar material coming to dominate over the radioactive-decay power from the inner ejecta. Comparing our observations to radiative transfer models with injected shock power, we find SN~2024ggi is best matched by $P_{\mathrm{shock, abs}}=1\times10^{41}\,erg\,s^{-1}$ at day 40, SN~2023ixf at day 300 and SN~2024ggi at day 200 are best matched by $P_{\mathrm{shock,abs}}=1\times10^{40}\,erg\,s^{-1}$, and SN~2023ixf at day 600 is best matched by $P_{\mathrm{shock,abs}}=5\times10^{39}\,erg\,s^{-1}$. From these models, we find the mass-loss rate of both supernovae increased just before explosion. For SN~2023ixf our mass-loss rates go from $4\times10^{-5}\,M_{\odot}\,yr^{-1}$ at 600 yr before explosion to $2\times10^{-2}\,M_{\odot}\,yr^{-1}$ at 15 yr prior to explosion. For SN~2024ggi, we find a mass-loss rate of $9\times10^{-5}\,M_{\odot}\,yr^{-1}$ at 150 yr before explosion and $1\times10^{-3}\,M_{\odot}\,yr^{-1}$ at 30 yr before explosion.</p>
+            </details>
+            
+            <div class="meta">
+                <div class="details">
+                    <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.74</b></span>
+                    <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>5</b></span>
+                    <span class="metric"><a href="https://arxiv.org/abs/2508.11756" target="_blank">View on ArXiv</a></span>
+                    <button class="add-to-reading-list" onclick="addToReadingList('2508.11756', 'Late-time Hubble Space Telescope Ultraviolet Spectra of SN 2023ixf and SN 2024ggi Show Ongoing Interaction with Circumstellar Material', 'https://arxiv.org/abs/2508.11756', 39.6, '2025-08')" title="Add to Reading List">
+                        📖 Add to List
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="meta">
-            <div class="details">
-                <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.77</b></span>
-                <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>58</b></span>
-                <span class="metric"><a href="https://arxiv.org/abs/2508.20952" target="_blank">View on ArXiv</a></span>
-                <button class="add-to-reading-list"
-                    onclick="addToReadingList('2508.20952', 'Very high-energy gamma-ray and neutrino emission from hadronic interaction in compact binary millisecond pulsars', 'https://arxiv.org/abs/2508.20952', 67.4, '2025-08')"
-                    title="Add to Reading List">
-                    📖 Add to List
-                </button>
+        
+        <div class="paper" style="border-left-color: #e74c3c" id="paper-2508.09333">
+            <div class="header">
+                <h2 class="title"><a href="https://arxiv.org/abs/2508.09333" target="_blank">24. Impact of thermal effects on prompt-collapse binary neutron star mergers</a></h2>
+                <div class="score-badge" style="background-color: #e74c3c" title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.77 × 100 + 2) / 2 = 39.3">39.3</div>
+            </div>
+            
+            <div style="margin-bottom: 10px; color: #555; font-style: italic;">
+                Carolyn A. Raithel, Vasileios Paschalidis
+            </div>
+            
+            <details style="margin-bottom: 15px;">
+                <summary style="cursor: pointer; color: #3498db; font-weight: 500;">Abstract</summary>
+                <p style="margin-top: 5px; line-height: 1.5; color: #444;">The fate of the remnant following the merger of two neutron stars initially on quasicircular orbits depends primarily on the mass of the initial neutron stars, the mass ratio, and the still-uncertain dense-matter equation of state (EoS). Previous works studying the threshold mass for prompt collapse to a black hole have primarily focused on the uncertainties in the zero-temperature EoS, which are parametrized by a macroscopic quantity such as the characteristic neutron star radius. However, prompt collapse can take place either with or without a core bounce during the merger. In the bounce-collapse scenario, shocks can produce additional thermal support, potentially altering the threshold for collapse. In this work, we investigate the impact of the uncertainties in the finite-temperature part of the nuclear EoS on the threshold mass for prompt collapse in equal mass mergers. Using two cold EoSs, combined with four parametrizations of the finite-temperature part of the EoS, we find that the threshold mass is insensitive to realistic variations of the thermal prescription, at sub-percent accuracy. We report on the thermal properties and ejecta of mergers with masses just above the threshold mass, i.e., which experience a single core-bounce before collapsing. During the bounce, the thermal pressure can reach )(1-10)% of the cold pressure at supranuclear densities, depending on the thermal treatment, leading to modest differences in the dynamical ejecta that are launched and in the remnant disk mass as a result.</p>
+            </details>
+            
+            <div class="meta">
+                <div class="details">
+                    <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.77</b></span>
+                    <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>2</b></span>
+                    <span class="metric"><a href="https://arxiv.org/abs/2508.09333" target="_blank">View on ArXiv</a></span>
+                    <button class="add-to-reading-list" onclick="addToReadingList('2508.09333', 'Impact of thermal effects on prompt-collapse binary neutron star mergers', 'https://arxiv.org/abs/2508.09333', 39.3, '2025-08')" title="Add to Reading List">
+                        📖 Add to List
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="paper" style="border-left-color: #f39c12" id="paper-2508.01428">
-        <div class="header">
-            <h2 class="title"><a href="https://arxiv.org/abs/2508.01428" target="_blank">13. SN 2024gy: Multi-epoch
-                    Spectroscopic Features Suggestive of Delayed Detonation in a Type Ia Supernova</a></h2>
-            <div class="score-badge" style="background-color: #f39c12"
-                title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.80 × 100 + 45) / 2 = 62.7">62.7
+        
+        <div class="paper" style="border-left-color: #e74c3c" id="paper-2508.06232">
+            <div class="header">
+                <h2 class="title"><a href="https://arxiv.org/abs/2508.06232" target="_blank">25. A Targeted Gamma-Ray Search of Five Prominent Galaxy Merger Systems with 17 years of Fermi-LAT Data</a></h2>
+                <div class="score-badge" style="background-color: #e74c3c" title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.75 × 100 + 0) / 2 = 37.3">37.3</div>
+            </div>
+            
+            <div style="margin-bottom: 10px; color: #555; font-style: italic;">
+                Siddhant Manna, Shantanu Desai
+            </div>
+            
+            <details style="margin-bottom: 15px;">
+                <summary style="cursor: pointer; color: #3498db; font-weight: 500;">Abstract</summary>
+                <p style="margin-top: 5px; line-height: 1.5; color: #444;">Galaxy mergers are among the most energetic astrophysical phenomena, driving intense star formation and potentially fueling cosmic ray acceleration, which can produce high energy $γ$-ray emission through hadronic processes. We present a targeted search for $γ$-ray emission from five prominent galaxy merger systems, NGC~3256, NGC~660, UGC~813/816, UGC~12914/12915, and VV~114 using 16.9 years of Fermi-LAT data in the 1--300~GeV energy range. Employing a binned maximum likelihood analysis, we model the emission with power-law spectra and derive spectral energy distributions (SEDs) to constrain $γ$-ray fluxes and spectral indices. Marginal detections are found for NGC~3256 (TS = 15.4, $\sim$3.51$σ$) and NGC~660 (TS = 8.16, $\sim$2.39$σ$), with photon fluxes of $(7.21 \pm 3.17) \times 10^{-11}$ and $(8.28 \pm 3.56) \times 10^{-11}$ ph cm$^{-2}$ s$^{-1}$, respectively, suggesting merger driven star formation contributes to $γ$-ray emission. The remaining systems yield non-detections (TS $< 5$). This is the first targeted study of $γ$-ray emission from these aforementioned galaxy merger systems.</p>
+            </details>
+            
+            <div class="meta">
+                <div class="details">
+                    <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.75</b></span>
+                    <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>0</b></span>
+                    <span class="metric"><a href="https://arxiv.org/abs/2508.06232" target="_blank">View on ArXiv</a></span>
+                    <button class="add-to-reading-list" onclick="addToReadingList('2508.06232', 'A Targeted Gamma-Ray Search of Five Prominent Galaxy Merger Systems with 17 years of Fermi-LAT Data', 'https://arxiv.org/abs/2508.06232', 37.3, '2025-08')" title="Add to Reading List">
+                        📖 Add to List
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="meta">
-            <div class="details">
-                <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.80</b></span>
-                <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>45</b></span>
-                <span class="metric"><a href="https://arxiv.org/abs/2508.01428" target="_blank">View on ArXiv</a></span>
-                <button class="add-to-reading-list"
-                    onclick="addToReadingList('2508.01428', 'SN 2024gy: Multi-epoch Spectroscopic Features Suggestive of Delayed Detonation in a Type Ia Supernova', 'https://arxiv.org/abs/2508.01428', 62.7, '2025-08')"
-                    title="Add to Reading List">
-                    📖 Add to List
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div class="paper" style="border-left-color: #f39c12" id="paper-2508.15435">
-        <div class="header">
-            <h2 class="title"><a href="https://arxiv.org/abs/2508.15435" target="_blank">14. Radio Observations of a
-                    Candidate Redback Millisecond Pulsar: 1FGL J0523.5-2529</a></h2>
-            <div class="score-badge" style="background-color: #f39c12"
-                title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.75 × 100 + 45) / 2 = 59.8">59.8
-            </div>
-        </div>
-        <div class="meta">
-            <div class="details">
-                <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.75</b></span>
-                <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>45</b></span>
-                <span class="metric"><a href="https://arxiv.org/abs/2508.15435" target="_blank">View on ArXiv</a></span>
-                <button class="add-to-reading-list"
-                    onclick="addToReadingList('2508.15435', 'Radio Observations of a Candidate Redback Millisecond Pulsar: 1FGL J0523.5-2529', 'https://arxiv.org/abs/2508.15435', 59.8, '2025-08')"
-                    title="Add to Reading List">
-                    📖 Add to List
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div class="paper" style="border-left-color: #f39c12" id="paper-2508.08750">
-        <div class="header">
-            <h2 class="title"><a href="https://arxiv.org/abs/2508.08750" target="_blank">15. Challenging a binary
-                    neutron star merger interpretation of GW230529</a></h2>
-            <div class="score-badge" style="background-color: #f39c12"
-                title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.76 × 100 + 40) / 2 = 57.8">57.8
-            </div>
-        </div>
-        <div class="meta">
-            <div class="details">
-                <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.76</b></span>
-                <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>40</b></span>
-                <span class="metric"><a href="https://arxiv.org/abs/2508.08750" target="_blank">View on ArXiv</a></span>
-                <button class="add-to-reading-list"
-                    onclick="addToReadingList('2508.08750', 'Challenging a binary neutron star merger interpretation of GW230529', 'https://arxiv.org/abs/2508.08750', 57.8, '2025-08')"
-                    title="Add to Reading List">
-                    📖 Add to List
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div class="paper" style="border-left-color: #f39c12" id="paper-2508.10994">
-        <div class="header">
-            <h2 class="title"><a href="https://arxiv.org/abs/2508.10994" target="_blank">16. The Type II SN 2025pht in
-                    NGC 1637: A Red Supergiant with Carbon-rich Circumstellar Dust as the First JWST Detection of a
-                    Supernova Progenitor Star</a></h2>
-            <div class="score-badge" style="background-color: #f39c12"
-                title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.83 × 100 + 30) / 2 = 56.4">56.4
-            </div>
-        </div>
-        <div class="meta">
-            <div class="details">
-                <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.83</b></span>
-                <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>30</b></span>
-                <span class="metric"><a href="https://arxiv.org/abs/2508.10994" target="_blank">View on ArXiv</a></span>
-                <button class="add-to-reading-list"
-                    onclick="addToReadingList('2508.10994', 'The Type II SN 2025pht in NGC 1637: A Red Supergiant with Carbon-rich Circumstellar Dust as the First JWST Detection of a Supernova Progenitor Star', 'https://arxiv.org/abs/2508.10994', 56.4, '2025-08')"
-                    title="Add to Reading List">
-                    📖 Add to List
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div class="paper" style="border-left-color: #f39c12" id="paper-2508.14476">
-        <div class="header">
-            <h2 class="title"><a href="https://arxiv.org/abs/2508.14476" target="_blank">17. High-resolution Radio Study
-                    of Pulsar Wind Nebula MSH 15-52 and Supernova Remnant RCW 89</a></h2>
-            <div class="score-badge" style="background-color: #f39c12"
-                title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.77 × 100 + 35) / 2 = 56.0">56.0
-            </div>
-        </div>
-        <div class="meta">
-            <div class="details">
-                <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.77</b></span>
-                <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>35</b></span>
-                <span class="metric"><a href="https://arxiv.org/abs/2508.14476" target="_blank">View on ArXiv</a></span>
-                <button class="add-to-reading-list"
-                    onclick="addToReadingList('2508.14476', 'High-resolution Radio Study of Pulsar Wind Nebula MSH 15-52 and Supernova Remnant RCW 89', 'https://arxiv.org/abs/2508.14476', 56.0, '2025-08')"
-                    title="Add to Reading List">
-                    📖 Add to List
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div class="paper" style="border-left-color: #f39c12" id="paper-2508.10573">
-        <div class="header">
-            <h2 class="title"><a href="https://arxiv.org/abs/2508.10573" target="_blank">18. Constraints on the
-                    progenitor and explosion of SN 2024ggi in harmony with pre-explosion detection and hydrodynamic
-                    simulations</a></h2>
-            <div class="score-badge" style="background-color: #f39c12"
-                title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.81 × 100 + 30) / 2 = 55.4">55.4
-            </div>
-        </div>
-        <div class="meta">
-            <div class="details">
-                <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.81</b></span>
-                <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>30</b></span>
-                <span class="metric"><a href="https://arxiv.org/abs/2508.10573" target="_blank">View on ArXiv</a></span>
-                <button class="add-to-reading-list"
-                    onclick="addToReadingList('2508.10573', 'Constraints on the progenitor and explosion of SN 2024ggi in harmony with pre-explosion detection and hydrodynamic simulations', 'https://arxiv.org/abs/2508.10573', 55.4, '2025-08')"
-                    title="Add to Reading List">
-                    📖 Add to List
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div class="paper" style="border-left-color: #f39c12" id="paper-2508.06232">
-        <div class="header">
-            <h2 class="title"><a href="https://arxiv.org/abs/2508.06232" target="_blank">19. A Targeted Gamma-Ray Search
-                    of Five Prominent Galaxy Merger Systems with 17 years of Fermi-LAT Data</a></h2>
-            <div class="score-badge" style="background-color: #f39c12"
-                title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.75 × 100 + 35) / 2 = 54.8">54.8
-            </div>
-        </div>
-        <div class="meta">
-            <div class="details">
-                <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.75</b></span>
-                <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>35</b></span>
-                <span class="metric"><a href="https://arxiv.org/abs/2508.06232" target="_blank">View on ArXiv</a></span>
-                <button class="add-to-reading-list"
-                    onclick="addToReadingList('2508.06232', 'A Targeted Gamma-Ray Search of Five Prominent Galaxy Merger Systems with 17 years of Fermi-LAT Data', 'https://arxiv.org/abs/2508.06232', 54.8, '2025-08')"
-                    title="Add to Reading List">
-                    📖 Add to List
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div class="paper" style="border-left-color: #f39c12" id="paper-2508.12721">
-        <div class="header">
-            <h2 class="title"><a href="https://arxiv.org/abs/2508.12721" target="_blank">20. Runaway stars and the
-                    Galactic supernova remnant landscape: non-thermal emission and observational evidence</a></h2>
-            <div class="score-badge" style="background-color: #f39c12"
-                title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.78 × 100 + 30) / 2 = 53.8">53.8
-            </div>
-        </div>
-        <div class="meta">
-            <div class="details">
-                <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.78</b></span>
-                <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>30</b></span>
-                <span class="metric"><a href="https://arxiv.org/abs/2508.12721" target="_blank">View on ArXiv</a></span>
-                <button class="add-to-reading-list"
-                    onclick="addToReadingList('2508.12721', 'Runaway stars and the Galactic supernova remnant landscape: non-thermal emission and observational evidence', 'https://arxiv.org/abs/2508.12721', 53.8, '2025-08')"
-                    title="Add to Reading List">
-                    📖 Add to List
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div class="paper" style="border-left-color: #f39c12" id="paper-2508.14397">
-        <div class="header">
-            <h2 class="title"><a href="https://arxiv.org/abs/2508.14397" target="_blank">21. Constraining Common
-                    Envelope Evolution in Binary Neutron Star Formation with Combined Galactic and Gravitational-Wave
-                    Observations</a></h2>
-            <div class="score-badge" style="background-color: #f39c12"
-                title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.77 × 100 + 30) / 2 = 53.6">53.6
-            </div>
-        </div>
-        <div class="meta">
-            <div class="details">
-                <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.77</b></span>
-                <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>30</b></span>
-                <span class="metric"><a href="https://arxiv.org/abs/2508.14397" target="_blank">View on ArXiv</a></span>
-                <button class="add-to-reading-list"
-                    onclick="addToReadingList('2508.14397', 'Constraining Common Envelope Evolution in Binary Neutron Star Formation with Combined Galactic and Gravitational-Wave Observations', 'https://arxiv.org/abs/2508.14397', 53.6, '2025-08')"
-                    title="Add to Reading List">
-                    📖 Add to List
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div class="paper" style="border-left-color: #f39c12" id="paper-2508.14570">
-        <div class="header">
-            <h2 class="title"><a href="https://arxiv.org/abs/2508.14570" target="_blank">22. MUSE Observations Reveal
-                    Optical Coronal Iron Lines from Shock Emission in Supernova Remnant 0540-69.3</a></h2>
-            <div class="score-badge" style="background-color: #f39c12"
-                title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.76 × 100 + 30) / 2 = 53.0">53.0
-            </div>
-        </div>
-        <div class="meta">
-            <div class="details">
-                <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.76</b></span>
-                <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>30</b></span>
-                <span class="metric"><a href="https://arxiv.org/abs/2508.14570" target="_blank">View on ArXiv</a></span>
-                <button class="add-to-reading-list"
-                    onclick="addToReadingList('2508.14570', 'MUSE Observations Reveal Optical Coronal Iron Lines from Shock Emission in Supernova Remnant 0540-69.3', 'https://arxiv.org/abs/2508.14570', 53.0, '2025-08')"
-                    title="Add to Reading List">
-                    📖 Add to List
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div class="paper" style="border-left-color: #f39c12" id="paper-2508.10105">
-        <div class="header">
-            <h2 class="title"><a href="https://arxiv.org/abs/2508.10105" target="_blank">23. The X-ray Source Population
-                    of the Metal-Rich Globular Cluster NGC 6528</a></h2>
-            <div class="score-badge" style="background-color: #f39c12"
-                title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.75 × 100 + 30) / 2 = 52.3">52.3
-            </div>
-        </div>
-        <div class="meta">
-            <div class="details">
-                <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.75</b></span>
-                <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>30</b></span>
-                <span class="metric"><a href="https://arxiv.org/abs/2508.10105" target="_blank">View on ArXiv</a></span>
-                <button class="add-to-reading-list"
-                    onclick="addToReadingList('2508.10105', 'The X-ray Source Population of the Metal-Rich Globular Cluster NGC 6528', 'https://arxiv.org/abs/2508.10105', 52.3, '2025-08')"
-                    title="Add to Reading List">
-                    📖 Add to List
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div class="paper" style="border-left-color: #f39c12" id="paper-2508.11756">
-        <div class="header">
-            <h2 class="title"><a href="https://arxiv.org/abs/2508.11756" target="_blank">24. Late-time Hubble Space
-                    Telescope Ultraviolet Spectra of SN 2023ixf and SN 2024ggi Show Ongoing Interaction with
-                    Circumstellar Material</a></h2>
-            <div class="score-badge" style="background-color: #f39c12"
-                title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.74 × 100 + 30) / 2 = 52.1">52.1
-            </div>
-        </div>
-        <div class="meta">
-            <div class="details">
-                <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.74</b></span>
-                <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>30</b></span>
-                <span class="metric"><a href="https://arxiv.org/abs/2508.11756" target="_blank">View on ArXiv</a></span>
-                <button class="add-to-reading-list"
-                    onclick="addToReadingList('2508.11756', 'Late-time Hubble Space Telescope Ultraviolet Spectra of SN 2023ixf and SN 2024ggi Show Ongoing Interaction with Circumstellar Material', 'https://arxiv.org/abs/2508.11756', 52.1, '2025-08')"
-                    title="Add to Reading List">
-                    📖 Add to List
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div class="paper" style="border-left-color: #f39c12" id="paper-2508.17582">
-        <div class="header">
-            <h2 class="title"><a href="https://arxiv.org/abs/2508.17582" target="_blank">25. The Near-Infrared Echo from
-                    SN 2023xgo: Evidence for a Massive Pre-Supernova Eruption in a Type Ibn/Icn Supernova</a></h2>
-            <div class="score-badge" style="background-color: #f39c12"
-                title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.74 × 100 + 30) / 2 = 51.8">51.8
-            </div>
-        </div>
-        <div class="meta">
-            <div class="details">
-                <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.74</b></span>
-                <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>30</b></span>
-                <span class="metric"><a href="https://arxiv.org/abs/2508.17582" target="_blank">View on ArXiv</a></span>
-                <button class="add-to-reading-list"
-                    onclick="addToReadingList('2508.17582', 'The Near-Infrared Echo from SN 2023xgo: Evidence for a Massive Pre-Supernova Eruption in a Type Ibn/Icn Supernova', 'https://arxiv.org/abs/2508.17582', 51.8, '2025-08')"
-                    title="Add to Reading List">
-                    📖 Add to List
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div class="paper" style="border-left-color: #e74c3c" id="paper-2508.10698">
-        <div class="header">
-            <h2 class="title"><a href="https://arxiv.org/abs/2508.10698" target="_blank">26. Investigating the Impact of
-                    Higher-Order Phase Transitions in Binary Neutron-Star Mergers</a></h2>
-            <div class="score-badge" style="background-color: #e74c3c"
-                title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.78 × 100 + 20) / 2 = 48.9">48.9
-            </div>
-        </div>
-        <div class="meta">
-            <div class="details">
-                <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.78</b></span>
-                <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>20</b></span>
-                <span class="metric"><a href="https://arxiv.org/abs/2508.10698" target="_blank">View on ArXiv</a></span>
-                <button class="add-to-reading-list"
-                    onclick="addToReadingList('2508.10698', 'Investigating the Impact of Higher-Order Phase Transitions in Binary Neutron-Star Mergers', 'https://arxiv.org/abs/2508.10698', 48.9, '2025-08')"
-                    title="Add to Reading List">
-                    📖 Add to List
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div class="paper" style="border-left-color: #e74c3c" id="paper-2508.02656">
-        <div class="header">
-            <h2 class="title"><a href="https://arxiv.org/abs/2508.02656" target="_blank">27. Optical and near-infrared
-                    nebular-phase spectroscopy of SN 2024ggi: constraints on the structure of the inner ejecta,
-                    progenitor mass, and dust</a></h2>
-            <div class="score-badge" style="background-color: #e74c3c"
-                title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.81 × 100 + 15) / 2 = 48.1">48.1
-            </div>
-        </div>
-        <div class="meta">
-            <div class="details">
-                <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.81</b></span>
-                <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>15</b></span>
-                <span class="metric"><a href="https://arxiv.org/abs/2508.02656" target="_blank">View on ArXiv</a></span>
-                <button class="add-to-reading-list"
-                    onclick="addToReadingList('2508.02656', 'Optical and near-infrared nebular-phase spectroscopy of SN 2024ggi: constraints on the structure of the inner ejecta, progenitor mass, and dust', 'https://arxiv.org/abs/2508.02656', 48.1, '2025-08')"
-                    title="Add to Reading List">
-                    📖 Add to List
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div class="paper" style="border-left-color: #e74c3c" id="paper-2508.08553">
-        <div class="header">
-            <h2 class="title"><a href="https://arxiv.org/abs/2508.08553" target="_blank">28. Optical emission from
-                    luminous and very soft X-ray sources in nearby galaxies: testing the scenario of edge-on
-                    supercritical accretion systems</a></h2>
-            <div class="score-badge" style="background-color: #e74c3c"
-                title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.74 × 100 + 20) / 2 = 46.8">46.8
-            </div>
-        </div>
-        <div class="meta">
-            <div class="details">
-                <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.74</b></span>
-                <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>20</b></span>
-                <span class="metric"><a href="https://arxiv.org/abs/2508.08553" target="_blank">View on ArXiv</a></span>
-                <button class="add-to-reading-list"
-                    onclick="addToReadingList('2508.08553', 'Optical emission from luminous and very soft X-ray sources in nearby galaxies: testing the scenario of edge-on supercritical accretion systems', 'https://arxiv.org/abs/2508.08553', 46.8, '2025-08')"
-                    title="Add to Reading List">
-                    📖 Add to List
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div class="paper" style="border-left-color: #e74c3c" id="paper-2508.12529">
-        <div class="header">
-            <h2 class="title"><a href="https://arxiv.org/abs/2508.12529" target="_blank">29. Mass Loss and Subsequent
-                    Thermal Evolution of Surviving Helium White Dwarfs Shocked by Thermonuclear Supernovae</a></h2>
-            <div class="score-badge" style="background-color: #e74c3c"
-                title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.73 × 100 + 20) / 2 = 46.5">46.5
-            </div>
-        </div>
-        <div class="meta">
-            <div class="details">
-                <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.73</b></span>
-                <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>20</b></span>
-                <span class="metric"><a href="https://arxiv.org/abs/2508.12529" target="_blank">View on ArXiv</a></span>
-                <button class="add-to-reading-list"
-                    onclick="addToReadingList('2508.12529', 'Mass Loss and Subsequent Thermal Evolution of Surviving Helium White Dwarfs Shocked by Thermonuclear Supernovae', 'https://arxiv.org/abs/2508.12529', 46.5, '2025-08')"
-                    title="Add to Reading List">
-                    📖 Add to List
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div class="paper" style="border-left-color: #e74c3c" id="paper-2508.15295">
-        <div class="header">
-            <h2 class="title"><a href="https://arxiv.org/abs/2508.15295" target="_blank">30. Contribution of Globular
-                    Clusters to Diffuse Gamma-ray Emission from Galactic Plane</a></h2>
-            <div class="score-badge" style="background-color: #e74c3c"
-                title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = (0.77 × 100 + 5) / 2 = 40.8">40.8</div>
-        </div>
-        <div class="meta">
-            <div class="details">
-                <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>0.77</b></span>
-                <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>5</b></span>
-                <span class="metric"><a href="https://arxiv.org/abs/2508.15295" target="_blank">View on ArXiv</a></span>
-                <button class="add-to-reading-list"
-                    onclick="addToReadingList('2508.15295', 'Contribution of Globular Clusters to Diffuse Gamma-ray Emission from Galactic Plane', 'https://arxiv.org/abs/2508.15295', 40.8, '2025-08')"
-                    title="Add to Reading List">
-                    📖 Add to List
-                </button>
-            </div>
-        </div>
-    </div>
-
+        
     <style>
         .add-to-reading-list {
             background: #3498db;
@@ -819,19 +723,12 @@
             font-size: 0.85em;
             transition: background 0.3s;
         }
-
         .add-to-reading-list:hover {
             background: #2980b9;
         }
-
         .add-to-reading-list.added {
             background: #27ae60;
         }
-
-        .add-to-reading-list.added {
-            background: #27ae60;
-        }
-
         .toast {
             position: fixed;
             bottom: 20px;
@@ -840,40 +737,39 @@
             color: white;
             padding: 15px 20px;
             border-radius: 5px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             opacity: 0;
             transition: opacity 0.3s;
             z-index: 1000;
         }
-
         .toast.show {
             opacity: 1;
         }
     </style>
-
+    
     <div id="toast" class="toast"></div>
-
+    
     <script>
         // Reading List Management
         function getReadingList() {
             const list = localStorage.getItem('arxivReadingList');
             return list ? JSON.parse(list) : [];
         }
-
+        
         function saveReadingList(list) {
             localStorage.setItem('arxivReadingList', JSON.stringify(list));
             updateReadingListCount();
         }
-
+        
         function addToReadingList(id, title, link, score, month) {
             const readingList = getReadingList();
-
+            
             // Check if already in list
             if (readingList.some(item => item.id === id)) {
                 showToast('Already in reading list!', '#f39c12');
                 return;
             }
-
+            
             // Add to list
             readingList.push({
                 id: id,
@@ -883,10 +779,11 @@
                 month: month,
                 addedDate: new Date().toISOString()
             });
-
+            
             saveReadingList(readingList);
             showToast('Added to reading list! 📖');
-
+            
+            // Update button appearance
             // Update button appearance
             const paperCard = document.getElementById(`paper-${id}`);
             if (paperCard) {
@@ -897,7 +794,7 @@
                 });
             }
         }
-
+        
         function updateReadingListCount() {
             const count = getReadingList().length;
             const countElement = document.getElementById('readingListCount');
@@ -905,7 +802,7 @@
                 countElement.textContent = count;
             }
         }
-
+        
         function showToast(message, color = '#27ae60') {
             const toast = document.getElementById('toast');
             toast.textContent = message;
@@ -915,7 +812,7 @@
                 toast.classList.remove('show');
             }, 2000);
         }
-
+        
         // Mark papers already in reading list
         function markAddedPapers() {
             const readingList = getReadingList();
@@ -930,13 +827,13 @@
                 }
             });
         }
-
+        
         // Initialize on page load
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             updateReadingListCount();
             markAddedPapers();
         });
     </script>
-</body>
-
-</html>
+    </body>
+    </html>
+    

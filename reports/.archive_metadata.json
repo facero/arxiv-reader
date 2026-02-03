@@ -1,51 +1,51 @@
 {
   "2026-01": {
-    "processed_date": "2026-02-02T21:05:23.819293",
+    "processed_date": "2026-02-03T11:21:35.487535",
     "total_papers": 478,
-    "filtered_papers": 340,
-    "top_matches": 30,
-    "excluded_keywords": 138
+    "filtered_papers": 329,
+    "top_matches": 25,
+    "excluded_keywords": 149
   },
   "2025-12": {
-    "processed_date": "2026-02-02T21:44:12.101138",
+    "processed_date": "2026-02-03T11:21:02.103766",
     "total_papers": 584,
-    "filtered_papers": 409,
-    "top_matches": 30,
-    "excluded_keywords": 175
+    "filtered_papers": 408,
+    "top_matches": 25,
+    "excluded_keywords": 176
   },
   "2025-11": {
-    "processed_date": "2026-02-02T22:37:22.832825",
+    "processed_date": "2026-02-03T11:20:26.457404",
     "total_papers": 438,
     "filtered_papers": 298,
-    "top_matches": 30,
+    "top_matches": 25,
     "excluded_keywords": 140
   },
   "2025-10": {
-    "processed_date": "2026-02-02T22:54:27.843461",
+    "processed_date": "2026-02-03T11:19:55.654091",
     "total_papers": 595,
-    "filtered_papers": 430,
-    "top_matches": 30,
-    "excluded_keywords": 165
+    "filtered_papers": 425,
+    "top_matches": 25,
+    "excluded_keywords": 170
   },
   "2025-09": {
-    "processed_date": "2026-02-02T22:58:12.843503",
+    "processed_date": "2026-02-03T11:18:09.233263",
     "total_papers": 607,
-    "filtered_papers": 424,
-    "top_matches": 30,
-    "excluded_keywords": 183
+    "filtered_papers": 418,
+    "top_matches": 25,
+    "excluded_keywords": 189
   },
   "2025-08": {
-    "processed_date": "2026-02-02T23:18:16.324085",
+    "processed_date": "2026-02-03T11:16:40.431754",
     "total_papers": 444,
     "filtered_papers": 304,
-    "top_matches": 30,
+    "top_matches": 25,
     "excluded_keywords": 140
   },
   "2025-07": {
-    "processed_date": "2026-02-02T23:58:10.935574",
+    "processed_date": "2026-02-03T11:16:13.500599",
     "total_papers": 689,
     "filtered_papers": 509,
-    "top_matches": 30,
+    "top_matches": 25,
     "excluded_keywords": 180
   }
 }

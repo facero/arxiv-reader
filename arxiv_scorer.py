@@ -4,6 +4,8 @@ import numpy as np
 import time
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
+import urllib.request
+import xml.etree.ElementTree as ET
 import sys
 import os
 import argparse
@@ -22,7 +24,7 @@ PERSONA_FILE = "research_persona.txt"
 IGNORED_KEYWORDS_FILE = "ignored-keywords.txt"
 
 # --- Output Files ---
-TOP_K_CANDIDATES = 30  # Number of top papers to re-score with LLM per month
+TOP_K_CANDIDATES = 25  # Number of top papers to re-score with LLM per month
 REPORTS_DIR = "reports"
 METADATA_FILE = os.path.join(REPORTS_DIR, ".archive_metadata.json")
 
@@ -172,7 +174,83 @@ def fetch_arxiv_postings(url):
         log(f"Error fetching arXiv data: {e}")
         return []
 
-# --- 3. LMStudio Interaction ---
+# --- 3. ArXiv API Enrichment ---
+def enrich_papers_with_api(papers, batch_size=100):
+    """
+    Fetches authors (first 5) and summary for each paper using the ArXiv API.
+    Updates the dictionaries in-place.
+    """
+    if not papers:
+        return
+
+    log(f"Enriching {len(papers)} papers via ArXiv API...")
+    
+    # Create a map for quick access (strip 'arXiv:' prefix if present)
+    # Filter out invalid IDs
+    id_map = {}
+    valid_papers = []
+    
+    for p in papers:
+        if 'id' in p and p['id'] != 'N/A':
+            clean_id = p['id'].replace('arXiv:', '').strip()
+            # Handle cases where ID might have version suffix already or other noise? 
+            # Usually from monthly list it's clean.
+            id_map[clean_id] = p
+            valid_papers.append(clean_id)
+            
+    if not valid_papers:
+        log("No valid ArXiv IDs found for enrichment.")
+        return
+
+    num_batches = (len(valid_papers) + batch_size - 1) // batch_size
+    
+    namespaces = {'atom': 'http://www.w3.org/2005/Atom'}
+    
+    for i in range(0, len(valid_papers), batch_size):
+        batch_ids = valid_papers[i:i + batch_size]
+        id_list_str = ",".join(batch_ids)
+        api_url = f"http://export.arxiv.org/api/query?id_list={id_list_str}&start=0&max_results={len(batch_ids)}"
+        
+        log(f"  Fetching API batch {i//batch_size + 1}/{num_batches}...")
+        
+        try:
+            with urllib.request.urlopen(api_url) as response:
+                data = response.read()
+                root = ET.fromstring(data)
+                
+                for entry in root.findall('atom:entry', namespaces):
+                    entry_id_url = entry.find('atom:id', namespaces).text
+                    # Extract ID from URL (http://arxiv.org/abs/1234.5678v1)
+                    # We strip the version (v1, v2) to match our list
+                    full_id = entry_id_url.split('/abs/')[-1]
+                    versionless_id = full_id.split('v')[0]
+                    
+                    target_paper = None
+                    if versionless_id in id_map:
+                        target_paper = id_map[versionless_id]
+                    elif full_id in id_map: # Just in case
+                        target_paper = id_map[full_id]
+                        
+                    if target_paper:
+                        # Get Summary
+                        summary_elem = entry.find('atom:summary', namespaces)
+                        if summary_elem is not None and summary_elem.text:
+                            # Clean up summary (remove newlines, extra spaces)
+                            target_paper['summary'] = " ".join(summary_elem.text.strip().split())
+                        else:
+                            target_paper['summary'] = ""
+                            
+                        # Get Authors (first 5)
+                        auth_elements = entry.findall('atom:author/atom:name', namespaces)
+                        target_paper['authors'] = [a.text for a in auth_elements[:5]]
+                        
+        except Exception as e:
+            log(f"  Error processing batch: {e}")
+            # Do not crash; continue to next batch or proceed with missing metadata
+            
+    log("Enrichment complete.")
+
+# --- 4. LMStudio Interaction ---
 def get_embedding(text):
     """
     Fetches the embedding vector for a single string.
@@ -346,12 +424,19 @@ def score_papers_hybrid(user_bib, arxiv_papers):
     
     for i, paper in enumerate(top_candidates):
         log(f"Scoring candidate {i+1}/{len(top_candidates)}: {paper['title'][:50]}...")
+        summary_text = paper.get('summary', '')
+        # Only use first few authors for prompt if list is long
+        authors_list = paper.get('authors', [])
+        authors_str = ", ".join(authors_list[:3]) + (" et al." if len(authors_list) > 3 else "")
+        
         prompt = f"""
-        Does the following paper title match this research persona?
+        Does the following paper match this research persona?
         
         Persona: {user_persona}
         
         Paper Title: "{paper['title']}"
+        Authors: {authors_str}
+        Paper Summary: "{summary_text}"
         
         Answer with a single number from 0 to 100, where 100 is a perfect match and 0 is irrelevant. 
         Only provides the number.
@@ -456,12 +541,27 @@ def generate_html_report(results, month_year):
         # Escape single quotes in title for JavaScript
         escaped_title = p['title'].replace("'", "\\'")
         
+        # Prepare authors and summary
+        authors_list = p.get('authors', [])
+        authors_str = ", ".join(authors_list)
+        summary_text = p.get('summary', '')
+        
         html_content += f"""
         <div class="paper" style="border-left-color: {color}" id="paper-{paper_id}">
             <div class="header">
                 <h2 class="title"><a href="{p['link']}" target="_blank">{i+1}. {p['title']}</a></h2>
                 <div class="score-badge" style="background-color: {color}" title="Final Score = (Vector Similarity × 100 + LLM Score) / 2 = ({vector_s:.2f} × 100 + {llm_s}) / 2 = {score:.1f}">{score:.1f}</div>
             </div>
+            
+            <div style="margin-bottom: 10px; color: #555; font-style: italic;">
+                {authors_str}
+            </div>
+            
+            <details style="margin-bottom: 15px;">
+                <summary style="cursor: pointer; color: #3498db; font-weight: 500;">Abstract</summary>
+                <p style="margin-top: 5px; line-height: 1.5; color: #444;">{summary_text}</p>
+            </details>
+            
             <div class="meta">
                 <div class="details">
                     <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>{vector_s:.2f}</b></span>
@@ -1198,7 +1298,7 @@ def generate_reading_list_page():
 
 
 # --- Main ---
-def main(month_year=None):
+def process_month(month_year=None):
     """
     Main function to process arXiv papers for a specific month.
     
@@ -1222,6 +1322,9 @@ def main(month_year=None):
     # 2. Fetch ArXiv
     arxiv_url = f"{ARXIV_BASE_URL}/{month_year}?skip=0&show=2000"
     all_papers = fetch_arxiv_postings(arxiv_url)
+    
+    # Enrich with API (Authors, Summary)
+    enrich_papers_with_api(all_papers)
     
     if not all_papers:
         log("No ArXiv papers found.")
@@ -1274,10 +1377,26 @@ if __name__ == "__main__":
     parser.add_argument(
         "--month",
         type=str,
-        help="Month to process in YYYY-MM format (default: current month)",
-        default=None
+        nargs='*',  # Accept zero or more arguments
+        help="Month(s) to process in YYYY-MM format (e.g. 2025-08 2025-09). Default: current month.",
+        default=[]
     )
     
     args = parser.parse_args()
-    main(month_year=args.month)
+    
+    months_to_process = args.month
+    
+    # If no months provided, default to current month
+    if not months_to_process:
+        months_to_process = [None]
+        
+    log(f"Starting batch processing for months: {months_to_process if months_to_process != [None] else '[Current Month]'}")
+    
+    for m in months_to_process:
+        try:
+            process_month(month_year=m)
+        except Exception as e:
+            log(f"Error processing month {m}: {e}")
+            # Continue to next month if one fails
+
 
