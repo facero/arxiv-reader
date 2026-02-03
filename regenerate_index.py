@@ -7,7 +7,7 @@ import os
 from datetime import datetime
 
 REPORTS_DIR = "reports"
-METADATA_FILE = os.path.join(REPORTS_DIR, ".archive_metadata.json")
+METADATA_FILE = os.path.join(REPORTS_DIR, "archive_metadata.json")
 
 def load_metadata():
     """Loads archive metadata from JSON file."""
@@ -198,9 +198,9 @@ def generate_index_page():
             <div class="subtitle">High Energy Astrophysics - Monthly Reports</div>
             
             <div style="text-align: center; margin-bottom: 20px;">
-                <a href="reading_list.html" style="background: #e74c3c; color: white; padding: 12px 24px; border-radius: 5px; text-decoration: none; font-weight: 500; display: inline-block;">
+                <button onclick="openReadingList()" style="background: #e74c3c; color: white; padding: 12px 24px; border-radius: 5px; border: none; cursor: pointer; text-decoration: none; font-weight: 500; font-size: 1em; display: inline-block;">
                     📖 View Reading List (<span id="readingListCount">0</span>)
-                </a>
+                </button>
             </div>
             
             <div class="search-box">
@@ -255,6 +255,9 @@ def generate_index_page():
             </div>
         </div>
         
+        <!-- Hidden sync iframe for cross-file origin sync -->
+        <iframe id="syncIframe" src="reading_list.html" style="display:none;"></iframe>
+
         <script>
             // Chart.js configuration
             const ctx = document.getElementById('papersChart').getContext('2d');
@@ -312,15 +315,35 @@ def generate_index_page():
                 }});
             }}
             
-            // Reading List Counter
-            function updateReadingListCount() {{
+            // --- Master Origin Logic ---
+            const MASTER_PAGE = 'reading_list.html';
+            const MASTER_WINDOW_NAME = '_arxiv_reading_list';
+
+            function openReadingList() {{
+                window.open(MASTER_PAGE, MASTER_WINDOW_NAME);
+            }}
+
+            function getReadingList() {{
                 const list = localStorage.getItem('arxivReadingList');
-                const count = list ? JSON.parse(list).length : 0;
+                return list ? JSON.parse(list) : [];
+            }}
+            
+            function updateReadingListCount() {{
+                const count = getReadingList().length;
                 const countElement = document.getElementById('readingListCount');
                 if (countElement) {{
                     countElement.textContent = count;
                 }}
             }}
+
+            // Listen for sync from Master Page
+            window.addEventListener('message', function(event) {{
+                const data = event.data;
+                if (data.type === 'arxiv_reading_list_sync_full') {{
+                    localStorage.setItem('arxivReadingList', JSON.stringify(data.list));
+                    updateReadingListCount();
+                }}
+            }}, false);
             
             // Initialize on page load
             document.addEventListener('DOMContentLoaded', updateReadingListCount);

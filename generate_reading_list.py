@@ -162,6 +162,7 @@ def generate_reading_list_page():
         </div>
         
         <script>
+            // --- Master Storage Logic ---
             function getReadingList() {
                 const list = localStorage.getItem('arxivReadingList');
                 return list ? JSON.parse(list) : [];
@@ -182,6 +183,56 @@ def generate_reading_list_page():
                 if (confirm('Are you sure you want to clear your entire reading list?')) {
                     localStorage.removeItem('arxivReadingList');
                     renderReadingList();
+                }
+            }
+
+            // --- URL Parameter Synchronization ---
+            function handleIncomingPaper() {
+                const params = new URLSearchParams(window.location.search);
+                const id = params.get('add_id');
+                if (!id) return;
+
+                const title = params.get('title');
+                const link = params.get('link');
+                const score = parseFloat(params.get('score'));
+                const month = params.get('month');
+                const summary = params.get('summary');
+
+                let readingList = getReadingList();
+                
+                // Only add if not already present
+                if (!readingList.some(item => item.id === id)) {
+                    readingList.push({
+                        id: id,
+                        title: title,
+                        link: link,
+                        score: score,
+                        month: month,
+                        summary: summary,
+                        addedDate: new Date().toISOString()
+                    });
+                    saveReadingList(readingList);
+                }
+
+                // Notify opener and clean URL
+                if (window.opener) {
+                    window.opener.postMessage({ type: 'arxiv_reading_list_synced', id: id }, '*');
+                }
+                
+                // Remove params from URL without reloading
+                const newUrl = window.location.pathname;
+                window.history.replaceState({}, '', newUrl);
+            }
+
+            // --- Synchronization Probe (for monthly reports) ---
+            function sendSyncProbe() {
+                // If we are in an iframe or opened as a master origin
+                if (window.parent !== window || window.opener) {
+                    const readingList = getReadingList();
+                    (window.parent || window.opener).postMessage({ 
+                        type: 'arxiv_reading_list_sync_full', 
+                        list: readingList 
+                    }, '*');
                 }
             }
             
@@ -216,6 +267,14 @@ def generate_reading_list_page():
                                 </div>
                                 <div class="score-badge" style="background-color: ${scoreColor}">${paper.score.toFixed(1)}</div>
                             </div>
+                            
+                            ${paper.summary ? `
+                            <details style="margin-bottom: 15px;">
+                                <summary style="cursor: pointer; color: #3498db; font-weight: 500;">Abstract</summary>
+                                <p style="margin-top: 5px; line-height: 1.5; color: #444; font-size: 0.95em;">${paper.summary}</p>
+                            </details>
+                            ` : ''}
+
                             <div class="paper-meta">
                                 <span>📅 ${paper.month}</span>
                                 <span>🕒 Added: ${addedDate}</span>
@@ -230,7 +289,17 @@ def generate_reading_list_page():
             }
             
             // Initialize on page load
-            document.addEventListener('DOMContentLoaded', renderReadingList);
+            document.addEventListener('DOMContentLoaded', () => {
+                handleIncomingPaper();
+                renderReadingList();
+                sendSyncProbe(); // Notify parent on load
+            });
+
+            // Handle cases where the window stays open and a new paper is "added" via re-focus
+            window.addEventListener('focus', () => {
+                handleIncomingPaper();
+                sendSyncProbe(); // Re-sync on focus/update
+            });
         </script>
     </body>
     </html>

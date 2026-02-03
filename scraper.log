@@ -8,22 +8,6 @@ Loading bibliography from my-bibtex-Feb-2026.bib (Regex Mode)...
 Found 82 unique entries in bibliography.
 Fetching arXiv listings from https://arxiv.org/list/astro-ph.HE/2025-07?skip=0&show=2000...
 Found 689 papers on arXiv page.
-Enriching 689 papers via ArXiv API...
-  Fetching API batch 1/7...
-  Error processing batch: HTTP Error 503: Service Unavailable
-  Fetching API batch 2/7...
-  Error processing batch: HTTP Error 429: Unknown Error
-  Fetching API batch 3/7...
-  Error processing batch: HTTP Error 429: Unknown Error
-  Fetching API batch 4/7...
-  Error processing batch: HTTP Error 429: Unknown Error
-  Fetching API batch 5/7...
-  Error processing batch: HTTP Error 429: Unknown Error
-  Fetching API batch 6/7...
-  Error processing batch: HTTP Error 429: Unknown Error
-  Fetching API batch 7/7...
-  Error processing batch: HTTP Error 429: Unknown Error
-Enrichment complete.
 Loaded 6 ignored keywords from ignored-keywords.txt
 Filtered out 180 papers based on ignored keywords. 509 papers remaining.
 Computing embeddings for 82 bibliography entries...
@@ -87,6 +71,9 @@ Computing embeddings for 509 new ArXiv papers...
 Computing vector similarity scores...
 
 Top 25 candidates selected for LLM re-scoring based on vector similarity.
+Enriching 25 papers via ArXiv API...
+  Fetching API batch 1/1...
+Enrichment complete.
 Loading existing Research Persona from research_persona.txt...
 Persona loaded successfully.
 Scoring Top Candidates with LLM...
@@ -123,101 +110,101 @@ Scoring candidate 25/25: A double dipole geometry for PSR~J0740+6620...
     Link: https://arxiv.org/abs/2507.04407
     (Vector: 0.84, LLM: 98)
 ----------------------------------------
-2. [Score: 87.7] Multi-wavelength study of the high Galactic latitude supernova remnant candidate G118.4+37.0 associated with the Calvera pulsar
+2. [Score: 88.8] The pulsar wind nebula around B1853+01 in X-rays
+    Link: https://arxiv.org/abs/2507.13278
+    (Vector: 0.83, LLM: 95)
+----------------------------------------
+3. [Score: 88.0] On the cosmic-ray distribution in the Galactic Center region: New insights from H.E.S.S
+    Link: https://arxiv.org/abs/2507.00132
+    (Vector: 0.78, LLM: 98)
+----------------------------------------
+4. [Score: 87.7] Multi-wavelength study of the high Galactic latitude supernova remnant candidate G118.4+37.0 associated with the Calvera pulsar
     Link: https://arxiv.org/abs/2507.13210
     (Vector: 0.77, LLM: 98)
 ----------------------------------------
-3. [Score: 85.9] Multi-wavelength Study of HESS J0632+057: New Insights into Pulsar-Disk Interaction
+5. [Score: 85.9] Multi-wavelength Study of HESS J0632+057: New Insights into Pulsar-Disk Interaction
     Link: https://arxiv.org/abs/2507.23304
     (Vector: 0.80, LLM: 92)
 ----------------------------------------
-4. [Score: 85.7] Possible Neutrino Emission from the Pulsar Wind Nebula G63.7+1.1
-    Link: https://arxiv.org/abs/2507.19724
+6. [Score: 85.6] GeV Gamma-Rays from Molecular Clouds Illuminated by Particles Diffusing from the Adjacent Supernova Remnant G335.2+0.1 Confined in an Expanding Bubble
+    Link: https://arxiv.org/abs/2507.08709
     (Vector: 0.79, LLM: 92)
 ----------------------------------------
-5. [Score: 84.5] NuSTAR Analysis of the 2024 Periastron Passage of TeV Binary PSR B1259-63
+7. [Score: 84.5] NuSTAR Analysis of the 2024 Periastron Passage of TeV Binary PSR B1259-63
     Link: https://arxiv.org/abs/2507.05571
     (Vector: 0.84, LLM: 85)
 ----------------------------------------
-6. [Score: 81.9] Binary Neutron Star Mergers: Multi-Messenger Systematics and Prospects with Next-Generation Facilities
-    Link: https://arxiv.org/abs/2507.20258
-    (Vector: 0.89, LLM: 75)
-----------------------------------------
-7. [Score: 80.5] Detection of low-luminosity X-ray pulsations from the accreting millisecond pulsar IGR J17511-3057: An ever-thinning thread between bright accretion and sub-luminous states
-    Link: https://arxiv.org/abs/2507.13248
+8. [Score: 80.7] H.E.S.S. programme searching for VHE gamma rays associated with FRBs
+    Link: https://arxiv.org/abs/2507.02143
     (Vector: 0.76, LLM: 85)
 ----------------------------------------
-8. [Score: 68.0] On the cosmic-ray distribution in the Galactic Center region: New insights from H.E.S.S
-    Link: https://arxiv.org/abs/2507.00132
-    (Vector: 0.78, LLM: 58)
+9. [Score: 78.7] Possible Neutrino Emission from the Pulsar Wind Nebula G63.7+1.1
+    Link: https://arxiv.org/abs/2507.19724
+    (Vector: 0.79, LLM: 78)
 ----------------------------------------
-9. [Score: 64.6] GeV Gamma-Rays from Molecular Clouds Illuminated by Particles Diffusing from the Adjacent Supernova Remnant G335.2+0.1 Confined in an Expanding Bubble
-    Link: https://arxiv.org/abs/2507.08709
-    (Vector: 0.79, LLM: 50)
+10. [Score: 66.9] Binary Neutron Star Mergers: Multi-Messenger Systematics and Prospects with Next-Generation Facilities
+    Link: https://arxiv.org/abs/2507.20258
+    (Vector: 0.89, LLM: 45)
 ----------------------------------------
-10. [Score: 62.9] Hadronic acceleration in the young star cluster NGC 6611 inside the M16 region unveiled by Fermi-LAT: constraints on the acceleration efficiency
-    Link: https://arxiv.org/abs/2507.13009
-    (Vector: 0.81, LLM: 45)
-----------------------------------------
-11. [Score: 62.3] The pulsar wind nebula around B1853+01 in X-rays
-    Link: https://arxiv.org/abs/2507.13278
-    (Vector: 0.83, LLM: 42)
-----------------------------------------
-12. [Score: 61.0] The Large Magellanic Cloud as a source of the highest energy cosmic rays
-    Link: https://arxiv.org/abs/2507.16378
-    (Vector: 0.77, LLM: 45)
-----------------------------------------
-13. [Score: 57.9] A double dipole geometry for PSR~J0740+6620
-    Link: https://arxiv.org/abs/2507.10197
-    (Vector: 0.76, LLM: 40)
-----------------------------------------
-14. [Score: 56.8] Multi-messenger observations of binary neutron star mergers: synergies between the next generation gravitational wave interferometers and wide-field, high-multiplex spectroscopic facilities
+11. [Score: 66.8] Multi-messenger observations of binary neutron star mergers: synergies between the next generation gravitational wave interferometers and wide-field, high-multiplex spectroscopic facilities
     Link: https://arxiv.org/abs/2507.02055
-    (Vector: 0.89, LLM: 25)
+    (Vector: 0.89, LLM: 45)
 ----------------------------------------
-15. [Score: 55.5] Red Supergiants as Supernova Progenitors
-    Link: https://arxiv.org/abs/2507.15973
-    (Vector: 0.81, LLM: 30)
+12. [Score: 59.0] Identifying potential binary neutron star merger events from the Fermi GBM Gamma-Ray Burst Catalog
+    Link: https://arxiv.org/abs/2507.18258
+    (Vector: 0.78, LLM: 40)
 ----------------------------------------
-16. [Score: 54.3] Reprocessing of the Parkes 70-cm Survey and Discovery of a New Radio Pulsar in the Large Magellanic Cloud
+13. [Score: 58.3] Reprocessing of the Parkes 70-cm Survey and Discovery of a New Radio Pulsar in the Large Magellanic Cloud
     Link: https://arxiv.org/abs/2507.21920
-    (Vector: 0.77, LLM: 32)
+    (Vector: 0.77, LLM: 40)
 ----------------------------------------
-17. [Score: 53.0] Where is the Supervirial Gas? III. Insights from X-ray Shadow Observations and a revised Model for the Soft Diffuse X-ray Background
-    Link: https://arxiv.org/abs/2507.13331
-    (Vector: 0.76, LLM: 30)
+14. [Score: 58.0] Red Supergiants as Supernova Progenitors
+    Link: https://arxiv.org/abs/2507.15973
+    (Vector: 0.81, LLM: 35)
 ----------------------------------------
-18. [Score: 50.7] H.E.S.S. programme searching for VHE gamma rays associated with FRBs
-    Link: https://arxiv.org/abs/2507.02143
+15. [Score: 56.0] The nebular phase of SN 2024ggi: a low-mass progenitor with no signs of interaction
+    Link: https://arxiv.org/abs/2507.22794
+    (Vector: 0.80, LLM: 32)
+----------------------------------------
+16. [Score: 55.4] A double dipole geometry for PSR~J0740+6620
+    Link: https://arxiv.org/abs/2507.10197
+    (Vector: 0.76, LLM: 35)
+----------------------------------------
+17. [Score: 53.9] Testing the ubiquitous presence of very high energy emission in gamma-ray bursts with the MAGIC telescopes
+    Link: https://arxiv.org/abs/2507.05215
+    (Vector: 0.78, LLM: 30)
+----------------------------------------
+18. [Score: 53.3] Does HESS J1731-347 have a thick crust ?
+    Link: https://arxiv.org/abs/2507.06837
+    (Vector: 0.77, LLM: 30)
+----------------------------------------
+19. [Score: 52.9] Hadronic acceleration in the young star cluster NGC 6611 inside the M16 region unveiled by Fermi-LAT: constraints on the acceleration efficiency
+    Link: https://arxiv.org/abs/2507.13009
+    (Vector: 0.81, LLM: 25)
+----------------------------------------
+20. [Score: 50.5] Detection of low-luminosity X-ray pulsations from the accreting millisecond pulsar IGR J17511-3057: An ever-thinning thread between bright accretion and sub-luminous states
+    Link: https://arxiv.org/abs/2507.13248
     (Vector: 0.76, LLM: 25)
 ----------------------------------------
-19. [Score: 49.2] A systematic study of binary neutron star merger rate density history using simulated gravitational wave and short gamma-ray burst observations
+21. [Score: 49.2] A systematic study of binary neutron star merger rate density history using simulated gravitational wave and short gamma-ray burst observations
     Link: https://arxiv.org/abs/2507.04019
     (Vector: 0.78, LLM: 20)
 ----------------------------------------
-20. [Score: 48.3] Does HESS J1731-347 have a thick crust ?
-    Link: https://arxiv.org/abs/2507.06837
-    (Vector: 0.77, LLM: 20)
+22. [Score: 48.0] Where is the Supervirial Gas? III. Insights from X-ray Shadow Observations and a revised Model for the Soft Diffuse X-ray Background
+    Link: https://arxiv.org/abs/2507.13331
+    (Vector: 0.76, LLM: 20)
 ----------------------------------------
-21. [Score: 41.5] Identifying potential binary neutron star merger events from the Fermi GBM Gamma-Ray Burst Catalog
-    Link: https://arxiv.org/abs/2507.18258
-    (Vector: 0.78, LLM: 5)
-----------------------------------------
-22. [Score: 41.4] Testing the ubiquitous presence of very high energy emission in gamma-ray bursts with the MAGIC telescopes
-    Link: https://arxiv.org/abs/2507.05215
-    (Vector: 0.78, LLM: 5)
-----------------------------------------
-23. [Score: 40.4] JWST Observations of SN 2024ggi I: Interpretation and Model Comparison of the Type II Supernova 2024ggi at 55 days Past Explosion
-    Link: https://arxiv.org/abs/2507.18753
-    (Vector: 0.79, LLM: 2)
-----------------------------------------
-24. [Score: 40.4] A deep search for radio pulsations from the 1.3 M$_{\odot}$ compact-object binary companion of young pulsar PSR J1906+0746
+23. [Score: 47.9] A deep search for radio pulsations from the 1.3 M$_{\odot}$ compact-object binary companion of young pulsar PSR J1906+0746
     Link: https://arxiv.org/abs/2507.17641
-    (Vector: 0.76, LLM: 5)
+    (Vector: 0.76, LLM: 20)
 ----------------------------------------
-25. [Score: 40.0] The nebular phase of SN 2024ggi: a low-mass progenitor with no signs of interaction
-    Link: https://arxiv.org/abs/2507.22794
-    (Vector: 0.80, LLM: 0)
+24. [Score: 41.9] JWST Observations of SN 2024ggi I: Interpretation and Model Comparison of the Type II Supernova 2024ggi at 55 days Past Explosion
+    Link: https://arxiv.org/abs/2507.18753
+    (Vector: 0.79, LLM: 5)
+----------------------------------------
+25. [Score: 41.0] The Large Magellanic Cloud as a source of the highest energy cosmic rays
+    Link: https://arxiv.org/abs/2507.16378
+    (Vector: 0.77, LLM: 5)
 ----------------------------------------
 Generating HTML report: reports/2025-07.html...
 HTML report saved to /Users/facero/Documents/Work/Program/arxiv-reader/reports/2025-07.html
@@ -241,13 +228,6 @@ Loading bibliography from my-bibtex-Feb-2026.bib (Regex Mode)...
 Found 82 unique entries in bibliography.
 Fetching arXiv listings from https://arxiv.org/list/astro-ph.HE/2025-08?skip=0&show=2000...
 Found 444 papers on arXiv page.
-Enriching 444 papers via ArXiv API...
-  Fetching API batch 1/5...
-  Fetching API batch 2/5...
-  Fetching API batch 3/5...
-  Fetching API batch 4/5...
-  Fetching API batch 5/5...
-Enrichment complete.
 Loaded 6 ignored keywords from ignored-keywords.txt
 Filtered out 140 papers based on ignored keywords. 304 papers remaining.
 Computing embeddings for 82 bibliography entries...
@@ -291,6 +271,9 @@ Computing embeddings for 304 new ArXiv papers...
 Computing vector similarity scores...
 
 Top 25 candidates selected for LLM re-scoring based on vector similarity.
+Enriching 25 papers via ArXiv API...
+  Fetching API batch 1/1...
+Enrichment complete.
 Loading existing Research Persona from research_persona.txt...
 Persona loaded successfully.
 Scoring Top Candidates with LLM...
@@ -327,101 +310,101 @@ Scoring candidate 25/25: Optical emission from luminous and very soft X-ray...
     Link: https://arxiv.org/abs/2508.18999
     (Vector: 0.84, LLM: 98)
 ----------------------------------------
-2. [Score: 89.6] X-ray studies of PSR J1838$-$0655 and its wind nebula associated with HESS J1837$-$069 and 1LHAASO J1837$-$0654u
+2. [Score: 88.1] X-ray studies of PSR J1838$-$0655 and its wind nebula associated with HESS J1837$-$069 and 1LHAASO J1837$-$0654u
     Link: https://arxiv.org/abs/2508.07660
-    (Vector: 0.84, LLM: 95)
+    (Vector: 0.84, LLM: 92)
 ----------------------------------------
-3. [Score: 87.5] High-resolution Radio Study of Pulsar Wind Nebula MSH 15-52 and Supernova Remnant RCW 89
-    Link: https://arxiv.org/abs/2508.14476
-    (Vector: 0.77, LLM: 98)
-----------------------------------------
-4. [Score: 86.7] Deciphering the gamma-ray emission in the Cygnus region
-    Link: https://arxiv.org/abs/2508.21644
-    (Vector: 0.75, LLM: 98)
-----------------------------------------
-5. [Score: 83.8] HAWC, VERITAS, Fermi-LAT and XMM-Newton follow-up observations of the unidentified ultra-high-energy gamma-ray source LHAASO J2108+5157
+3. [Score: 86.8] HAWC, VERITAS, Fermi-LAT and XMM-Newton follow-up observations of the unidentified ultra-high-energy gamma-ray source LHAASO J2108+5157
     Link: https://arxiv.org/abs/2508.01934
+    (Vector: 0.76, LLM: 98)
+----------------------------------------
+4. [Score: 85.2] Deciphering the gamma-ray emission in the Cygnus region
+    Link: https://arxiv.org/abs/2508.21644
+    (Vector: 0.75, LLM: 95)
+----------------------------------------
+5. [Score: 84.8] Runaway stars and the Galactic supernova remnant landscape: non-thermal emission and observational evidence
+    Link: https://arxiv.org/abs/2508.12721
+    (Vector: 0.78, LLM: 92)
+----------------------------------------
+6. [Score: 84.5] High-resolution Radio Study of Pulsar Wind Nebula MSH 15-52 and Supernova Remnant RCW 89
+    Link: https://arxiv.org/abs/2508.14476
+    (Vector: 0.77, LLM: 92)
+----------------------------------------
+7. [Score: 84.4] Very high-energy gamma-ray and neutrino emission from hadronic interaction in compact binary millisecond pulsars
+    Link: https://arxiv.org/abs/2508.20952
+    (Vector: 0.77, LLM: 92)
+----------------------------------------
+8. [Score: 84.0] MUSE Observations Reveal Optical Coronal Iron Lines from Shock Emission in Supernova Remnant 0540-69.3
+    Link: https://arxiv.org/abs/2508.14570
     (Vector: 0.76, LLM: 92)
 ----------------------------------------
-6. [Score: 78.6] Constraining Common Envelope Evolution in Binary Neutron Star Formation with Combined Galactic and Gravitational-Wave Observations
-    Link: https://arxiv.org/abs/2508.14397
-    (Vector: 0.77, LLM: 80)
-----------------------------------------
-7. [Score: 76.3] Runaway stars and the Galactic supernova remnant landscape: non-thermal emission and observational evidence
-    Link: https://arxiv.org/abs/2508.12721
-    (Vector: 0.78, LLM: 75)
-----------------------------------------
-8. [Score: 65.9] Constraining the TeV gamma-ray emission of SN 2024bch, a possible type IIn-L from a red supergiant progenitor. Multiwavelength observations and analysis of the progenitor
+9. [Score: 82.4] Constraining the TeV gamma-ray emission of SN 2024bch, a possible type IIn-L from a red supergiant progenitor. Multiwavelength observations and analysis of the progenitor
     Link: https://arxiv.org/abs/2508.20048
-    (Vector: 1.00, LLM: 32)
+    (Vector: 1.00, LLM: 65)
 ----------------------------------------
-9. [Score: 62.8] Challenging a binary neutron star merger interpretation of GW230529
+10. [Score: 62.8] Challenging a binary neutron star merger interpretation of GW230529
     Link: https://arxiv.org/abs/2508.08750
     (Vector: 0.76, LLM: 50)
 ----------------------------------------
-10. [Score: 60.9] Very high-energy gamma-ray and neutrino emission from hadronic interaction in compact binary millisecond pulsars
-    Link: https://arxiv.org/abs/2508.20952
-    (Vector: 0.77, LLM: 45)
+11. [Score: 61.4] Constraints on the progenitor and explosion of SN 2024ggi in harmony with pre-explosion detection and hydrodynamic simulations
+    Link: https://arxiv.org/abs/2508.10573
+    (Vector: 0.81, LLM: 42)
 ----------------------------------------
-11. [Score: 56.6] Optical and near-infrared nebular-phase spectroscopy of SN 2024ggi: constraints on the structure of the inner ejecta, progenitor mass, and dust
+12. [Score: 60.6] Optical and near-infrared nebular-phase spectroscopy of SN 2024ggi: constraints on the structure of the inner ejecta, progenitor mass, and dust
     Link: https://arxiv.org/abs/2508.02656
-    (Vector: 0.81, LLM: 32)
+    (Vector: 0.81, LLM: 40)
 ----------------------------------------
-12. [Score: 55.2] SN 2024gy: Multi-epoch Spectroscopic Features Suggestive of Delayed Detonation in a Type Ia Supernova
-    Link: https://arxiv.org/abs/2508.01428
-    (Vector: 0.80, LLM: 30)
-----------------------------------------
-13. [Score: 54.8] Radio Observations of a Candidate Redback Millisecond Pulsar: 1FGL J0523.5-2529
-    Link: https://arxiv.org/abs/2508.15435
-    (Vector: 0.75, LLM: 35)
+13. [Score: 59.7] The First Radio-Bright Off-Nuclear TDE 2024tvd Reveals the Fastest-Evolving Double-Peaked Radio Emission
+    Link: https://arxiv.org/abs/2508.03807
+    (Vector: 0.74, LLM: 45)
 ----------------------------------------
 14. [Score: 53.3] Contribution of Globular Clusters to Diffuse Gamma-ray Emission from Galactic Plane
     Link: https://arxiv.org/abs/2508.15295
     (Vector: 0.77, LLM: 30)
 ----------------------------------------
-15. [Score: 53.0] MUSE Observations Reveal Optical Coronal Iron Lines from Shock Emission in Supernova Remnant 0540-69.3
-    Link: https://arxiv.org/abs/2508.14570
-    (Vector: 0.76, LLM: 30)
+15. [Score: 51.8] Optical emission from luminous and very soft X-ray sources in nearby galaxies: testing the scenario of edge-on supercritical accretion systems
+    Link: https://arxiv.org/abs/2508.08553
+    (Vector: 0.74, LLM: 30)
 ----------------------------------------
-16. [Score: 50.4] Constraints on the progenitor and explosion of SN 2024ggi in harmony with pre-explosion detection and hydrodynamic simulations
-    Link: https://arxiv.org/abs/2508.10573
-    (Vector: 0.81, LLM: 20)
+16. [Score: 49.8] The X-ray Source Population of the Metal-Rich Globular Cluster NGC 6528
+    Link: https://arxiv.org/abs/2508.10105
+    (Vector: 0.75, LLM: 25)
 ----------------------------------------
-17. [Score: 49.5] PSR J0614-3329: A NICER case for Strange Quark Stars
-    Link: https://arxiv.org/abs/2508.02652
-    (Vector: 0.74, LLM: 25)
-----------------------------------------
-18. [Score: 48.9] Investigating the Impact of Higher-Order Phase Transitions in Binary Neutron-Star Mergers
+17. [Score: 48.9] Investigating the Impact of Higher-Order Phase Transitions in Binary Neutron-Star Mergers
     Link: https://arxiv.org/abs/2508.10698
     (Vector: 0.78, LLM: 20)
 ----------------------------------------
-19. [Score: 47.3] The X-ray Source Population of the Metal-Rich Globular Cluster NGC 6528
-    Link: https://arxiv.org/abs/2508.10105
+18. [Score: 47.3] A Targeted Gamma-Ray Search of Five Prominent Galaxy Merger Systems with 17 years of Fermi-LAT Data
+    Link: https://arxiv.org/abs/2508.06232
     (Vector: 0.75, LLM: 20)
 ----------------------------------------
-20. [Score: 47.2] The First Radio-Bright Off-Nuclear TDE 2024tvd Reveals the Fastest-Evolving Double-Peaked Radio Emission
-    Link: https://arxiv.org/abs/2508.03807
-    (Vector: 0.74, LLM: 20)
+19. [Score: 47.3] Radio Observations of a Candidate Redback Millisecond Pulsar: 1FGL J0523.5-2529
+    Link: https://arxiv.org/abs/2508.15435
+    (Vector: 0.75, LLM: 20)
 ----------------------------------------
-21. [Score: 46.8] Optical emission from luminous and very soft X-ray sources in nearby galaxies: testing the scenario of edge-on supercritical accretion systems
-    Link: https://arxiv.org/abs/2508.08553
-    (Vector: 0.74, LLM: 20)
-----------------------------------------
-22. [Score: 43.9] The Type II SN 2025pht in NGC 1637: A Red Supergiant with Carbon-rich Circumstellar Dust as the First JWST Detection of a Supernova Progenitor Star
+20. [Score: 46.4] The Type II SN 2025pht in NGC 1637: A Red Supergiant with Carbon-rich Circumstellar Dust as the First JWST Detection of a Supernova Progenitor Star
     Link: https://arxiv.org/abs/2508.10994
-    (Vector: 0.83, LLM: 5)
+    (Vector: 0.83, LLM: 10)
 ----------------------------------------
-23. [Score: 39.6] Late-time Hubble Space Telescope Ultraviolet Spectra of SN 2023ixf and SN 2024ggi Show Ongoing Interaction with Circumstellar Material
-    Link: https://arxiv.org/abs/2508.11756
-    (Vector: 0.74, LLM: 5)
+21. [Score: 42.7] SN 2024gy: Multi-epoch Spectroscopic Features Suggestive of Delayed Detonation in a Type Ia Supernova
+    Link: https://arxiv.org/abs/2508.01428
+    (Vector: 0.80, LLM: 5)
 ----------------------------------------
-24. [Score: 39.3] Impact of thermal effects on prompt-collapse binary neutron star mergers
+22. [Score: 41.1] Constraining Common Envelope Evolution in Binary Neutron Star Formation with Combined Galactic and Gravitational-Wave Observations
+    Link: https://arxiv.org/abs/2508.14397
+    (Vector: 0.77, LLM: 5)
+----------------------------------------
+23. [Score: 39.8] Impact of thermal effects on prompt-collapse binary neutron star mergers
     Link: https://arxiv.org/abs/2508.09333
-    (Vector: 0.77, LLM: 2)
+    (Vector: 0.77, LLM: 3)
 ----------------------------------------
-25. [Score: 37.3] A Targeted Gamma-Ray Search of Five Prominent Galaxy Merger Systems with 17 years of Fermi-LAT Data
-    Link: https://arxiv.org/abs/2508.06232
-    (Vector: 0.75, LLM: 0)
+24. [Score: 38.5] PSR J0614-3329: A NICER case for Strange Quark Stars
+    Link: https://arxiv.org/abs/2508.02652
+    (Vector: 0.74, LLM: 3)
+----------------------------------------
+25. [Score: 38.1] Late-time Hubble Space Telescope Ultraviolet Spectra of SN 2023ixf and SN 2024ggi Show Ongoing Interaction with Circumstellar Material
+    Link: https://arxiv.org/abs/2508.11756
+    (Vector: 0.74, LLM: 2)
 ----------------------------------------
 Generating HTML report: reports/2025-08.html...
 HTML report saved to /Users/facero/Documents/Work/Program/arxiv-reader/reports/2025-08.html
@@ -445,22 +428,6 @@ Loading bibliography from my-bibtex-Feb-2026.bib (Regex Mode)...
 Found 82 unique entries in bibliography.
 Fetching arXiv listings from https://arxiv.org/list/astro-ph.HE/2025-09?skip=0&show=2000...
 Found 607 papers on arXiv page.
-Enriching 607 papers via ArXiv API...
-  Fetching API batch 1/7...
-  Error processing batch: HTTP Error 429: Unknown Error
-  Fetching API batch 2/7...
-  Error processing batch: HTTP Error 429: Unknown Error
-  Fetching API batch 3/7...
-  Error processing batch: HTTP Error 429: Unknown Error
-  Fetching API batch 4/7...
-  Error processing batch: HTTP Error 429: Unknown Error
-  Fetching API batch 5/7...
-  Error processing batch: HTTP Error 429: Unknown Error
-  Fetching API batch 6/7...
-  Error processing batch: HTTP Error 429: Unknown Error
-  Fetching API batch 7/7...
-  Error processing batch: HTTP Error 429: Unknown Error
-Enrichment complete.
 Loaded 6 ignored keywords from ignored-keywords.txt
 Filtered out 189 papers based on ignored keywords. 418 papers remaining.
 Computing embeddings for 82 bibliography entries...
@@ -515,6 +482,9 @@ Computing embeddings for 418 new ArXiv papers...
 Computing vector similarity scores...
 
 Top 25 candidates selected for LLM re-scoring based on vector similarity.
+Enriching 25 papers via ArXiv API...
+  Fetching API batch 1/1...
+Enrichment complete.
 Loading existing Research Persona from research_persona.txt...
 Persona loaded successfully.
 Scoring Top Candidates with LLM...
@@ -551,101 +521,101 @@ Scoring candidate 25/25: Low-frequency observations of low-mass binary syst...
     Link: https://arxiv.org/abs/2509.20515
     (Vector: 0.83, LLM: 98)
 ----------------------------------------
-2. [Score: 79.1] Fermi-LAT Detected Gamma-ray Emission Likely Associated with SNR Kes 78
+2. [Score: 86.3] A Search for High-Energy Emission from the Remnant of Supernova 1181
+    Link: https://arxiv.org/abs/2509.20131
+    (Vector: 0.78, LLM: 95)
+----------------------------------------
+3. [Score: 85.1] Fermi-LAT Detected Gamma-ray Emission Likely Associated with SNR Kes 78
     Link: https://arxiv.org/abs/2509.13812
-    (Vector: 0.73, LLM: 85)
+    (Vector: 0.73, LLM: 97)
 ----------------------------------------
-3. [Score: 76.2] Multi-GeV Fermi-LAT Detection of PSR B1259-63
-    Link: https://arxiv.org/abs/2509.10037
-    (Vector: 0.74, LLM: 78)
-----------------------------------------
-4. [Score: 76.1] Multiwavelength observations of a new black-widow millisecond pulsar PSR J1544-2555
-    Link: https://arxiv.org/abs/2509.09605
-    (Vector: 0.74, LLM: 78)
-----------------------------------------
-5. [Score: 64.3] SN 2022acko and the Properties of its Red Supergiant Progenitor: Direct Detection, Light Curves, and Nebular Spectroscopy
-    Link: https://arxiv.org/abs/2509.04707
-    (Vector: 0.87, LLM: 42)
-----------------------------------------
-6. [Score: 62.5] Chandra Large Project Observations of the Supernova Remnant N132D: Measuring the Expansion of the Forward Shock
-    Link: https://arxiv.org/abs/2509.12157
-    (Vector: 0.80, LLM: 45)
-----------------------------------------
-7. [Score: 61.4] SN 2024aecx: a fast-evolving Type IIb supernova with a prominent shock-cooling peak
-    Link: https://arxiv.org/abs/2509.12343
-    (Vector: 0.78, LLM: 45)
-----------------------------------------
-8. [Score: 60.5] Fifteen years of Gamma-Ray Burst observations at Very High Energies with H.E.S.S
-    Link: https://arxiv.org/abs/2509.15869
-    (Vector: 0.79, LLM: 42)
-----------------------------------------
-9. [Score: 60.3] Stochastic modelling of cosmic-ray sources for Galactic diffuse emissions
-    Link: https://arxiv.org/abs/2509.06857
-    (Vector: 0.76, LLM: 45)
-----------------------------------------
-10. [Score: 59.2] Probing the Cosmic Ray Background of Gamma-Ray Astronomy with Hadron Colliders
-    Link: https://arxiv.org/abs/2509.04040
-    (Vector: 0.73, LLM: 45)
-----------------------------------------
-11. [Score: 58.0] Probing the millisecond pulsar origin of the $γ$-ray excess in the Galactic centre with LISA
-    Link: https://arxiv.org/abs/2509.12998
-    (Vector: 0.76, LLM: 40)
-----------------------------------------
-12. [Score: 57.9] Fermi detection of $γ$-rays from the radio-quiet Seyfert galaxy NGC 3281
-    Link: https://arxiv.org/abs/2509.21958
-    (Vector: 0.76, LLM: 40)
-----------------------------------------
-13. [Score: 57.8] Gamma-ray Analysis of Pulsar Environments and Their Theoretical Explanation
+4. [Score: 84.8] Gamma-ray Analysis of Pulsar Environments and Their Theoretical Explanation
     Link: https://arxiv.org/abs/2509.13195
-    (Vector: 0.78, LLM: 38)
+    (Vector: 0.78, LLM: 92)
 ----------------------------------------
-14. [Score: 55.8] The Photospheric Emission of a Short-Duration Gamma-Ray Burst Emerging from a Realistic Binary Neutron Star Merger
-    Link: https://arxiv.org/abs/2509.12505
-    (Vector: 0.77, LLM: 35)
+5. [Score: 84.4] Classification of Unidentified Extended LHAASO Sources based on their Gamma-Ray Morphology: Prospects for Future IACTs
+    Link: https://arxiv.org/abs/2509.20180
+    (Vector: 0.77, LLM: 92)
 ----------------------------------------
-15. [Score: 54.1] Low-frequency observations of low-mass binary systems with neutron star candidates
-    Link: https://arxiv.org/abs/2509.03001
+6. [Score: 81.1] Search for cosmic-ray induced gamma-ray emission from local galaxy clusters using Fermi-LAT data
+    Link: https://arxiv.org/abs/2509.15720
+    (Vector: 0.77, LLM: 85)
+----------------------------------------
+7. [Score: 79.7] Multi-GeV Fermi-LAT Detection of PSR B1259-63
+    Link: https://arxiv.org/abs/2509.10037
+    (Vector: 0.74, LLM: 85)
+----------------------------------------
+8. [Score: 77.5] Chandra Large Project Observations of the Supernova Remnant N132D: Measuring the Expansion of the Forward Shock
+    Link: https://arxiv.org/abs/2509.12157
+    (Vector: 0.80, LLM: 75)
+----------------------------------------
+9. [Score: 76.0] Galactic Center Gamma-Ray Emission in MHD Galaxy Formation Simulations with Full Cosmic Ray Spectra
+    Link: https://arxiv.org/abs/2509.18351
+    (Vector: 0.74, LLM: 78)
+----------------------------------------
+10. [Score: 74.6] Multiwavelength observations of a new black-widow millisecond pulsar PSR J1544-2555
+    Link: https://arxiv.org/abs/2509.09605
+    (Vector: 0.74, LLM: 75)
+----------------------------------------
+11. [Score: 74.3] High energy gamma rays and neutrinos from the Sun, Jupiter and Earth
+    Link: https://arxiv.org/abs/2509.20970
+    (Vector: 0.74, LLM: 75)
+----------------------------------------
+12. [Score: 72.2] SN 2019hnl: A Type IIP Supernova with a Partially Stripped, Low Mass Progenitor
+    Link: https://arxiv.org/abs/2509.03732
+    (Vector: 0.74, LLM: 70)
+----------------------------------------
+13. [Score: 67.9] Fermi detection of $γ$-rays from the radio-quiet Seyfert galaxy NGC 3281
+    Link: https://arxiv.org/abs/2509.21958
+    (Vector: 0.76, LLM: 60)
+----------------------------------------
+14. [Score: 62.0] Fifteen years of Gamma-Ray Burst observations at Very High Energies with H.E.S.S
+    Link: https://arxiv.org/abs/2509.15869
+    (Vector: 0.79, LLM: 45)
+----------------------------------------
+15. [Score: 61.2] Two-component diffuse Galactic gamma-ray emission revealed with Fermi-LAT
+    Link: https://arxiv.org/abs/2509.26290
+    (Vector: 0.77, LLM: 45)
+----------------------------------------
+16. [Score: 56.4] SN 2024aecx: a fast-evolving Type IIb supernova with a prominent shock-cooling peak
+    Link: https://arxiv.org/abs/2509.12343
+    (Vector: 0.78, LLM: 35)
+----------------------------------------
+17. [Score: 55.3] Stochastic modelling of cosmic-ray sources for Galactic diffuse emissions
+    Link: https://arxiv.org/abs/2509.06857
+    (Vector: 0.76, LLM: 35)
+----------------------------------------
+18. [Score: 54.1] Studying the black widow pulsars PSR J0312$-$0921 and PSR J1627$+$3219 in the optical and X-rays
+    Link: https://arxiv.org/abs/2509.01488
     (Vector: 0.73, LLM: 35)
 ----------------------------------------
-16. [Score: 53.7] Two-component diffuse Galactic gamma-ray emission revealed with Fermi-LAT
-    Link: https://arxiv.org/abs/2509.26290
-    (Vector: 0.77, LLM: 30)
-----------------------------------------
-17. [Score: 53.6] Search for cosmic-ray induced gamma-ray emission from local galaxy clusters using Fermi-LAT data
-    Link: https://arxiv.org/abs/2509.15720
-    (Vector: 0.77, LLM: 30)
-----------------------------------------
-18. [Score: 52.0] Galactic Center Gamma-Ray Emission in MHD Galaxy Formation Simulations with Full Cosmic Ray Spectra
-    Link: https://arxiv.org/abs/2509.18351
-    (Vector: 0.74, LLM: 30)
-----------------------------------------
-19. [Score: 51.8] High energy gamma rays and neutrinos from the Sun, Jupiter and Earth
-    Link: https://arxiv.org/abs/2509.20970
-    (Vector: 0.74, LLM: 30)
-----------------------------------------
-20. [Score: 51.7] CTAO Contributions to the 39th International Cosmic Ray Conference (ICRC 2025)
+19. [Score: 51.7] CTAO Contributions to the 39th International Cosmic Ray Conference (ICRC 2025)
     Link: https://arxiv.org/abs/2509.15442
     (Vector: 0.73, LLM: 30)
 ----------------------------------------
-21. [Score: 51.3] A Search for High-Energy Emission from the Remnant of Supernova 1181
-    Link: https://arxiv.org/abs/2509.20131
-    (Vector: 0.78, LLM: 25)
+20. [Score: 51.6] Low-frequency observations of low-mass binary systems with neutron star candidates
+    Link: https://arxiv.org/abs/2509.03001
+    (Vector: 0.73, LLM: 30)
 ----------------------------------------
-22. [Score: 48.4] Classification of Unidentified Extended LHAASO Sources based on their Gamma-Ray Morphology: Prospects for Future IACTs
-    Link: https://arxiv.org/abs/2509.20180
-    (Vector: 0.77, LLM: 20)
+21. [Score: 48.0] Probing the millisecond pulsar origin of the $γ$-ray excess in the Galactic centre with LISA
+    Link: https://arxiv.org/abs/2509.12998
+    (Vector: 0.76, LLM: 20)
 ----------------------------------------
-23. [Score: 47.6] The first radio view of a type Ibn supernova in SN 2023fyq: Understanding the mass-loss history in the last decade before the explosion
+22. [Score: 47.6] The first radio view of a type Ibn supernova in SN 2023fyq: Understanding the mass-loss history in the last decade before the explosion
     Link: https://arxiv.org/abs/2509.07080
     (Vector: 0.75, LLM: 20)
 ----------------------------------------
-24. [Score: 39.7] SN 2019hnl: A Type IIP Supernova with a Partially Stripped, Low Mass Progenitor
-    Link: https://arxiv.org/abs/2509.03732
-    (Vector: 0.74, LLM: 5)
+23. [Score: 46.7] Probing the Cosmic Ray Background of Gamma-Ray Astronomy with Hadron Colliders
+    Link: https://arxiv.org/abs/2509.04040
+    (Vector: 0.73, LLM: 20)
 ----------------------------------------
-25. [Score: 39.1] Studying the black widow pulsars PSR J0312$-$0921 and PSR J1627$+$3219 in the optical and X-rays
-    Link: https://arxiv.org/abs/2509.01488
-    (Vector: 0.73, LLM: 5)
+24. [Score: 45.8] SN 2022acko and the Properties of its Red Supergiant Progenitor: Direct Detection, Light Curves, and Nebular Spectroscopy
+    Link: https://arxiv.org/abs/2509.04707
+    (Vector: 0.87, LLM: 5)
+----------------------------------------
+25. [Score: 40.8] The Photospheric Emission of a Short-Duration Gamma-Ray Burst Emerging from a Realistic Binary Neutron Star Merger
+    Link: https://arxiv.org/abs/2509.12505
+    (Vector: 0.77, LLM: 5)
 ----------------------------------------
 Generating HTML report: reports/2025-09.html...
 HTML report saved to /Users/facero/Documents/Work/Program/arxiv-reader/reports/2025-09.html
@@ -669,14 +639,6 @@ Loading bibliography from my-bibtex-Feb-2026.bib (Regex Mode)...
 Found 82 unique entries in bibliography.
 Fetching arXiv listings from https://arxiv.org/list/astro-ph.HE/2025-10?skip=0&show=2000...
 Found 595 papers on arXiv page.
-Enriching 595 papers via ArXiv API...
-  Fetching API batch 1/6...
-  Fetching API batch 2/6...
-  Fetching API batch 3/6...
-  Fetching API batch 4/6...
-  Fetching API batch 5/6...
-  Fetching API batch 6/6...
-Enrichment complete.
 Loaded 6 ignored keywords from ignored-keywords.txt
 Filtered out 170 papers based on ignored keywords. 425 papers remaining.
 Computing embeddings for 82 bibliography entries...
@@ -732,6 +694,9 @@ Computing embeddings for 425 new ArXiv papers...
 Computing vector similarity scores...
 
 Top 25 candidates selected for LLM re-scoring based on vector similarity.
+Enriching 25 papers via ArXiv API...
+  Fetching API batch 1/1...
+Enrichment complete.
 Loading existing Research Persona from research_persona.txt...
 Persona loaded successfully.
 Scoring Top Candidates with LLM...
@@ -768,101 +733,101 @@ Scoring candidate 25/25: A Giant Peanut-shaped Ultra-High-Energy Gamma-Ray ...
     Link: https://arxiv.org/abs/2510.03183
     (Vector: 0.83, LLM: 98)
 ----------------------------------------
-2. [Score: 86.7] Line emission search from DM annihilation in the Galactic Center with LST-1
-    Link: https://arxiv.org/abs/2510.04977
-    (Vector: 0.78, LLM: 95)
+2. [Score: 89.8] Unlocking the radio-gamma spectrum of the pulsar wind nebula around PSR J1124-5916 in SNR G292.0+1.8
+    Link: https://arxiv.org/abs/2510.23747
+    (Vector: 0.85, LLM: 95)
 ----------------------------------------
-3. [Score: 84.9] Particle acceleration at radiative supernova remnant shocks
+3. [Score: 88.1] TeV Emission from PSR B1055-52 with HESS: Evidence for a Pulsar Halo
+    Link: https://arxiv.org/abs/2510.02802
+    (Vector: 0.78, LLM: 98)
+----------------------------------------
+4. [Score: 87.1] H.E.S.S. observations of SN 2024ggi
+    Link: https://arxiv.org/abs/2510.02796
+    (Vector: 0.79, LLM: 95)
+----------------------------------------
+5. [Score: 85.3] Multi-Faceted Emission Properties of PSR J2129+4119 Observed with FAST
+    Link: https://arxiv.org/abs/2510.26209
+    (Vector: 0.76, LLM: 95)
+----------------------------------------
+6. [Score: 84.9] Particle acceleration at radiative supernova remnant shocks
     Link: https://arxiv.org/abs/2510.18763
     (Vector: 0.78, LLM: 92)
 ----------------------------------------
-4. [Score: 83.6] A Giant Peanut-shaped Ultra-High-Energy Gamma-Ray Emitter Off the Galactic Plane
+7. [Score: 83.6] A Giant Peanut-shaped Ultra-High-Energy Gamma-Ray Emitter Off the Galactic Plane
     Link: https://arxiv.org/abs/2510.06786
     (Vector: 0.75, LLM: 92)
 ----------------------------------------
-5. [Score: 83.3] Discovery of diffuse gamma-ray emission in the vicinity of G172.8+1.5: An old supernova remnant with different turbulence properties
+8. [Score: 83.3] First detection of ultra-high energy emission from gamma-ray binary LS I +61 303
+    Link: https://arxiv.org/abs/2510.23345
+    (Vector: 0.82, LLM: 85)
+----------------------------------------
+9. [Score: 83.3] Discovery of diffuse gamma-ray emission in the vicinity of G172.8+1.5: An old supernova remnant with different turbulence properties
     Link: https://arxiv.org/abs/2510.01340
     (Vector: 0.82, LLM: 85)
 ----------------------------------------
-6. [Score: 82.1] H.E.S.S. observations of SN 2024ggi
-    Link: https://arxiv.org/abs/2510.02796
-    (Vector: 0.79, LLM: 85)
-----------------------------------------
-7. [Score: 81.6] TeV Emission from PSR B1055-52 with HESS: Evidence for a Pulsar Halo
-    Link: https://arxiv.org/abs/2510.02802
+10. [Score: 81.4] The population of Galactic young massive star clusters in the TeV range
+    Link: https://arxiv.org/abs/2510.21480
     (Vector: 0.78, LLM: 85)
 ----------------------------------------
-8. [Score: 80.7] Investigating the mysterious nature of 1LHAASO J1740+0948u through deep XMM-Newton observations
+11. [Score: 75.7] Investigating the mysterious nature of 1LHAASO J1740+0948u through deep XMM-Newton observations
     Link: https://arxiv.org/abs/2510.17970
-    (Vector: 0.76, LLM: 85)
+    (Vector: 0.76, LLM: 75)
 ----------------------------------------
-9. [Score: 80.2] Gamma-rays from Wolf-Rayet stellar winds
-    Link: https://arxiv.org/abs/2510.12510
-    (Vector: 0.75, LLM: 85)
+12. [Score: 73.7] Cosmic Ray Transport and Gamma-Ray Signatures in the Interstellar Medium
+    Link: https://arxiv.org/abs/2510.12965
+    (Vector: 0.75, LLM: 72)
 ----------------------------------------
-10. [Score: 79.8] Unlocking the radio-gamma spectrum of the pulsar wind nebula around PSR J1124-5916 in SNR G292.0+1.8
-    Link: https://arxiv.org/abs/2510.23747
-    (Vector: 0.85, LLM: 75)
-----------------------------------------
-11. [Score: 77.9] The population of Galactic young massive star clusters in the TeV range
-    Link: https://arxiv.org/abs/2510.21480
-    (Vector: 0.78, LLM: 78)
-----------------------------------------
-12. [Score: 75.8] TRAPUM search for pulsars in supernova remnants and pulsar wind nebulae - II. Survey analysis and population study
+13. [Score: 70.8] TRAPUM search for pulsars in supernova remnants and pulsar wind nebulae - II. Survey analysis and population study
     Link: https://arxiv.org/abs/2510.16618
-    (Vector: 0.77, LLM: 75)
+    (Vector: 0.77, LLM: 65)
 ----------------------------------------
-13. [Score: 63.3] First detection of ultra-high energy emission from gamma-ray binary LS I +61 303
-    Link: https://arxiv.org/abs/2510.23345
-    (Vector: 0.82, LLM: 45)
-----------------------------------------
-14. [Score: 61.5] Mapping the Perseus Galaxy Cluster with XRISM: Gas Kinematic Features and their Implications for Turbulence
-    Link: https://arxiv.org/abs/2510.12782
-    (Vector: 0.78, LLM: 45)
-----------------------------------------
-15. [Score: 59.4] Exotic PeVatrons as sources of ultra-high-energy gamma rays
+14. [Score: 60.9] Exotic PeVatrons as sources of ultra-high-energy gamma rays
     Link: https://arxiv.org/abs/2510.00254
-    (Vector: 0.77, LLM: 42)
+    (Vector: 0.77, LLM: 45)
+----------------------------------------
+15. [Score: 60.2] The Gravitational Wave Memory from Binary Neutron Star Mergers
+    Link: https://arxiv.org/abs/2510.09742
+    (Vector: 0.75, LLM: 45)
 ----------------------------------------
 16. [Score: 59.3] Direct observation of the X-ray counterpart of the Hα filaments and of the sloshing spiral in the Perseus galaxy cluster
     Link: https://arxiv.org/abs/2510.09559
     (Vector: 0.99, LLM: 20)
 ----------------------------------------
-17. [Score: 53.7] Cosmic Ray Transport and Gamma-Ray Signatures in the Interstellar Medium
-    Link: https://arxiv.org/abs/2510.12965
-    (Vector: 0.75, LLM: 32)
+17. [Score: 55.3] The very high energy view of gamma-ray bursts with the MAGIC telescopes
+    Link: https://arxiv.org/abs/2510.08249
+    (Vector: 0.76, LLM: 35)
 ----------------------------------------
-18. [Score: 53.5] Gamma-ray Bursts
-    Link: https://arxiv.org/abs/2510.05297
-    (Vector: 0.77, LLM: 30)
+18. [Score: 55.2] Gamma-rays from Wolf-Rayet stellar winds
+    Link: https://arxiv.org/abs/2510.12510
+    (Vector: 0.75, LLM: 35)
 ----------------------------------------
-19. [Score: 50.6] SN 2024cld: unveiling the complex mass-loss histories of evolved supergiant progenitors to core collapse supernovae
+19. [Score: 54.2] Line emission search from DM annihilation in the Galactic Center with LST-1
+    Link: https://arxiv.org/abs/2510.04977
+    (Vector: 0.78, LLM: 30)
+----------------------------------------
+20. [Score: 54.0] Mapping the Perseus Galaxy Cluster with XRISM: Gas Kinematic Features and their Implications for Turbulence
+    Link: https://arxiv.org/abs/2510.12782
+    (Vector: 0.78, LLM: 30)
+----------------------------------------
+21. [Score: 52.9] AT2025ulz and S250818k: Investigating early time observations of a subsolar mass gravitational-wave binary neutron star merger candidate
+    Link: https://arxiv.org/abs/2510.24620
+    (Vector: 0.76, LLM: 30)
+----------------------------------------
+22. [Score: 51.1] Luminosity Functions and Detectability of Binary Neutron Star Merger-nova Signals with Various Merger Remnants
+    Link: https://arxiv.org/abs/2510.23115
+    (Vector: 0.77, LLM: 25)
+----------------------------------------
+23. [Score: 50.6] SN 2024cld: unveiling the complex mass-loss histories of evolved supergiant progenitors to core collapse supernovae
     Link: https://arxiv.org/abs/2510.27631
     (Vector: 0.81, LLM: 20)
 ----------------------------------------
-20. [Score: 50.4] AT2025ulz and S250818k: Investigating early time observations of a subsolar mass gravitational-wave binary neutron star merger candidate
-    Link: https://arxiv.org/abs/2510.24620
-    (Vector: 0.76, LLM: 25)
-----------------------------------------
-21. [Score: 48.6] Luminosity Functions and Detectability of Binary Neutron Star Merger-nova Signals with Various Merger Remnants
-    Link: https://arxiv.org/abs/2510.23115
+24. [Score: 48.5] Gamma-ray Bursts
+    Link: https://arxiv.org/abs/2510.05297
     (Vector: 0.77, LLM: 20)
 ----------------------------------------
-22. [Score: 47.8] The very high energy view of gamma-ray bursts with the MAGIC telescopes
-    Link: https://arxiv.org/abs/2510.08249
-    (Vector: 0.76, LLM: 20)
-----------------------------------------
-23. [Score: 40.9] SN 2024iss: A Double-peaked Type IIb Supernova with Evidence of Circumstellar Interaction
+25. [Score: 40.9] SN 2024iss: A Double-peaked Type IIb Supernova with Evidence of Circumstellar Interaction
     Link: https://arxiv.org/abs/2510.22997
     (Vector: 0.77, LLM: 5)
-----------------------------------------
-24. [Score: 40.3] Multi-Faceted Emission Properties of PSR J2129+4119 Observed with FAST
-    Link: https://arxiv.org/abs/2510.26209
-    (Vector: 0.76, LLM: 5)
-----------------------------------------
-25. [Score: 40.2] The Gravitational Wave Memory from Binary Neutron Star Mergers
-    Link: https://arxiv.org/abs/2510.09742
-    (Vector: 0.75, LLM: 5)
 ----------------------------------------
 Generating HTML report: reports/2025-10.html...
 HTML report saved to /Users/facero/Documents/Work/Program/arxiv-reader/reports/2025-10.html
@@ -886,13 +851,6 @@ Loading bibliography from my-bibtex-Feb-2026.bib (Regex Mode)...
 Found 82 unique entries in bibliography.
 Fetching arXiv listings from https://arxiv.org/list/astro-ph.HE/2025-11?skip=0&show=2000...
 Found 438 papers on arXiv page.
-Enriching 438 papers via ArXiv API...
-  Fetching API batch 1/5...
-  Fetching API batch 2/5...
-  Fetching API batch 3/5...
-  Fetching API batch 4/5...
-  Fetching API batch 5/5...
-Enrichment complete.
 Loaded 6 ignored keywords from ignored-keywords.txt
 Filtered out 140 papers based on ignored keywords. 298 papers remaining.
 Computing embeddings for 82 bibliography entries...
@@ -935,6 +893,9 @@ Computing embeddings for 298 new ArXiv papers...
 Computing vector similarity scores...
 
 Top 25 candidates selected for LLM re-scoring based on vector similarity.
+Enriching 25 papers via ArXiv API...
+  Fetching API batch 1/1...
+Enrichment complete.
 Loading existing Research Persona from research_persona.txt...
 Persona loaded successfully.
 Scoring Top Candidates with LLM...
@@ -971,100 +932,100 @@ Scoring candidate 25/25: SN 2016iog: A fast declining Type II-L supernova w...
     Link: https://arxiv.org/abs/2511.16764
     (Vector: 0.76, LLM: 98)
 ----------------------------------------
-2. [Score: 84.0] Point-symmetric morphology in supernova remnant G11.2-0.3: the jittering jets explosion mechanism
-    Link: https://arxiv.org/abs/2511.14578
-    (Vector: 0.73, LLM: 95)
-----------------------------------------
-3. [Score: 82.3] A Self-Consistent Model of the Ultra High-Energy Gamma-Ray Emission of Pulsar Wind Nebulae: Insights from LHAASO and ATNF Catalogs
+2. [Score: 85.8] A Self-Consistent Model of the Ultra High-Energy Gamma-Ray Emission of Pulsar Wind Nebulae: Insights from LHAASO and ATNF Catalogs
     Link: https://arxiv.org/abs/2511.20452
-    (Vector: 0.80, LLM: 85)
+    (Vector: 0.80, LLM: 92)
 ----------------------------------------
-4. [Score: 80.9] Prospects for Neutrino Observation and Mass Measurement from Binary Neutron Star Mergers
-    Link: https://arxiv.org/abs/2511.16658
-    (Vector: 0.82, LLM: 80)
+3. [Score: 80.2] An axisymmetric shock breakout indicated by prompt polarized emission from the type II supernova 2024ggi
+    Link: https://arxiv.org/abs/2511.08824
+    (Vector: 0.75, LLM: 85)
 ----------------------------------------
-5. [Score: 80.0] Constraining the nature of the most extreme Galactic particle accelerator. H.E.S.S. observations of the microquasar V4641 Sgr
+4. [Score: 80.0] Constraining the nature of the most extreme Galactic particle accelerator. H.E.S.S. observations of the microquasar V4641 Sgr
     Link: https://arxiv.org/abs/2511.10537
     (Vector: 0.75, LLM: 85)
 ----------------------------------------
-6. [Score: 75.2] Star clusters in the gamma-ray sky
-    Link: https://arxiv.org/abs/2511.11432
-    (Vector: 0.78, LLM: 72)
-----------------------------------------
-7. [Score: 74.4] Measuring accretion disc properties in the transitional millisecond pulsar PSR J1023+0038 using XMM-Newton, NuSTAR, NICER and Chandra
-    Link: https://arxiv.org/abs/2511.03457
-    (Vector: 0.74, LLM: 75)
-----------------------------------------
-8. [Score: 68.0] Galaxy Mergers Collectively Illuminate the $γ$-Ray Sky
-    Link: https://arxiv.org/abs/2511.13818
-    (Vector: 0.76, LLM: 60)
-----------------------------------------
-9. [Score: 61.7] The Origin of the Mg-rich Supernova Remnant J0550-6823 and the Frequency of Similar Events in the Large Magellanic Cloud
+5. [Score: 78.2] The Origin of the Mg-rich Supernova Remnant J0550-6823 and the Frequency of Similar Events in the Large Magellanic Cloud
     Link: https://arxiv.org/abs/2511.14126
-    (Vector: 0.78, LLM: 45)
+    (Vector: 0.78, LLM: 78)
 ----------------------------------------
-10. [Score: 55.2] LHAASO Detection of Ultra-High-Energy Gamma-Ray Emission toward the Giant Molecular Clouds
-    Link: https://arxiv.org/abs/2511.05015
-    (Vector: 0.80, LLM: 30)
+6. [Score: 76.7] Star clusters in the gamma-ray sky
+    Link: https://arxiv.org/abs/2511.11432
+    (Vector: 0.78, LLM: 75)
 ----------------------------------------
-11. [Score: 55.2] An axisymmetric shock breakout indicated by prompt polarized emission from the type II supernova 2024ggi
-    Link: https://arxiv.org/abs/2511.08824
-    (Vector: 0.75, LLM: 35)
+7. [Score: 71.7] How Bright in Gravitational Waves are Millisecond Pulsars for the Galactic Center GeV Gamma-Ray Excess? A Systematic Study
+    Link: https://arxiv.org/abs/2511.15793
+    (Vector: 0.73, LLM: 70)
 ----------------------------------------
-12. [Score: 54.6] Identification and characterization of optical companions to the population of millisecond pulsars in the globular cluster M3
-    Link: https://arxiv.org/abs/2511.01969
-    (Vector: 0.74, LLM: 35)
+8. [Score: 59.8] Iron Nuclei in Ultra-High Energy Cosmic Rays Near the Earth
+    Link: https://arxiv.org/abs/2511.15776
+    (Vector: 0.75, LLM: 45)
 ----------------------------------------
-13. [Score: 54.2] Revisiting $γ$-Ray Orbital Modulation in the Redback Millisecond Pulsar PSR J2039-5617
-    Link: https://arxiv.org/abs/2511.17900
+9. [Score: 59.0] Point-symmetric morphology in supernova remnant G11.2-0.3: the jittering jets explosion mechanism
+    Link: https://arxiv.org/abs/2511.14578
+    (Vector: 0.73, LLM: 45)
+----------------------------------------
+10. [Score: 55.5] Galaxy Mergers Collectively Illuminate the $γ$-Ray Sky
+    Link: https://arxiv.org/abs/2511.13818
+    (Vector: 0.76, LLM: 35)
+----------------------------------------
+11. [Score: 54.2] Study of Flat Spectrum Radio Quasars and BL Lacertae Objects as Sources of Diffusive Ultra High-Energy Cosmic Rays
+    Link: https://arxiv.org/abs/2511.08153
     (Vector: 0.73, LLM: 35)
+----------------------------------------
+12. [Score: 54.0] Excess of diffuse gamma-ray emission detected from the galaxy cluster Abell 119 from 14-year Fermi-LAT Data
+    Link: https://arxiv.org/abs/2511.15559
+    (Vector: 0.73, LLM: 35)
+----------------------------------------
+13. [Score: 53.7] Massive stars exploding in a He-rich circumstellar medium XII. SN 2024acyl: A fast, linearly declining Type Ibn supernova with early flash-ionisation features
+    Link: https://arxiv.org/abs/2511.04337
+    (Vector: 0.77, LLM: 30)
 ----------------------------------------
 14. [Score: 53.6] A Comprehensive Study of WIMP Models Explaining the Fermi-LAT Galactic Center Excess
     Link: https://arxiv.org/abs/2511.21808
     (Vector: 0.77, LLM: 30)
 ----------------------------------------
-15. [Score: 51.4] SN 2016iog: A fast declining Type II-L supernova with an ultra-faint tail, persistently interacting with circumstellar material
-    Link: https://arxiv.org/abs/2511.12929
+15. [Score: 52.7] LHAASO Detection of Ultra-High-Energy Gamma-Ray Emission toward the Giant Molecular Clouds
+    Link: https://arxiv.org/abs/2511.05015
+    (Vector: 0.80, LLM: 25)
+----------------------------------------
+16. [Score: 52.7] Curious Case of CGRaBS J0211+1051: Observational Evidence of Lepto-Hadronic Origin of High-Energy Emission?
+    Link: https://arxiv.org/abs/2511.10329
+    (Vector: 0.75, LLM: 30)
+----------------------------------------
+17. [Score: 52.0] Discovery of a 9.67-s pulsar in an ultraluminous X-ray source in NGC 4631 with XMM-Newton
+    Link: https://arxiv.org/abs/2511.04282
+    (Vector: 0.74, LLM: 30)
+----------------------------------------
+18. [Score: 51.7] Revisiting $γ$-Ray Orbital Modulation in the Redback Millisecond Pulsar PSR J2039-5617
+    Link: https://arxiv.org/abs/2511.17900
     (Vector: 0.73, LLM: 30)
 ----------------------------------------
-16. [Score: 51.2] Massive stars exploding in a He-rich circumstellar medium XII. SN 2024acyl: A fast, linearly declining Type Ibn supernova with early flash-ionisation features
-    Link: https://arxiv.org/abs/2511.04337
-    (Vector: 0.77, LLM: 25)
+19. [Score: 50.9] Prospects for Neutrino Observation and Mass Measurement from Binary Neutron Star Mergers
+    Link: https://arxiv.org/abs/2511.16658
+    (Vector: 0.82, LLM: 20)
 ----------------------------------------
-17. [Score: 50.2] Curious Case of CGRaBS J0211+1051: Observational Evidence of Lepto-Hadronic Origin of High-Energy Emission?
-    Link: https://arxiv.org/abs/2511.10329
-    (Vector: 0.75, LLM: 25)
+20. [Score: 49.5] A Novel Parameterization for Rapid Cooling in Supernova Remnants, with applications to the Pa 30 nebula
+    Link: https://arxiv.org/abs/2511.08519
+    (Vector: 0.74, LLM: 25)
 ----------------------------------------
-18. [Score: 49.8] Iron Nuclei in Ultra-High Energy Cosmic Rays Near the Earth
-    Link: https://arxiv.org/abs/2511.15776
-    (Vector: 0.75, LLM: 25)
-----------------------------------------
-19. [Score: 46.8] The diverse morphology of gravitational wave signals from merging neutron-star white-dwarf binaries
-    Link: https://arxiv.org/abs/2511.20970
+21. [Score: 46.9] Disk mass predictions for binary neutron star mergers: limitations of proposed symbolic regression models
+    Link: https://arxiv.org/abs/2511.11887
     (Vector: 0.74, LLM: 20)
 ----------------------------------------
-20. [Score: 46.7] How Bright in Gravitational Waves are Millisecond Pulsars for the Galactic Center GeV Gamma-Ray Excess? A Systematic Study
-    Link: https://arxiv.org/abs/2511.15793
+22. [Score: 46.4] SN 2016iog: A fast declining Type II-L supernova with an ultra-faint tail, persistently interacting with circumstellar material
+    Link: https://arxiv.org/abs/2511.12929
     (Vector: 0.73, LLM: 20)
 ----------------------------------------
-21. [Score: 44.0] Excess of diffuse gamma-ray emission detected from the galaxy cluster Abell 119 from 14-year Fermi-LAT Data
-    Link: https://arxiv.org/abs/2511.15559
-    (Vector: 0.73, LLM: 15)
-----------------------------------------
-22. [Score: 41.7] Study of Flat Spectrum Radio Quasars and BL Lacertae Objects as Sources of Diffusive Ultra High-Energy Cosmic Rays
-    Link: https://arxiv.org/abs/2511.08153
-    (Vector: 0.73, LLM: 10)
-----------------------------------------
-23. [Score: 39.5] A Novel Parameterization for Rapid Cooling in Supernova Remnants, with applications to the Pa 30 nebula
-    Link: https://arxiv.org/abs/2511.08519
+23. [Score: 39.6] Identification and characterization of optical companions to the population of millisecond pulsars in the globular cluster M3
+    Link: https://arxiv.org/abs/2511.01969
     (Vector: 0.74, LLM: 5)
 ----------------------------------------
-24. [Score: 39.5] Discovery of a 9.67-s pulsar in an ultraluminous X-ray source in NGC 4631 with XMM-Newton
-    Link: https://arxiv.org/abs/2511.04282
-    (Vector: 0.74, LLM: 5)
+24. [Score: 38.8] The diverse morphology of gravitational wave signals from merging neutron-star white-dwarf binaries
+    Link: https://arxiv.org/abs/2511.20970
+    (Vector: 0.74, LLM: 4)
 ----------------------------------------
-25. [Score: 37.9] Disk mass predictions for binary neutron star mergers: limitations of proposed symbolic regression models
-    Link: https://arxiv.org/abs/2511.11887
+25. [Score: 37.9] Measuring accretion disc properties in the transitional millisecond pulsar PSR J1023+0038 using XMM-Newton, NuSTAR, NICER and Chandra
+    Link: https://arxiv.org/abs/2511.03457
     (Vector: 0.74, LLM: 2)
 ----------------------------------------
 Generating HTML report: reports/2025-11.html...
@@ -1089,14 +1050,6 @@ Loading bibliography from my-bibtex-Feb-2026.bib (Regex Mode)...
 Found 82 unique entries in bibliography.
 Fetching arXiv listings from https://arxiv.org/list/astro-ph.HE/2025-12?skip=0&show=2000...
 Found 584 papers on arXiv page.
-Enriching 584 papers via ArXiv API...
-  Fetching API batch 1/6...
-  Fetching API batch 2/6...
-  Fetching API batch 3/6...
-  Fetching API batch 4/6...
-  Fetching API batch 5/6...
-  Fetching API batch 6/6...
-Enrichment complete.
 Loaded 6 ignored keywords from ignored-keywords.txt
 Filtered out 176 papers based on ignored keywords. 408 papers remaining.
 Computing embeddings for 82 bibliography entries...
@@ -1150,6 +1103,9 @@ Computing embeddings for 408 new ArXiv papers...
 Computing vector similarity scores...
 
 Top 25 candidates selected for LLM re-scoring based on vector similarity.
+Enriching 25 papers via ArXiv API...
+  Fetching API batch 1/1...
+Enrichment complete.
 Loading existing Research Persona from research_persona.txt...
 Persona loaded successfully.
 Scoring Top Candidates with LLM...
@@ -1182,105 +1138,105 @@ Scoring candidate 25/25: A Wind-Driven Origin for the Firework Morphology o...
 
 ====== FINAL RESULTS ======
 
-1. [Score: 83.5] Hadronic Emissions from the Microquasar V4641 Sgr, SS433, and its implications in the Diffuse Galactic Emission
-    Link: https://arxiv.org/abs/2512.05839
-    (Vector: 0.75, LLM: 92)
-----------------------------------------
-2. [Score: 81.4] Understanding Pulsar Wind Nebulae with the SKA
+1. [Score: 84.9] Understanding Pulsar Wind Nebulae with the SKA
     Link: https://arxiv.org/abs/2512.16160
-    (Vector: 0.78, LLM: 85)
+    (Vector: 0.78, LLM: 92)
 ----------------------------------------
-3. [Score: 80.7] Type IIP SN 2024bch: Hydrodynamic model, shock breakout, and circumstellar interaction
-    Link: https://arxiv.org/abs/2512.01552
-    (Vector: 0.76, LLM: 85)
+2. [Score: 81.0] Revisiting the Supernova Engines in the 3C 397 and W49B Supernova Remnants
+    Link: https://arxiv.org/abs/2512.01176
+    (Vector: 0.77, LLM: 85)
 ----------------------------------------
-4. [Score: 80.2] Scintillating insights into PSR~J0737$-$3039A and the interstellar plasma of the Gum Nebula from MeerKAT
-    Link: https://arxiv.org/abs/2512.10489
+3. [Score: 81.0] Massive Star Clusters as sources of high-energy gamma radiation
+    Link: https://arxiv.org/abs/2512.09743
+    (Vector: 0.77, LLM: 85)
+----------------------------------------
+4. [Score: 80.0] Hadronic Emissions from the Microquasar V4641 Sgr, SS433, and its implications in the Diffuse Galactic Emission
+    Link: https://arxiv.org/abs/2512.05839
     (Vector: 0.75, LLM: 85)
 ----------------------------------------
-5. [Score: 76.5] Identification of radio and gamma-ray pulsars in X-rays using data from the SRG/eROSITA all-sky survey
-    Link: https://arxiv.org/abs/2512.13584
-    (Vector: 0.75, LLM: 78)
+5. [Score: 77.7] The final stages of binary evolution using multi-messenger studies
+    Link: https://arxiv.org/abs/2512.16988
+    (Vector: 0.75, LLM: 80)
 ----------------------------------------
-6. [Score: 74.5] Revisiting the Supernova Engines in the 3C 397 and W49B Supernova Remnants
-    Link: https://arxiv.org/abs/2512.01176
-    (Vector: 0.77, LLM: 72)
+6. [Score: 75.7] SN 2022acko: a low-luminosity SNe IIP with signs of early circumstellar interaction
+    Link: https://arxiv.org/abs/2512.23267
+    (Vector: 0.76, LLM: 75)
 ----------------------------------------
-7. [Score: 72.7] Exploring the Galactic Plane: A Comparative Study of Fermi-LAT Sources and HESS's Non-Detection at TeV Energies
-    Link: https://arxiv.org/abs/2512.16009
-    (Vector: 0.80, LLM: 65)
+7. [Score: 69.8] A Wind-Driven Origin for the Firework Morphology of the Supernova Remnant Pa 30
+    Link: https://arxiv.org/abs/2512.03140
+    (Vector: 0.75, LLM: 65)
 ----------------------------------------
-8. [Score: 63.5] Massive Star Clusters as sources of high-energy gamma radiation
-    Link: https://arxiv.org/abs/2512.09743
-    (Vector: 0.77, LLM: 50)
-----------------------------------------
-9. [Score: 62.3] Discovery of two new millisecond pulsars towards the Galactic bulge
-    Link: https://arxiv.org/abs/2512.16699
-    (Vector: 0.75, LLM: 50)
-----------------------------------------
-10. [Score: 59.9] Observing binary neutron star subpopulations with the Einstein Telescope
-    Link: https://arxiv.org/abs/2512.02296
-    (Vector: 0.75, LLM: 45)
-----------------------------------------
-11. [Score: 55.6] Globular Clusters GMRT Pulsar Search (GCGPS) II: Discovery of five MSPs in M69 and M70
-    Link: https://arxiv.org/abs/2512.11058
-    (Vector: 0.76, LLM: 35)
-----------------------------------------
-12. [Score: 55.4] JWST and HST observations of the host galaxy and supernova, SN 2024aihh in EP240801a at z=1.67
+8. [Score: 67.9] JWST and HST observations of the host galaxy and supernova, SN 2024aihh in EP240801a at z=1.67
     Link: https://arxiv.org/abs/2512.11572
-    (Vector: 0.76, LLM: 35)
+    (Vector: 0.76, LLM: 60)
 ----------------------------------------
-13. [Score: 54.6] A Search for Hard X-ray/Soft $γ$-ray Emission from SPT-CL J2012-5649 (Abell 3667) Using INTEGRAL/ISGRI
-    Link: https://arxiv.org/abs/2512.12616
-    (Vector: 0.79, LLM: 30)
+9. [Score: 66.2] Exploring the Galactic Plane: A Comparative Study of Fermi-LAT Sources and HESS's Non-Detection at TeV Energies
+    Link: https://arxiv.org/abs/2512.16009
+    (Vector: 0.80, LLM: 52)
 ----------------------------------------
-14. [Score: 53.3] $^{12}$CO $J$=3--2 Observations of Tycho's supernova remnant: constraints on the environmental gas properties
-    Link: https://arxiv.org/abs/2512.10245
-    (Vector: 0.77, LLM: 30)
+10. [Score: 62.6] On the Cooling of Compact Stars in Light of the HESS J1731-347 Remnant
+    Link: https://arxiv.org/abs/2512.21406
+    (Vector: 0.80, LLM: 45)
 ----------------------------------------
-15. [Score: 53.1] An extragalactic gamma-ray binary formed in supernova 2022jli
-    Link: https://arxiv.org/abs/2512.09223
+11. [Score: 59.5] Inference of Neutron Star Mass Distributions and the Equation of State from Multi-messenger Observations
+    Link: https://arxiv.org/abs/2512.12130
+    (Vector: 0.79, LLM: 40)
+----------------------------------------
+12. [Score: 54.8] Discovery of two new millisecond pulsars towards the Galactic bulge
+    Link: https://arxiv.org/abs/2512.16699
+    (Vector: 0.75, LLM: 35)
+----------------------------------------
+13. [Score: 53.2] Type IIP SN 2024bch: Hydrodynamic model, shock breakout, and circumstellar interaction
+    Link: https://arxiv.org/abs/2512.01552
     (Vector: 0.76, LLM: 30)
 ----------------------------------------
-16. [Score: 52.7] The final stages of binary evolution using multi-messenger studies
-    Link: https://arxiv.org/abs/2512.16988
+14. [Score: 52.5] The supernova Ia progenitor problem in the 2040s
+    Link: https://arxiv.org/abs/2512.16991
     (Vector: 0.75, LLM: 30)
 ----------------------------------------
-17. [Score: 52.5] Fermi-LAT detections of novae V1723 Sco and V6598 Sgr
-    Link: https://arxiv.org/abs/2512.14198
+15. [Score: 52.5] Identification of radio and gamma-ray pulsars in X-rays using data from the SRG/eROSITA all-sky survey
+    Link: https://arxiv.org/abs/2512.13584
     (Vector: 0.75, LLM: 30)
 ----------------------------------------
-18. [Score: 52.4] Unveiling SN 2022eyw: A Bright Member of the Type Iax Supernova Subclass
+16. [Score: 52.4] Unveiling SN 2022eyw: A Bright Member of the Type Iax Supernova Subclass
     Link: https://arxiv.org/abs/2512.23428
     (Vector: 0.75, LLM: 30)
 ----------------------------------------
-19. [Score: 52.3] SN 2024afav: A Superluminous Supernova with Multiple Light Curve Bumps and Spectroscopic Signatures of Circumstellar Interaction
+17. [Score: 52.3] SN 2024afav: A Superluminous Supernova with Multiple Light Curve Bumps and Spectroscopic Signatures of Circumstellar Interaction
     Link: https://arxiv.org/abs/2512.06067
     (Vector: 0.80, LLM: 25)
 ----------------------------------------
-20. [Score: 50.1] On the Cooling of Compact Stars in Light of the HESS J1731-347 Remnant
-    Link: https://arxiv.org/abs/2512.21406
-    (Vector: 0.80, LLM: 20)
+18. [Score: 52.1] A Search for Hard X-ray/Soft $γ$-ray Emission from SPT-CL J2012-5649 (Abell 3667) Using INTEGRAL/ISGRI
+    Link: https://arxiv.org/abs/2512.12616
+    (Vector: 0.79, LLM: 25)
 ----------------------------------------
-21. [Score: 48.2] SN 2022acko: a low-luminosity SNe IIP with signs of early circumstellar interaction
-    Link: https://arxiv.org/abs/2512.23267
+19. [Score: 50.6] Globular Clusters GMRT Pulsar Search (GCGPS) II: Discovery of five MSPs in M69 and M70
+    Link: https://arxiv.org/abs/2512.11058
+    (Vector: 0.76, LLM: 25)
+----------------------------------------
+20. [Score: 48.3] $^{12}$CO $J$=3--2 Observations of Tycho's supernova remnant: constraints on the environmental gas properties
+    Link: https://arxiv.org/abs/2512.10245
+    (Vector: 0.77, LLM: 20)
+----------------------------------------
+21. [Score: 48.1] An extragalactic gamma-ray binary formed in supernova 2022jli
+    Link: https://arxiv.org/abs/2512.09223
     (Vector: 0.76, LLM: 20)
 ----------------------------------------
-22. [Score: 47.7] SN 2025ogs: A Spectroscopically-Normal Type Ia Supernova at z = 2 as a Benchmark for Redshift Evolution
+22. [Score: 47.7] Scintillating insights into PSR~J0737$-$3039A and the interstellar plasma of the Gum Nebula from MeerKAT
+    Link: https://arxiv.org/abs/2512.10489
+    (Vector: 0.75, LLM: 20)
+----------------------------------------
+23. [Score: 47.7] SN 2025ogs: A Spectroscopically-Normal Type Ia Supernova at z = 2 as a Benchmark for Redshift Evolution
     Link: https://arxiv.org/abs/2512.19783
     (Vector: 0.75, LLM: 20)
 ----------------------------------------
-23. [Score: 41.5] Inference of Neutron Star Mass Distributions and the Equation of State from Multi-messenger Observations
-    Link: https://arxiv.org/abs/2512.12130
-    (Vector: 0.79, LLM: 4)
+24. [Score: 47.4] Observing binary neutron star subpopulations with the Einstein Telescope
+    Link: https://arxiv.org/abs/2512.02296
+    (Vector: 0.75, LLM: 20)
 ----------------------------------------
-24. [Score: 39.8] A Wind-Driven Origin for the Firework Morphology of the Supernova Remnant Pa 30
-    Link: https://arxiv.org/abs/2512.03140
-    (Vector: 0.75, LLM: 5)
-----------------------------------------
-25. [Score: 38.5] The supernova Ia progenitor problem in the 2040s
-    Link: https://arxiv.org/abs/2512.16991
-    (Vector: 0.75, LLM: 2)
+25. [Score: 45.0] Fermi-LAT detections of novae V1723 Sco and V6598 Sgr
+    Link: https://arxiv.org/abs/2512.14198
+    (Vector: 0.75, LLM: 15)
 ----------------------------------------
 Generating HTML report: reports/2025-12.html...
 HTML report saved to /Users/facero/Documents/Work/Program/arxiv-reader/reports/2025-12.html
@@ -1304,13 +1260,6 @@ Loading bibliography from my-bibtex-Feb-2026.bib (Regex Mode)...
 Found 82 unique entries in bibliography.
 Fetching arXiv listings from https://arxiv.org/list/astro-ph.HE/2026-01?skip=0&show=2000...
 Found 478 papers on arXiv page.
-Enriching 478 papers via ArXiv API...
-  Fetching API batch 1/5...
-  Fetching API batch 2/5...
-  Fetching API batch 3/5...
-  Fetching API batch 4/5...
-  Fetching API batch 5/5...
-Enrichment complete.
 Loaded 6 ignored keywords from ignored-keywords.txt
 Filtered out 149 papers based on ignored keywords. 329 papers remaining.
 Computing embeddings for 82 bibliography entries...
@@ -1356,6 +1305,9 @@ Computing embeddings for 329 new ArXiv papers...
 Computing vector similarity scores...
 
 Top 25 candidates selected for LLM re-scoring based on vector similarity.
+Enriching 25 papers via ArXiv API...
+  Fetching API batch 1/1...
+Enrichment complete.
 Loading existing Research Persona from research_persona.txt...
 Persona loaded successfully.
 Scoring Top Candidates with LLM...
@@ -1388,105 +1340,105 @@ Scoring candidate 25/25: A COLIBRI Photometric Study of SN 2025bvm: A Norma...
 
 ====== FINAL RESULTS ======
 
-1. [Score: 93.9] On the hadronic origin of the very high energy $γ$-ray emission surrounding the young massive stellar cluster Westerlund 1
+1. [Score: 91.4] On the hadronic origin of the very high energy $γ$-ray emission surrounding the young massive stellar cluster Westerlund 1
     Link: https://arxiv.org/abs/2601.17324
-    (Vector: 0.91, LLM: 97)
+    (Vector: 0.91, LLM: 92)
 ----------------------------------------
-2. [Score: 89.2] Investigating the emission signatures of pulsar halo candidate HESS J1813-126
+2. [Score: 90.7] Investigating the emission signatures of pulsar halo candidate HESS J1813-126
     Link: https://arxiv.org/abs/2601.21689
-    (Vector: 0.83, LLM: 95)
+    (Vector: 0.83, LLM: 98)
 ----------------------------------------
-3. [Score: 87.2] New Hard X-Ray and Multiwavelength Study of the PeVatron Candidate PWN G0.9+0.1 in the Galactic Center Region
+3. [Score: 87.6] Investigating Pulsar Wind Nebula DA 495: Insights from LHAASO and Multi-Wavelength Observations
+    Link: https://arxiv.org/abs/2601.11071
+    (Vector: 0.77, LLM: 98)
+----------------------------------------
+4. [Score: 87.2] New Hard X-Ray and Multiwavelength Study of the PeVatron Candidate PWN G0.9+0.1 in the Galactic Center Region
     Link: https://arxiv.org/abs/2601.09788
     (Vector: 0.79, LLM: 95)
 ----------------------------------------
-4. [Score: 86.9] Gamma-ray Emission from the S147 Region: Indication of Escaping Cosmic Rays Interacting with Molecular Clouds
+5. [Score: 85.4] Gamma-ray Emission from the S147 Region: Indication of Escaping Cosmic Rays Interacting with Molecular Clouds
     Link: https://arxiv.org/abs/2601.20210
-    (Vector: 0.76, LLM: 98)
-----------------------------------------
-5. [Score: 86.1] Investigating Pulsar Wind Nebula DA 495: Insights from LHAASO and Multi-Wavelength Observations
-    Link: https://arxiv.org/abs/2601.11071
-    (Vector: 0.77, LLM: 95)
+    (Vector: 0.76, LLM: 95)
 ----------------------------------------
 6. [Score: 85.2] The Supernova Remnant G284.3$-$1.8 and Its Relation to the Gamma-ray Binary 1FGL J1018.6$-$5856
     Link: https://arxiv.org/abs/2601.14801
     (Vector: 0.78, LLM: 92)
 ----------------------------------------
-7. [Score: 83.6] Hadronic Origin of Sub-PeV Gamma-Ray Emission from LHAASO J0621+3755
-    Link: https://arxiv.org/abs/2601.00692
-    (Vector: 0.75, LLM: 92)
-----------------------------------------
-8. [Score: 75.0] SN 2024abvb: A Type Icn Supernova in the Outskirts of its Host Galaxy
-    Link: https://arxiv.org/abs/2601.01333
-    (Vector: 0.75, LLM: 75)
-----------------------------------------
-9. [Score: 70.5] Detection of giant pulses from the transitional millisecond pulsar J1227$-$4853
-    Link: https://arxiv.org/abs/2601.01563
-    (Vector: 0.76, LLM: 65)
-----------------------------------------
-10. [Score: 69.7] Deciphering the Remnants of Core-Collapse Supernovae: Reconstructing Progenitor Star Properties and Explosion Mechanisms
+7. [Score: 83.2] Deciphering the Remnants of Core-Collapse Supernovae: Reconstructing Progenitor Star Properties and Explosion Mechanisms
     Link: https://arxiv.org/abs/2601.17499
-    (Vector: 0.74, LLM: 65)
+    (Vector: 0.74, LLM: 92)
 ----------------------------------------
-11. [Score: 60.1] SN 2024abfl: A Flat-Plateau, Low-Luminosity Type IIP Supernova with Early CSM Interaction
+8. [Score: 80.1] Hadronic Origin of Sub-PeV Gamma-Ray Emission from LHAASO J0621+3755
+    Link: https://arxiv.org/abs/2601.00692
+    (Vector: 0.75, LLM: 85)
+----------------------------------------
+9. [Score: 74.7] Probing the Diversity of Type Ia Supernova Remnants in 3-D Hydrodynamic Simulations with X-ray Spectral Synthesis
+    Link: https://arxiv.org/abs/2601.20446
+    (Vector: 0.74, LLM: 75)
+----------------------------------------
+10. [Score: 70.0] Physical origin of very-high-energy gamma rays from the low-luminosity active galactic nucleus NGC 4278 and implications for neutrino observations
+    Link: https://arxiv.org/abs/2601.23242
+    (Vector: 0.75, LLM: 65)
+----------------------------------------
+11. [Score: 62.0] Einstein Probe discovery of EP J171159.4-333253: an eclipsing neutron star low-mass X-ray binary with clocked bursts
+    Link: https://arxiv.org/abs/2601.11784
+    (Vector: 0.74, LLM: 50)
+----------------------------------------
+12. [Score: 60.7] Radio timing constraints on the orbital orientation and component masses of PSR J1455$-$3330
+    Link: https://arxiv.org/abs/2601.08541
+    (Vector: 0.76, LLM: 45)
+----------------------------------------
+13. [Score: 60.1] SN 2024abfl: A Flat-Plateau, Low-Luminosity Type IIP Supernova with Early CSM Interaction
     Link: https://arxiv.org/abs/2601.02638
     (Vector: 0.75, LLM: 45)
 ----------------------------------------
-12. [Score: 55.0] Broadband study of the Be/X-ray binary pulsar eRASSU J012422.9-724248 in the Magellanic Bridge, near the Eastern Wing of the Small Magellanic Cloud
+14. [Score: 60.0] Revealing the diversity of Type IIn supernova progenitors through their environments
+    Link: https://arxiv.org/abs/2601.07542
+    (Vector: 0.75, LLM: 45)
+----------------------------------------
+15. [Score: 55.0] Broadband study of the Be/X-ray binary pulsar eRASSU J012422.9-724248 in the Magellanic Bridge, near the Eastern Wing of the Small Magellanic Cloud
     Link: https://arxiv.org/abs/2601.11120
     (Vector: 0.75, LLM: 35)
 ----------------------------------------
-13. [Score: 54.9] The Double-Peaked Calcium-Strong SN 2025coe: Progenitor Constraints from Early Interaction and Ejecta Asymmetries
-    Link: https://arxiv.org/abs/2601.00415
+16. [Score: 54.9] Evolution and afterglow emission of gamma-ray burst jets from binary neutron star mergers
+    Link: https://arxiv.org/abs/2601.08714
     (Vector: 0.75, LLM: 35)
 ----------------------------------------
-14. [Score: 53.2] Propagating Uncertainties from Nuclear Physics to Gamma-rays in Core Collapse Supernovae
+17. [Score: 53.2] Propagating Uncertainties from Nuclear Physics to Gamma-rays in Core Collapse Supernovae
     Link: https://arxiv.org/abs/2601.04464
     (Vector: 0.76, LLM: 30)
 ----------------------------------------
-15. [Score: 52.5] Physical origin of very-high-energy gamma rays from the low-luminosity active galactic nucleus NGC 4278 and implications for neutrino observations
-    Link: https://arxiv.org/abs/2601.23242
-    (Vector: 0.75, LLM: 30)
-----------------------------------------
-16. [Score: 52.4] Turbulent Dynamo Action in Binary Neutron Star Mergers
-    Link: https://arxiv.org/abs/2601.20953
-    (Vector: 0.75, LLM: 30)
-----------------------------------------
-17. [Score: 52.0] A COLIBRI Photometric Study of SN 2025bvm: A Normal, Slowly Declining Type Ia Supernova
-    Link: https://arxiv.org/abs/2601.07745
-    (Vector: 0.74, LLM: 30)
-----------------------------------------
-18. [Score: 49.9] Evolution and afterglow emission of gamma-ray burst jets from binary neutron star mergers
-    Link: https://arxiv.org/abs/2601.08714
-    (Vector: 0.75, LLM: 25)
-----------------------------------------
-19. [Score: 49.7] Probing the Diversity of Type Ia Supernova Remnants in 3-D Hydrodynamic Simulations with X-ray Spectral Synthesis
-    Link: https://arxiv.org/abs/2601.20446
-    (Vector: 0.74, LLM: 25)
-----------------------------------------
-20. [Score: 43.5] First detection of VHE gamma-ray signal from the FSRQ TON 0599
-    Link: https://arxiv.org/abs/2601.03873
-    (Vector: 0.79, LLM: 8)
-----------------------------------------
-21. [Score: 42.6] The Progenitor of the Type II-Plateau SN 2025pht in NGC 1637: The Dustiest, Most Luminous Red Supergiant So Far?
+18. [Score: 48.1] The Progenitor of the Type II-Plateau SN 2025pht in NGC 1637: The Dustiest, Most Luminous Red Supergiant So Far?
     Link: https://arxiv.org/abs/2601.09087
-    (Vector: 0.81, LLM: 4)
+    (Vector: 0.81, LLM: 15)
 ----------------------------------------
-22. [Score: 40.0] Einstein Probe discovery of EP J171159.4-333253: an eclipsing neutron star low-mass X-ray binary with clocked bursts
-    Link: https://arxiv.org/abs/2601.11784
-    (Vector: 0.74, LLM: 6)
+19. [Score: 47.4] The Double-Peaked Calcium-Strong SN 2025coe: Progenitor Constraints from Early Interaction and Ejecta Asymmetries
+    Link: https://arxiv.org/abs/2601.00415
+    (Vector: 0.75, LLM: 20)
 ----------------------------------------
-23. [Score: 40.0] Revealing the diversity of Type IIn supernova progenitors through their environments
-    Link: https://arxiv.org/abs/2601.07542
-    (Vector: 0.75, LLM: 5)
+20. [Score: 47.4] Turbulent Dynamo Action in Binary Neutron Star Mergers
+    Link: https://arxiv.org/abs/2601.20953
+    (Vector: 0.75, LLM: 20)
 ----------------------------------------
-24. [Score: 39.7] Radio timing constraints on the orbital orientation and component masses of PSR J1455$-$3330
-    Link: https://arxiv.org/abs/2601.08541
-    (Vector: 0.76, LLM: 3)
+21. [Score: 42.0] First detection of VHE gamma-ray signal from the FSRQ TON 0599
+    Link: https://arxiv.org/abs/2601.03873
+    (Vector: 0.79, LLM: 5)
 ----------------------------------------
-25. [Score: 39.5] Probing the morphology of the Gum Nebula through pulsar observables and a novel distance estimation method
+22. [Score: 39.5] Probing the morphology of the Gum Nebula through pulsar observables and a novel distance estimation method
     Link: https://arxiv.org/abs/2601.05791
     (Vector: 0.74, LLM: 5)
+----------------------------------------
+23. [Score: 39.0] SN 2024abvb: A Type Icn Supernova in the Outskirts of its Host Galaxy
+    Link: https://arxiv.org/abs/2601.01333
+    (Vector: 0.75, LLM: 3)
+----------------------------------------
+24. [Score: 38.0] Detection of giant pulses from the transitional millisecond pulsar J1227$-$4853
+    Link: https://arxiv.org/abs/2601.01563
+    (Vector: 0.76, LLM: 0)
+----------------------------------------
+25. [Score: 37.0] A COLIBRI Photometric Study of SN 2025bvm: A Normal, Slowly Declining Type Ia Supernova
+    Link: https://arxiv.org/abs/2601.07745
+    (Vector: 0.74, LLM: 0)
 ----------------------------------------
 Generating HTML report: reports/2026-01.html...
 HTML report saved to /Users/facero/Documents/Work/Program/arxiv-reader/reports/2026-01.html
@@ -1499,613 +1451,5 @@ Reading list page saved to /Users/facero/Documents/Work/Program/arxiv-reader/rep
 ✅ Successfully processed 2026-01
    Total papers: 478
    After filtering: 329
-   Top matches: 25
-
-Starting batch processing for months: ['2025-08']
-
-============================================================
-Processing arXiv papers for: 2025-08
-============================================================
-
-Loading bibliography from my-bibtex-Feb-2026.bib (Regex Mode)...
-Found 82 unique entries in bibliography.
-Fetching arXiv listings from https://arxiv.org/list/astro-ph.HE/2025-08?skip=0&show=2000...
-Found 444 papers on arXiv page.
-Enriching 444 papers via ArXiv API...
-  Fetching API batch 1/5...
-  Fetching API batch 2/5...
-  Fetching API batch 3/5...
-  Fetching API batch 4/5...
-  Fetching API batch 5/5...
-Enrichment complete.
-Loaded 6 ignored keywords from ignored-keywords.txt
-Filtered out 140 papers based on ignored keywords. 304 papers remaining.
-Computing embeddings for 82 bibliography entries...
-  Embedded 20/82 bibliography entries...
-  Embedded 40/82 bibliography entries...
-  Embedded 60/82 bibliography entries...
-  Embedded 80/82 bibliography entries...
-  Embedded 82/82 bibliography entries...
-Computing embeddings for 304 new ArXiv papers...
-  Embedded 10/304 papers...
-  Embedded 20/304 papers...
-  Embedded 30/304 papers...
-  Embedded 40/304 papers...
-  Embedded 50/304 papers...
-  Embedded 60/304 papers...
-  Embedded 70/304 papers...
-  Embedded 80/304 papers...
-  Embedded 90/304 papers...
-  Embedded 100/304 papers...
-  Embedded 110/304 papers...
-  Embedded 120/304 papers...
-  Embedded 130/304 papers...
-  Embedded 140/304 papers...
-  Embedded 150/304 papers...
-  Embedded 160/304 papers...
-  Embedded 170/304 papers...
-  Embedded 180/304 papers...
-  Embedded 190/304 papers...
-  Embedded 200/304 papers...
-  Embedded 210/304 papers...
-  Embedded 220/304 papers...
-  Embedded 230/304 papers...
-  Embedded 240/304 papers...
-  Embedded 250/304 papers...
-  Embedded 260/304 papers...
-  Embedded 270/304 papers...
-  Embedded 280/304 papers...
-  Embedded 290/304 papers...
-  Embedded 300/304 papers...
-  Embedded 304/304 papers...
-Computing vector similarity scores...
-
-Top 25 candidates selected for LLM re-scoring based on vector similarity.
-Loading existing Research Persona from research_persona.txt...
-Persona loaded successfully.
-Scoring Top Candidates with LLM...
-Scoring candidate 1/25: Constraining the TeV gamma-ray emission of SN 2024...
-Starting batch processing for months: ['2025-08']
-
-============================================================
-Processing arXiv papers for: 2025-08
-============================================================
-
-Loading bibliography from my-bibtex-Feb-2026.bib (Regex Mode)...
-Found 82 unique entries in bibliography.
-Fetching arXiv listings from https://arxiv.org/list/astro-ph.HE/2025-08?skip=0&show=2000...
-Found 444 papers on arXiv page.
-Enriching 444 papers via ArXiv API...
-  Fetching API batch 1/5...
-  Fetching API batch 2/5...
-  Fetching API batch 3/5...
-  Fetching API batch 4/5...
-  Fetching API batch 5/5...
-Enrichment complete.
-Loaded 6 ignored keywords from ignored-keywords.txt
-Filtered out 140 papers based on ignored keywords. 304 papers remaining.
-Computing embeddings for 82 bibliography entries...
-  Embedded 20/82 bibliography entries...
-  Embedded 40/82 bibliography entries...
-  Embedded 60/82 bibliography entries...
-  Embedded 80/82 bibliography entries...
-  Embedded 82/82 bibliography entries...
-Computing embeddings for 304 new ArXiv papers...
-  Embedded 10/304 papers...
-  Embedded 20/304 papers...
-  Embedded 30/304 papers...
-  Embedded 40/304 papers...
-  Embedded 50/304 papers...
-  Embedded 60/304 papers...
-  Embedded 70/304 papers...
-  Embedded 80/304 papers...
-  Embedded 90/304 papers...
-  Embedded 100/304 papers...
-  Embedded 110/304 papers...
-  Embedded 120/304 papers...
-  Embedded 130/304 papers...
-  Embedded 140/304 papers...
-  Embedded 150/304 papers...
-  Embedded 160/304 papers...
-  Embedded 170/304 papers...
-  Embedded 180/304 papers...
-  Embedded 190/304 papers...
-  Embedded 200/304 papers...
-  Embedded 210/304 papers...
-  Embedded 220/304 papers...
-  Embedded 230/304 papers...
-  Embedded 240/304 papers...
-  Embedded 250/304 papers...
-  Embedded 260/304 papers...
-  Embedded 270/304 papers...
-  Embedded 280/304 papers...
-  Embedded 290/304 papers...
-  Embedded 300/304 papers...
-  Embedded 304/304 papers...
-Computing vector similarity scores...
-
-Top 25 candidates selected for LLM re-scoring based on vector similarity.
-Loading existing Research Persona from research_persona.txt...
-Persona loaded successfully.
-Scoring Top Candidates with LLM...
-Scoring candidate 1/25: Constraining the TeV gamma-ray emission of SN 2024...
-Scoring candidate 2/25: X-ray studies of PSR J1838$-$0655 and its wind neb...
-Scoring candidate 3/25: Detection of Diffuse Radio Emission inside the Sup...
-Scoring candidate 4/25: The Type II SN 2025pht in NGC 1637: A Red Supergia...
-Scoring candidate 5/25: Optical and near-infrared nebular-phase spectrosco...
-Scoring candidate 6/25: Constraints on the progenitor and explosion of SN ...
-Scoring candidate 7/25: SN 2024gy: Multi-epoch Spectroscopic Features Sugg...
-Scoring candidate 8/25: Investigating the Impact of Higher-Order Phase Tra...
-Scoring candidate 9/25: Runaway stars and the Galactic supernova remnant l...
-Scoring candidate 10/25: Constraining Common Envelope Evolution in Binary N...
-Scoring candidate 11/25: High-resolution Radio Study of Pulsar Wind Nebula ...
-Scoring candidate 12/25: Very high-energy gamma-ray and neutrino emission f...
-Scoring candidate 13/25: Impact of thermal effects on prompt-collapse binar...
-Scoring candidate 14/25: Contribution of Globular Clusters to Diffuse Gamma...
-Scoring candidate 15/25: MUSE Observations Reveal Optical Coronal Iron Line...
-Scoring candidate 16/25: Challenging a binary neutron star merger interpret...
-Scoring candidate 17/25: HAWC, VERITAS, Fermi-LAT and XMM-Newton follow-up ...
-Scoring candidate 18/25: Deciphering the gamma-ray emission in the Cygnus r...
-Scoring candidate 19/25: A Targeted Gamma-Ray Search of Five Prominent Gala...
-Scoring candidate 20/25: Radio Observations of a Candidate Redback Millisec...
-Scoring candidate 21/25: The X-ray Source Population of the Metal-Rich Glob...
-Scoring candidate 22/25: The First Radio-Bright Off-Nuclear TDE 2024tvd Rev...
-Scoring candidate 23/25: Late-time Hubble Space Telescope Ultraviolet Spect...
-Scoring candidate 24/25: PSR J0614-3329: A NICER case for Strange Quark Sta...
-Scoring candidate 25/25: Optical emission from luminous and very soft X-ray...
-
-
-====== FINAL RESULTS ======
-
-1. [Score: 90.9] Detection of Diffuse Radio Emission inside the Supernova Remnant G338.3-0.0 associated with the Gamma-ray Source HESS J1640-465
-    Link: https://arxiv.org/abs/2508.18999
-    (Vector: 0.84, LLM: 98)
-----------------------------------------
-2. [Score: 88.1] X-ray studies of PSR J1838$-$0655 and its wind nebula associated with HESS J1837$-$069 and 1LHAASO J1837$-$0654u
-    Link: https://arxiv.org/abs/2508.07660
-    (Vector: 0.84, LLM: 92)
-----------------------------------------
-3. [Score: 87.4] Constraining the TeV gamma-ray emission of SN 2024bch, a possible type IIn-L from a red supergiant progenitor. Multiwavelength observations and analysis of the progenitor
-    Link: https://arxiv.org/abs/2508.20048
-    (Vector: 1.00, LLM: 75)
-----------------------------------------
-4. [Score: 86.7] Deciphering the gamma-ray emission in the Cygnus region
-    Link: https://arxiv.org/abs/2508.21644
-    (Vector: 0.75, LLM: 98)
-----------------------------------------
-5. [Score: 84.8] Runaway stars and the Galactic supernova remnant landscape: non-thermal emission and observational evidence
-    Link: https://arxiv.org/abs/2508.12721
-    (Vector: 0.78, LLM: 92)
-----------------------------------------
-6. [Score: 84.5] High-resolution Radio Study of Pulsar Wind Nebula MSH 15-52 and Supernova Remnant RCW 89
-    Link: https://arxiv.org/abs/2508.14476
-    (Vector: 0.77, LLM: 92)
-----------------------------------------
-7. [Score: 81.3] HAWC, VERITAS, Fermi-LAT and XMM-Newton follow-up observations of the unidentified ultra-high-energy gamma-ray source LHAASO J2108+5157
-    Link: https://arxiv.org/abs/2508.01934
-    (Vector: 0.76, LLM: 87)
-----------------------------------------
-8. [Score: 75.5] MUSE Observations Reveal Optical Coronal Iron Lines from Shock Emission in Supernova Remnant 0540-69.3
-    Link: https://arxiv.org/abs/2508.14570
-    (Vector: 0.76, LLM: 75)
-----------------------------------------
-9. [Score: 70.6] Optical and near-infrared nebular-phase spectroscopy of SN 2024ggi: constraints on the structure of the inner ejecta, progenitor mass, and dust
-    Link: https://arxiv.org/abs/2508.02656
-    (Vector: 0.81, LLM: 60)
-----------------------------------------
-10. [Score: 64.4] Very high-energy gamma-ray and neutrino emission from hadronic interaction in compact binary millisecond pulsars
-    Link: https://arxiv.org/abs/2508.20952
-    (Vector: 0.77, LLM: 52)
-----------------------------------------
-11. [Score: 59.3] Impact of thermal effects on prompt-collapse binary neutron star mergers
-    Link: https://arxiv.org/abs/2508.09333
-    (Vector: 0.77, LLM: 42)
-----------------------------------------
-12. [Score: 57.7] SN 2024gy: Multi-epoch Spectroscopic Features Suggestive of Delayed Detonation in a Type Ia Supernova
-    Link: https://arxiv.org/abs/2508.01428
-    (Vector: 0.80, LLM: 35)
-----------------------------------------
-13. [Score: 54.8] Radio Observations of a Candidate Redback Millisecond Pulsar: 1FGL J0523.5-2529
-    Link: https://arxiv.org/abs/2508.15435
-    (Vector: 0.75, LLM: 35)
-----------------------------------------
-14. [Score: 52.8] Challenging a binary neutron star merger interpretation of GW230529
-    Link: https://arxiv.org/abs/2508.08750
-    (Vector: 0.76, LLM: 30)
-----------------------------------------
-15. [Score: 52.0] PSR J0614-3329: A NICER case for Strange Quark Stars
-    Link: https://arxiv.org/abs/2508.02652
-    (Vector: 0.74, LLM: 30)
-----------------------------------------
-16. [Score: 51.4] The Type II SN 2025pht in NGC 1637: A Red Supergiant with Carbon-rich Circumstellar Dust as the First JWST Detection of a Supernova Progenitor Star
-    Link: https://arxiv.org/abs/2508.10994
-    (Vector: 0.83, LLM: 20)
-----------------------------------------
-17. [Score: 48.3] Contribution of Globular Clusters to Diffuse Gamma-ray Emission from Galactic Plane
-    Link: https://arxiv.org/abs/2508.15295
-    (Vector: 0.77, LLM: 20)
-----------------------------------------
-18. [Score: 47.3] A Targeted Gamma-Ray Search of Five Prominent Galaxy Merger Systems with 17 years of Fermi-LAT Data
-    Link: https://arxiv.org/abs/2508.06232
-    (Vector: 0.75, LLM: 20)
-----------------------------------------
-19. [Score: 47.2] The First Radio-Bright Off-Nuclear TDE 2024tvd Reveals the Fastest-Evolving Double-Peaked Radio Emission
-    Link: https://arxiv.org/abs/2508.03807
-    (Vector: 0.74, LLM: 20)
-----------------------------------------
-20. [Score: 47.1] Late-time Hubble Space Telescope Ultraviolet Spectra of SN 2023ixf and SN 2024ggi Show Ongoing Interaction with Circumstellar Material
-    Link: https://arxiv.org/abs/2508.11756
-    (Vector: 0.74, LLM: 20)
-----------------------------------------
-21. [Score: 41.9] Constraints on the progenitor and explosion of SN 2024ggi in harmony with pre-explosion detection and hydrodynamic simulations
-    Link: https://arxiv.org/abs/2508.10573
-    (Vector: 0.81, LLM: 3)
-----------------------------------------
-22. [Score: 41.4] Investigating the Impact of Higher-Order Phase Transitions in Binary Neutron-Star Mergers
-    Link: https://arxiv.org/abs/2508.10698
-    (Vector: 0.78, LLM: 5)
-----------------------------------------
-23. [Score: 41.1] Constraining Common Envelope Evolution in Binary Neutron Star Formation with Combined Galactic and Gravitational-Wave Observations
-    Link: https://arxiv.org/abs/2508.14397
-    (Vector: 0.77, LLM: 5)
-----------------------------------------
-24. [Score: 39.8] The X-ray Source Population of the Metal-Rich Globular Cluster NGC 6528
-    Link: https://arxiv.org/abs/2508.10105
-    (Vector: 0.75, LLM: 5)
-----------------------------------------
-25. [Score: 39.3] Optical emission from luminous and very soft X-ray sources in nearby galaxies: testing the scenario of edge-on supercritical accretion systems
-    Link: https://arxiv.org/abs/2508.08553
-    (Vector: 0.74, LLM: 5)
-----------------------------------------
-Generating HTML report: reports/2025-08.html...
-HTML report saved to /Users/facero/Documents/Work/Program/arxiv-reader/reports/2025-08.html
-Updated archive metadata for 2025-08
-Generating archive index page: reports/index.html...
-Archive index page saved to /Users/facero/Documents/Work/Program/arxiv-reader/reports/index.html
-Generating reading list page: reports/reading_list.html...
-Reading list page saved to /Users/facero/Documents/Work/Program/arxiv-reader/reports/reading_list.html
-
-✅ Successfully processed 2025-08
-   Total papers: 444
-   After filtering: 304
-   Top matches: 25
-
-Starting batch processing for months: ['2025-08']
-
-============================================================
-Processing arXiv papers for: 2025-08
-============================================================
-
-Loading bibliography from my-bibtex-Feb-2026.bib (Regex Mode)...
-Found 82 unique entries in bibliography.
-Fetching arXiv listings from https://arxiv.org/list/astro-ph.HE/2025-08?skip=0&show=2000...
-Found 444 papers on arXiv page.
-Loaded 6 ignored keywords from ignored-keywords.txt
-Filtered out 140 papers based on ignored keywords. 304 papers remaining.
-Enriching 304 papers via ArXiv API...
-  Fetching API batch 1/4...
-  Fetching API batch 2/4...
-  Fetching API batch 3/4...
-  Fetching API batch 4/4...
-Enrichment complete.
-Computing embeddings for 82 bibliography entries...
-  Embedded 20/82 bibliography entries...
-  Embedded 40/82 bibliography entries...
-  Embedded 60/82 bibliography entries...
-  Embedded 80/82 bibliography entries...
-  Embedded 82/82 bibliography entries...
-Computing embeddings for 304 new ArXiv papers...
-  Embedded 10/304 papers...
-  Embedded 20/304 papers...
-  Embedded 30/304 papers...
-  Embedded 40/304 papers...
-  Embedded 50/304 papers...
-  Embedded 60/304 papers...
-  Embedded 70/304 papers...
-  Embedded 80/304 papers...
-  Embedded 90/304 papers...
-  Embedded 100/304 papers...
-  Embedded 110/304 papers...
-  Embedded 120/304 papers...
-  Embedded 130/304 papers...
-  Embedded 140/304 papers...
-  Embedded 150/304 papers...
-  Embedded 160/304 papers...
-  Embedded 170/304 papers...
-  Embedded 180/304 papers...
-  Embedded 190/304 papers...
-  Embedded 200/304 papers...
-  Embedded 210/304 papers...
-  Embedded 220/304 papers...
-  Embedded 230/304 papers...
-  Embedded 240/304 papers...
-  Embedded 250/304 papers...
-  Embedded 260/304 papers...
-  Embedded 270/304 papers...
-  Embedded 280/304 papers...
-  Embedded 290/304 papers...
-  Embedded 300/304 papers...
-  Embedded 304/304 papers...
-Computing vector similarity scores...
-
-Top 25 candidates selected for LLM re-scoring based on vector similarity.
-Loading existing Research Persona from research_persona.txt...
-Persona loaded successfully.
-Scoring Top Candidates with LLM...
-Scoring candidate 1/25: Constraining the TeV gamma-ray emission of SN 2024...
-Scoring candidate 2/25: X-ray studies of PSR J1838$-$0655 and its wind neb...
-Starting batch processing for months: ['2025-08']
-
-============================================================
-Processing arXiv papers for: 2025-08
-============================================================
-
-Loading bibliography from my-bibtex-Feb-2026.bib (Regex Mode)...
-Found 82 unique entries in bibliography.
-Fetching arXiv listings from https://arxiv.org/list/astro-ph.HE/2025-08?skip=0&show=2000...
-Found 444 papers on arXiv page.
-Loaded 6 ignored keywords from ignored-keywords.txt
-Filtered out 140 papers based on ignored keywords. 304 papers remaining.
-Computing embeddings for 82 bibliography entries...
-  Embedded 20/82 bibliography entries...
-  Embedded 40/82 bibliography entries...
-  Embedded 60/82 bibliography entries...
-  Embedded 80/82 bibliography entries...
-  Embedded 82/82 bibliography entries...
-Computing embeddings for 304 new ArXiv papers...
-  Embedded 10/304 papers...
-  Embedded 20/304 papers...
-  Embedded 30/304 papers...
-  Embedded 40/304 papers...
-  Embedded 50/304 papers...
-  Embedded 60/304 papers...
-  Embedded 70/304 papers...
-  Embedded 80/304 papers...
-  Embedded 90/304 papers...
-  Embedded 100/304 papers...
-  Embedded 110/304 papers...
-  Embedded 120/304 papers...
-  Embedded 130/304 papers...
-  Embedded 140/304 papers...
-  Embedded 150/304 papers...
-  Embedded 160/304 papers...
-  Embedded 170/304 papers...
-  Embedded 180/304 papers...
-  Embedded 190/304 papers...
-  Embedded 200/304 papers...
-  Embedded 210/304 papers...
-  Embedded 220/304 papers...
-  Embedded 230/304 papers...
-  Embedded 240/304 papers...
-  Embedded 250/304 papers...
-  Embedded 260/304 papers...
-  Embedded 270/304 papers...
-  Embedded 280/304 papers...
-  Embedded 290/304 papers...
-  Embedded 300/304 papers...
-  Embedded 304/304 papers...
-Computing vector similarity scores...
-
-Top 25 candidates selected for LLM re-scoring based on vector similarity.
-Enriching 25 papers via ArXiv API...
-  Fetching API batch 1/1...
-Enrichment complete.
-Loading existing Research Persona from research_persona.txt...
-Persona loaded successfully.
-Scoring Top Candidates with LLM...
-Scoring candidate 1/25: Constraining the TeV gamma-ray emission of SN 2024...
-Scoring candidate 2/25: X-ray studies of PSR J1838$-$0655 and its wind neb...
-Scoring candidate 3/25: Detection of Diffuse Radio Emission inside the Sup...
-Scoring candidate 4/25: The Type II SN 2025pht in NGC 1637: A Red Supergia...
-Scoring candidate 5/25: Optical and near-infrared nebular-phase spectrosco...
-Scoring candidate 6/25: Constraints on the progenitor and explosion of SN ...
-Scoring candidate 7/25: SN 2024gy: Multi-epoch Spectroscopic Features Sugg...
-Scoring candidate 8/25: Investigating the Impact of Higher-Order Phase Tra...
-Scoring candidate 9/25: Runaway stars and the Galactic supernova remnant l...
-Scoring candidate 10/25: Constraining Common Envelope Evolution in Binary N...
-Scoring candidate 11/25: High-resolution Radio Study of Pulsar Wind Nebula ...
-Scoring candidate 12/25: Very high-energy gamma-ray and neutrino emission f...
-Scoring candidate 13/25: Impact of thermal effects on prompt-collapse binar...
-Scoring candidate 14/25: Contribution of Globular Clusters to Diffuse Gamma...
-Scoring candidate 15/25: MUSE Observations Reveal Optical Coronal Iron Line...
-Starting batch processing for months: ['2025-08']
-
-============================================================
-Processing arXiv papers for: 2025-08
-============================================================
-
-Loading bibliography from my-bibtex-Feb-2026.bib (Regex Mode)...
-Found 82 unique entries in bibliography.
-Fetching arXiv listings from https://arxiv.org/list/astro-ph.HE/2025-08?skip=0&show=2000...
-Found 444 papers on arXiv page.
-Loaded 6 ignored keywords from ignored-keywords.txt
-Filtered out 140 papers based on ignored keywords. 304 papers remaining.
-Computing embeddings for 82 bibliography entries...
-  Embedded 20/82 bibliography entries...
-  Embedded 40/82 bibliography entries...
-  Embedded 60/82 bibliography entries...
-  Embedded 80/82 bibliography entries...
-  Embedded 82/82 bibliography entries...
-Computing embeddings for 304 new ArXiv papers...
-  Embedded 10/304 papers...
-  Embedded 20/304 papers...
-  Embedded 30/304 papers...
-  Embedded 40/304 papers...
-  Embedded 50/304 papers...
-  Embedded 60/304 papers...
-  Embedded 70/304 papers...
-  Embedded 80/304 papers...
-  Embedded 90/304 papers...
-  Embedded 100/304 papers...
-  Embedded 110/304 papers...
-  Embedded 120/304 papers...
-  Embedded 130/304 papers...
-  Embedded 140/304 papers...
-  Embedded 150/304 papers...
-  Embedded 160/304 papers...
-  Embedded 170/304 papers...
-  Embedded 180/304 papers...
-  Embedded 190/304 papers...
-  Embedded 200/304 papers...
-  Embedded 210/304 papers...
-  Embedded 220/304 papers...
-  Embedded 230/304 papers...
-  Embedded 240/304 papers...
-  Embedded 250/304 papers...
-  Embedded 260/304 papers...
-  Embedded 270/304 papers...
-  Embedded 280/304 papers...
-  Embedded 290/304 papers...
-  Embedded 300/304 papers...
-  Embedded 304/304 papers...
-Computing vector similarity scores...
-
-Top 25 candidates selected for LLM re-scoring based on vector similarity.
-Enriching 25 papers via ArXiv API...
-  Fetching API batch 1/1...
-Enrichment complete.
-Loading existing Research Persona from research_persona.txt...
-Persona loaded successfully.
-Scoring Top Candidates with LLM...
-Scoring candidate 1/25: Constraining the TeV gamma-ray emission of SN 2024...
-Scoring candidate 2/25: X-ray studies of PSR J1838$-$0655 and its wind neb...
-Scoring candidate 3/25: Detection of Diffuse Radio Emission inside the Sup...
-Scoring candidate 4/25: The Type II SN 2025pht in NGC 1637: A Red Supergia...
-Scoring candidate 5/25: Optical and near-infrared nebular-phase spectrosco...
-Scoring candidate 6/25: Constraints on the progenitor and explosion of SN ...
-Scoring candidate 7/25: SN 2024gy: Multi-epoch Spectroscopic Features Sugg...
-Scoring candidate 8/25: Investigating the Impact of Higher-Order Phase Tra...
-Scoring candidate 9/25: Runaway stars and the Galactic supernova remnant l...
-Scoring candidate 10/25: Constraining Common Envelope Evolution in Binary N...
-Scoring candidate 11/25: High-resolution Radio Study of Pulsar Wind Nebula ...
-Scoring candidate 12/25: Very high-energy gamma-ray and neutrino emission f...
-Scoring candidate 13/25: Impact of thermal effects on prompt-collapse binar...
-Scoring candidate 14/25: Contribution of Globular Clusters to Diffuse Gamma...
-Scoring candidate 15/25: MUSE Observations Reveal Optical Coronal Iron Line...
-Scoring candidate 16/25: Challenging a binary neutron star merger interpret...
-Scoring candidate 17/25: HAWC, VERITAS, Fermi-LAT and XMM-Newton follow-up ...
-Scoring candidate 18/25: Deciphering the gamma-ray emission in the Cygnus r...
-Scoring candidate 19/25: A Targeted Gamma-Ray Search of Five Prominent Gala...
-Scoring candidate 20/25: Radio Observations of a Candidate Redback Millisec...
-Scoring candidate 21/25: The X-ray Source Population of the Metal-Rich Glob...
-Scoring candidate 22/25: The First Radio-Bright Off-Nuclear TDE 2024tvd Rev...
-Scoring candidate 23/25: Late-time Hubble Space Telescope Ultraviolet Spect...
-Scoring candidate 24/25: PSR J0614-3329: A NICER case for Strange Quark Sta...
-Scoring candidate 25/25: Optical emission from luminous and very soft X-ray...
-
-
-====== FINAL RESULTS ======
-
-1. [Score: 88.1] X-ray studies of PSR J1838$-$0655 and its wind nebula associated with HESS J1837$-$069 and 1LHAASO J1837$-$0654u
-    Link: https://arxiv.org/abs/2508.07660
-    (Vector: 0.84, LLM: 92)
-----------------------------------------
-2. [Score: 87.9] Detection of Diffuse Radio Emission inside the Supernova Remnant G338.3-0.0 associated with the Gamma-ray Source HESS J1640-465
-    Link: https://arxiv.org/abs/2508.18999
-    (Vector: 0.84, LLM: 92)
-----------------------------------------
-3. [Score: 84.8] Runaway stars and the Galactic supernova remnant landscape: non-thermal emission and observational evidence
-    Link: https://arxiv.org/abs/2508.12721
-    (Vector: 0.78, LLM: 92)
-----------------------------------------
-4. [Score: 83.8] HAWC, VERITAS, Fermi-LAT and XMM-Newton follow-up observations of the unidentified ultra-high-energy gamma-ray source LHAASO J2108+5157
-    Link: https://arxiv.org/abs/2508.01934
-    (Vector: 0.76, LLM: 92)
-----------------------------------------
-5. [Score: 81.0] High-resolution Radio Study of Pulsar Wind Nebula MSH 15-52 and Supernova Remnant RCW 89
-    Link: https://arxiv.org/abs/2508.14476
-    (Vector: 0.77, LLM: 85)
-----------------------------------------
-6. [Score: 80.9] Very high-energy gamma-ray and neutrino emission from hadronic interaction in compact binary millisecond pulsars
-    Link: https://arxiv.org/abs/2508.20952
-    (Vector: 0.77, LLM: 85)
-----------------------------------------
-7. [Score: 80.5] MUSE Observations Reveal Optical Coronal Iron Lines from Shock Emission in Supernova Remnant 0540-69.3
-    Link: https://arxiv.org/abs/2508.14570
-    (Vector: 0.76, LLM: 85)
-----------------------------------------
-8. [Score: 80.2] Deciphering the gamma-ray emission in the Cygnus region
-    Link: https://arxiv.org/abs/2508.21644
-    (Vector: 0.75, LLM: 85)
-----------------------------------------
-9. [Score: 79.8] The X-ray Source Population of the Metal-Rich Globular Cluster NGC 6528
-    Link: https://arxiv.org/abs/2508.10105
-    (Vector: 0.75, LLM: 85)
-----------------------------------------
-10. [Score: 78.3] Impact of thermal effects on prompt-collapse binary neutron star mergers
-    Link: https://arxiv.org/abs/2508.09333
-    (Vector: 0.77, LLM: 80)
-----------------------------------------
-11. [Score: 69.3] Optical emission from luminous and very soft X-ray sources in nearby galaxies: testing the scenario of edge-on supercritical accretion systems
-    Link: https://arxiv.org/abs/2508.08553
-    (Vector: 0.74, LLM: 65)
-----------------------------------------
-12. [Score: 67.4] Constraining the TeV gamma-ray emission of SN 2024bch, a possible type IIn-L from a red supergiant progenitor. Multiwavelength observations and analysis of the progenitor
-    Link: https://arxiv.org/abs/2508.20048
-    (Vector: 1.00, LLM: 35)
-----------------------------------------
-13. [Score: 61.4] Investigating the Impact of Higher-Order Phase Transitions in Binary Neutron-Star Mergers
-    Link: https://arxiv.org/abs/2508.10698
-    (Vector: 0.78, LLM: 45)
-----------------------------------------
-14. [Score: 55.6] Optical and near-infrared nebular-phase spectroscopy of SN 2024ggi: constraints on the structure of the inner ejecta, progenitor mass, and dust
-    Link: https://arxiv.org/abs/2508.02656
-    (Vector: 0.81, LLM: 30)
-----------------------------------------
-15. [Score: 55.2] SN 2024gy: Multi-epoch Spectroscopic Features Suggestive of Delayed Detonation in a Type Ia Supernova
-    Link: https://arxiv.org/abs/2508.01428
-    (Vector: 0.80, LLM: 30)
-----------------------------------------
-16. [Score: 52.3] A Targeted Gamma-Ray Search of Five Prominent Galaxy Merger Systems with 17 years of Fermi-LAT Data
-    Link: https://arxiv.org/abs/2508.06232
-    (Vector: 0.75, LLM: 30)
-----------------------------------------
-17. [Score: 51.4] The Type II SN 2025pht in NGC 1637: A Red Supergiant with Carbon-rich Circumstellar Dust as the First JWST Detection of a Supernova Progenitor Star
-    Link: https://arxiv.org/abs/2508.10994
-    (Vector: 0.83, LLM: 20)
-----------------------------------------
-18. [Score: 47.3] Radio Observations of a Candidate Redback Millisecond Pulsar: 1FGL J0523.5-2529
-    Link: https://arxiv.org/abs/2508.15435
-    (Vector: 0.75, LLM: 20)
-----------------------------------------
-19. [Score: 47.2] The First Radio-Bright Off-Nuclear TDE 2024tvd Reveals the Fastest-Evolving Double-Peaked Radio Emission
-    Link: https://arxiv.org/abs/2508.03807
-    (Vector: 0.74, LLM: 20)
-----------------------------------------
-20. [Score: 47.1] Late-time Hubble Space Telescope Ultraviolet Spectra of SN 2023ixf and SN 2024ggi Show Ongoing Interaction with Circumstellar Material
-    Link: https://arxiv.org/abs/2508.11756
-    (Vector: 0.74, LLM: 20)
-----------------------------------------
-21. [Score: 41.4] Constraints on the progenitor and explosion of SN 2024ggi in harmony with pre-explosion detection and hydrodynamic simulations
-    Link: https://arxiv.org/abs/2508.10573
-    (Vector: 0.81, LLM: 2)
-----------------------------------------
-22. [Score: 41.1] Constraining Common Envelope Evolution in Binary Neutron Star Formation with Combined Galactic and Gravitational-Wave Observations
-    Link: https://arxiv.org/abs/2508.14397
-    (Vector: 0.77, LLM: 5)
-----------------------------------------
-23. [Score: 40.8] Contribution of Globular Clusters to Diffuse Gamma-ray Emission from Galactic Plane
-    Link: https://arxiv.org/abs/2508.15295
-    (Vector: 0.77, LLM: 5)
-----------------------------------------
-24. [Score: 39.5] PSR J0614-3329: A NICER case for Strange Quark Stars
-    Link: https://arxiv.org/abs/2508.02652
-    (Vector: 0.74, LLM: 5)
-----------------------------------------
-25. [Score: 39.3] Challenging a binary neutron star merger interpretation of GW230529
-    Link: https://arxiv.org/abs/2508.08750
-    (Vector: 0.76, LLM: 3)
-----------------------------------------
-Generating HTML report: reports/2025-08.html...
-HTML report saved to /Users/facero/Documents/Work/Program/arxiv-reader/reports/2025-08.html
-Updated archive metadata for 2025-08
-Generating archive index page: reports/index.html...
-Archive index page saved to /Users/facero/Documents/Work/Program/arxiv-reader/reports/index.html
-Generating reading list page: reports/reading_list.html...
-Reading list page saved to /Users/facero/Documents/Work/Program/arxiv-reader/reports/reading_list.html
-
-✅ Successfully processed 2025-08
-   Total papers: 444
-   After filtering: 304
    Top matches: 25
 

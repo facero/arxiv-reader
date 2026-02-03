@@ -33,7 +33,7 @@ IGNORED_KEYWORDS_FILE = "ignored-keywords.txt"
 # --- Output Files ---
 TOP_K_CANDIDATES = 25  # Number of top papers to re-score with LLM per month
 REPORTS_DIR = "reports"
-METADATA_FILE = os.path.join(REPORTS_DIR, ".archive_metadata.json")
+METADATA_FILE = os.path.join(REPORTS_DIR, "archive_metadata.json")
 
 # --- Helper Logger ---
 def log(msg):
@@ -578,7 +578,7 @@ def generate_html_report(results, month_year):
                     <span class="metric" title="Cosine Similarity with Bibliography">Vector Similarity: <b>{vector_s:.2f}</b></span>
                     <span class="metric" title="LLM Relevance Score (0-100)">LLM Persona Score: <b>{llm_s}</b></span>
                     <span class="metric"><a href="{p['link']}" target="_blank">View on ArXiv</a></span>
-                    <button class="add-to-reading-list" onclick="addToReadingList('{paper_id}', '{escaped_title}', '{p['link']}', {score:.1f}, '{month_year}')" title="Add to Reading List">
+                    <button class="add-to-reading-list" onclick="addToReadingList('{paper_id}', '{escaped_title}', '{p['link']}', {score:.1f}, '{month_year}', `{summary_text}`)" title="Add to Reading List">
                         📖 Add to List
                     </button>
                 </div>
@@ -624,8 +624,14 @@ def generate_html_report(results, month_year):
     
     <div id="toast" class="toast"></div>
     
+    <!-- Hidden sync iframe for cross-file origin sync -->
+    <iframe id="syncIframe" src="reading_list.html" style="display:none;"></iframe>
+    
     <script>
-        // Reading List Management
+        // --- Synchronization Logic (Master Origin: reading_list.html) ---
+        const MASTER_PAGE = 'reading_list.html';
+        const MASTER_WINDOW_NAME = '_arxiv_reading_list';
+        
         function getReadingList() {
             const list = localStorage.getItem('arxivReadingList');
             return list ? JSON.parse(list) : [];
@@ -634,41 +640,50 @@ def generate_html_report(results, month_year):
         function saveReadingList(list) {
             localStorage.setItem('arxivReadingList', JSON.stringify(list));
             updateReadingListCount();
+            markAddedPapers();
         }
         
-        function addToReadingList(id, title, link, score, month) {
-            const readingList = getReadingList();
+        function addToReadingList(id, title, link, score, month, summary) {
+            // 1. Construct sync URL for Master Page
+            const params = new URLSearchParams();
+            params.set('add_id', id);
+            params.set('title', title);
+            params.set('link', link);
+            params.set('score', score);
+            params.set('month', month);
+            params.set('summary', summary);
             
-            // Check if already in list
-            if (readingList.some(item => item.id === id)) {
-                showToast('Already in reading list!', '#f39c12');
-                return;
+            const syncUrl = `${MASTER_PAGE}?${params.toString()}`;
+            
+            // 2. Open/Focus Master Page in named window
+            const masterWin = window.open(syncUrl, MASTER_WINDOW_NAME);
+            
+            // 3. Fallback: Save locally if Master Page blocked or etc.
+            // (Standard behavior remains for local feedback)
+            let localList = getReadingList();
+            if (!localList.some(item => item.id === id)) {
+                localList.push({ id, title, link, score, month, summary, addedDate: new Date().toISOString() });
+                saveReadingList(localList);
             }
             
-            // Add to list
-            readingList.push({
-                id: id,
-                title: title,
-                link: link,
-                score: score,
-                month: month,
-                addedDate: new Date().toISOString()
-            });
-            
-            saveReadingList(readingList);
-            showToast('Added to reading list! 📖');
-            
-            // Update button appearance
-            // Update button appearance
-            const paperCard = document.getElementById(`paper-${id}`);
-            if (paperCard) {
-                const buttons = paperCard.querySelectorAll('.add-to-reading-list');
-                buttons.forEach(btn => {
-                    btn.classList.add('added');
-                    btn.textContent = '✓ Added';
-                });
-            }
+            showToast('Adding to Reading List... 📖');
+            if (masterWin) masterWin.blur(); // Bring focus back to report (if possible)
+            window.focus();
         }
+
+        // Listen for sync messages from Master Page
+        window.addEventListener('message', function(event) {
+            // Security: In local file context, origin might be 'null'
+            const data = event.data;
+            
+            if (data.type === 'arxiv_reading_list_synced') {
+                showToast('Synced with Master List! ✅');
+            } else if (data.type === 'arxiv_reading_list_sync_full') {
+                // Received full list from hidden iframe on load
+                console.log('Master list sync received:', data.list);
+                saveReadingList(data.list); // Update local cache
+            }
+        }, false);
         
         function updateReadingListCount() {
             const count = getReadingList().length;
@@ -688,9 +703,14 @@ def generate_html_report(results, month_year):
             }, 2000);
         }
         
-        // Mark papers already in reading list
         function markAddedPapers() {
             const readingList = getReadingList();
+            // Reset all buttons first (optional but safer)
+            document.querySelectorAll('.add-to-reading-list').forEach(btn => {
+                btn.classList.remove('added');
+                btn.textContent = '📖 Add to List';
+            });
+            
             readingList.forEach(item => {
                 const paperCard = document.getElementById(`paper-${item.id}`);
                 if (paperCard) {

@@ -1,0 +1,51 @@
+{
+  "2025-07": {
+    "processed_date": "2026-02-03T14:47:42.908429",
+    "total_papers": 689,
+    "filtered_papers": 509,
+    "top_matches": 25,
+    "excluded_keywords": 180
+  },
+  "2025-08": {
+    "processed_date": "2026-02-03T14:48:08.757957",
+    "total_papers": 444,
+    "filtered_papers": 304,
+    "top_matches": 25,
+    "excluded_keywords": 140
+  },
+  "2025-09": {
+    "processed_date": "2026-02-03T14:48:37.123896",
+    "total_papers": 607,
+    "filtered_papers": 418,
+    "top_matches": 25,
+    "excluded_keywords": 189
+  },
+  "2025-10": {
+    "processed_date": "2026-02-03T14:49:05.460795",
+    "total_papers": 595,
+    "filtered_papers": 425,
+    "top_matches": 25,
+    "excluded_keywords": 170
+  },
+  "2025-11": {
+    "processed_date": "2026-02-03T14:49:31.212109",
+    "total_papers": 438,
+    "filtered_papers": 298,
+    "top_matches": 25,
+    "excluded_keywords": 140
+  },
+  "2025-12": {
+    "processed_date": "2026-02-03T14:49:59.155788",
+    "total_papers": 584,
+    "filtered_papers": 408,
+    "top_matches": 25,
+    "excluded_keywords": 176
+  },
+  "2026-01": {
+    "processed_date": "2026-02-03T14:50:26.940050",
+    "total_papers": 478,
+    "filtered_papers": 329,
+    "top_matches": 25,
+    "excluded_keywords": 149
+  }
+}
