@@ -1,6 +1,6 @@
 {
   "2025-07": {
-    "processed_date": "2026-02-03T14:47:42.908429",
+    "processed_date": "2026-02-03T15:56:02.894114",
     "total_papers": 689,
     "filtered_papers": 509,
     "top_matches": 25,
@@ -47,5 +47,12 @@
     "filtered_papers": 329,
     "top_matches": 25,
     "excluded_keywords": 149
+  },
+  "2025-06": {
+    "processed_date": "2026-02-03T15:04:51.887681",
+    "total_papers": 471,
+    "filtered_papers": 325,
+    "top_matches": 25,
+    "excluded_keywords": 146
   }
 }

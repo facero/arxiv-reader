@@ -12,6 +12,10 @@ import argparse
 import json
 from datetime import datetime
 
+# Import standalone generators
+from regenerate_index import generate_index_page
+from generate_reading_list import generate_reading_list_page
+
 # Force unbuffered output
 try:
     if hasattr(sys.stdout, 'reconfigure'):
@@ -37,6 +41,12 @@ METADATA_FILE = os.path.join(REPORTS_DIR, "archive_metadata.json")
 
 # --- Helper Logger ---
 def log(msg):
+    """
+    Prints a message to console and appends it to the scraper.log file.
+
+    Args:
+        msg: The message string to log.
+    """
     print(msg, flush=True)
     sys.stdout.flush()  # Force immediate output
     with open("scraper.log", "a") as f:
@@ -46,7 +56,12 @@ def log(msg):
 def load_ignored_keywords(filepath):
     """
     Loads ignored keywords from a text file (one per line).
-    Returns a list of lowercase keywords.
+
+    Args:
+        filepath: The absolute path to the text file containing keywords.
+
+    Returns:
+        A list of lowercase keywords extracted from the file.
     """
     if not os.path.exists(filepath):
         log(f"Warning: {filepath} not found. No keywords will be filtered.")
@@ -64,6 +79,13 @@ def load_ignored_keywords(filepath):
 def filter_by_keywords(papers, ignored_keywords):
     """
     Filters out papers whose titles contain any of the ignored keywords (case-insensitive).
+
+    Args:
+        papers: A list of paper dictionaries, each containing at least a 'title'.
+        ignored_keywords: A list of lowercase keywords to filter against.
+
+    Returns:
+        The filtered list of paper dictionaries.
     """
     if not ignored_keywords:
         return papers
@@ -88,6 +110,12 @@ def load_bibliography(filepath):
     """
     Parses a BibTeX file using regex to extract titles.
     Avoids `bibtexparser` dependency due to installation issues.
+
+    Args:
+        filepath: The absolute path to the .bib file.
+
+    Returns:
+        A list of unique titles extracted from the BibTeX entries.
     """
     log(f"Loading bibliography from {filepath} (Regex Mode)...")
     try:
@@ -135,6 +163,12 @@ def load_bibliography(filepath):
 def fetch_arxiv_postings(url):
     """
     Scrapes the arXiv monthly list for titles and links.
+
+    Args:
+        url: The arXiv URL to scrape (e.g., a specific month's listing).
+
+    Returns:
+        A list of dictionaries, each containing 'title', 'link', and 'id'.
     """
     log(f"Fetching arXiv listings from {url}...")
     try:
@@ -186,6 +220,10 @@ def enrich_papers_with_api(papers, batch_size=100):
     """
     Fetches authors (first 5) and summary for each paper using the ArXiv API.
     Updates the dictionaries in-place.
+
+    Args:
+        papers: A list of paper dictionaries to enrich.
+        batch_size: The number of IDs to request per API call (default: 100).
     """
     if not papers:
         return
@@ -260,7 +298,14 @@ def enrich_papers_with_api(papers, batch_size=100):
 # --- 4. LMStudio Interaction ---
 def get_embedding(text):
     """
-    Fetches the embedding vector for a single string.
+    Fetches the embedding vector for a single string using the LMStudio/OpenAI-compatible API.
+
+    Args:
+        text: The text string to embed.
+
+    Returns:
+        A list of floats representing the embedding vector, 
+        or None if the request fails.
     """
     url = f"{LMSTUDIO_BASE_URL}/embeddings"
     payload = {
@@ -278,6 +323,16 @@ def get_embedding(text):
         return None
 
 def get_chat_completion(messages, max_tokens=500):
+    """
+    Generates a chat completion using the LMStudio/OpenAI-compatible API.
+
+    Args:
+        messages: A list of message objects (role and content).
+        max_tokens: The maximum number of tokens to generate (default: 500).
+
+    Returns:
+        The generated response content string, or None if the request fails.
+    """
     url = f"{LMSTUDIO_BASE_URL}/chat/completions"
     payload = {
         "model": CHAT_MODEL,
@@ -299,6 +354,12 @@ def generate_user_persona(bib_titles):
     """
     Summarizes the user's research interests based on their bibliography.
     Caches the result to a file to avoid re-running on every execution.
+
+    Args:
+        bib_titles: A list of publication titles from the user's bibliography.
+
+    Returns:
+        A one-paragraph summary of research interests, or None if generation fails.
     """
     # 1. Check if persona file exists
     if os.path.exists(PERSONA_FILE):
@@ -352,9 +413,16 @@ def generate_user_persona(bib_titles):
 
 def score_papers_hybrid(user_bib, arxiv_papers):
     """
-    Hybrid scoring:
-    1. Embedding similarity (fast filter)
-    2. LLM Persona-based Re-ranking (slow, high quality)
+    Hybrid scoring mechanism for paper relevance:
+    1. Embedding similarity (fast vector search filter)
+    2. LLM Persona-based Re-ranking (deep semantic analysis)
+
+    Args:
+        user_bib: The user's full bibliography (titles).
+        arxiv_papers: The list of new arXiv papers to score.
+
+    Returns:
+        A sorted list of the most relevant papers with attached scores.
     """
     # 1. Embed user bibliography
     # To save time, let's sample the user's bib (e.g., last 100 papers)
@@ -474,18 +542,14 @@ def score_papers_hybrid(user_bib, arxiv_papers):
     final_results.sort(key=lambda x: x['final_score'], reverse=True)
     return final_results
 
-# --- Main ---
-def main():
-    # 1. Load Bib
-    bib_entries = load_bibliography(BIBLIOGRAPHY_FILE)
-    if not bib_entries:
-        print("Please ensure the .bib file is correct.")
-        return
-
-    # 2. Fetch ArXiv
+# --- Main Logic ---
 def generate_html_report(results, month_year):
     """
-    Generates a nice HTML report of the scored papers for a specific month.
+    Generates a stylized HTML report for a specific month's scored papers.
+
+    Args:
+        results: A list of paper dictionaries with scores and metadata.
+        month_year: The month identifier in YYYY-MM format.
     """
     os.makedirs(REPORTS_DIR, exist_ok=True)
     filename = os.path.join(REPORTS_DIR, f"{month_year}.html")
@@ -741,11 +805,21 @@ def generate_html_report(results, month_year):
 
 # --- Archive Management ---
 def get_current_month():
-    """Returns current month in YYYY-MM format."""
+    """
+    Returns the current month in YYYY-MM format.
+
+    Returns:
+        Current system date formatted as 'YYYY-MM'.
+    """
     return datetime.now().strftime("%Y-%m")
 
 def load_metadata():
-    """Loads archive metadata from JSON file."""
+    """
+    Loads archive metadata from the central JSON file.
+
+    Returns:
+        A dictionary containing metadata for all processed months.
+    """
     if not os.path.exists(METADATA_FILE):
         return {}
     try:
@@ -756,7 +830,12 @@ def load_metadata():
         return {}
 
 def save_metadata(metadata):
-    """Saves archive metadata to JSON file."""
+    """
+    Saves the archive metadata to a JSON file.
+
+    Args:
+        metadata: The dictionary of metadata to persist.
+    """
     os.makedirs(REPORTS_DIR, exist_ok=True)
     try:
         with open(METADATA_FILE, 'w') as f:
@@ -765,7 +844,16 @@ def save_metadata(metadata):
         log(f"Error saving metadata: {e}")
 
 def update_archive_metadata(month_year, total_papers, filtered_papers, top_matches, excluded_count):
-    """Updates metadata for a specific month."""
+    """
+    Updates or creates the metadata entry for a specific month.
+
+    Args:
+        month_year: The month identifier in YYYY-MM format.
+        total_papers: Total papers fetched from arXiv initially.
+        filtered_papers: Papers remaining after keyword filtering.
+        top_matches: Number of top papers scored and reported.
+        excluded_count: Number of papers removed by keyword filters.
+    """
     metadata = load_metadata()
     metadata[month_year] = {
         "processed_date": datetime.now().isoformat(),
@@ -777,564 +865,21 @@ def update_archive_metadata(month_year, total_papers, filtered_papers, top_match
     save_metadata(metadata)
     log(f"Updated archive metadata for {month_year}")
 
-def generate_index_page():
-    """Generates the main archive index page with search and statistics."""
-    metadata = load_metadata()
-    
-    if not metadata:
-        log("No archive data found. Skipping index page generation.")
-        return
-    
-    # Sort months in reverse chronological order
-    sorted_months = sorted(metadata.keys(), reverse=True)
-    
-    # Calculate statistics
-    total_months = len(sorted_months)
-    total_papers_all = sum(m['total_papers'] for m in metadata.values())
-    avg_papers = total_papers_all / total_months if total_months > 0 else 0
-    
-    # Prepare data for Chart.js
-    chart_labels = [m for m in reversed(sorted_months)]
-    chart_data = [metadata[m]['total_papers'] for m in reversed(sorted_months)]
-    
-    index_path = os.path.join(REPORTS_DIR, "index.html")
-    log(f"Generating archive index page: {index_path}...")
-    
-    html_content = f"""
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>ArXiv Paper Archive</title>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <style>
-            body {{
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                max-width: 1000px;
-                margin: 0 auto;
-                padding: 20px;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                min-height: 100vh;
-            }}
-            .container {{
-                background: white;
-                border-radius: 12px;
-                padding: 30px;
-                box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            }}
-            h1 {{
-                text-align: center;
-                color: #2c3e50;
-                margin-bottom: 10px;
-                font-size: 2.5em;
-            }}
-            .subtitle {{
-                text-align: center;
-                color: #7f8c8d;
-                margin-bottom: 30px;
-            }}
-            .search-box {{
-                margin-bottom: 30px;
-                text-align: center;
-            }}
-            .search-box input {{
-                width: 60%;
-                padding: 12px 20px;
-                font-size: 1em;
-                border: 2px solid #3498db;
-                border-radius: 25px;
-                outline: none;
-                transition: all 0.3s;
-            }}
-            .search-box input:focus {{
-                border-color: #2980b9;
-                box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
-            }}
-            .stats-grid {{
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 20px;
-                margin-bottom: 30px;
-            }}
-            .stat-card {{
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                color: white;
-                padding: 20px;
-                border-radius: 10px;
-                text-align: center;
-            }}
-            .stat-card .number {{
-                font-size: 2.5em;
-                font-weight: bold;
-                margin-bottom: 5px;
-            }}
-            .stat-card .label {{
-                font-size: 0.9em;
-                opacity: 0.9;
-            }}
-            .chart-container {{
-                margin-bottom: 30px;
-                background: #f8f9fa;
-                padding: 20px;
-                border-radius: 10px;
-            }}
-            .month-list {{
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                gap: 15px;
-                margin-bottom: 30px;
-            }}
-            .month-item {{
-                background: white;
-                border: 2px solid #ecf0f1;
-                border-radius: 8px;
-                padding: 15px;
-                transition: all 0.3s;
-                display: flex;
-                flex-direction: column;
-                align-items: stretch;
-            }}
-            .month-item:hover {{
-                border-color: #3498db;
-                transform: translateY(-3px);
-                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            }}
-            .month-item.hidden {{
-                display: none;
-            }}
-            @media (max-width: 900px) {{
-                .month-list {{
-                    grid-template-columns: repeat(2, 1fr);
-                }}
-            }}
-            @media (max-width: 500px) {{
-                .month-list {{
-                    grid-template-columns: 1fr;
-                }}
-            }}
-            .month-info {{
-                flex: 1;
-                margin-bottom: 10px;
-            }}
-            .month-title {{
-                font-size: 1.1em;
-                font-weight: 600;
-                color: #2c3e50;
-                margin-bottom: 8px;
-            }}
-            .month-stats {{
-                color: #7f8c8d;
-                font-size: 0.8em;
-                display: flex;
-                flex-direction: column;
-                gap: 4px;
-            }}
-            .month-stats span {{
-                display: block;
-            }}
-            .view-btn {{
-                background: #3498db;
-                color: white;
-                padding: 8px 16px;
-                border-radius: 5px;
-                text-decoration: none;
-                font-weight: 500;
-                transition: background 0.3s;
-                text-align: center;
-                display: block;
-            }}
-            .view-btn:hover {{
-                background: #2980b9;
-            }}
-    </head>
-    <body>
-        <div class="container">
-            <h1>📚 ArXiv Paper Archive</h1>
-            <div class="subtitle">High Energy Astrophysics - Monthly Reports</div>
-            
-            <div style="text-align: center; margin-bottom: 20px;">
-                <a href="reading_list.html" style="background: #e74c3c; color: white; padding: 12px 24px; border-radius: 5px; text-decoration: none; font-weight: 500; display: inline-block;">
-                    📖 View Reading List (<span id="readingListCount">0</span>)
-                </a>
-            </div>
-            
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="🔍 Search by month or keyword..." onkeyup="filterMonths()">
-            </div>
-            
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="number">{total_months}</div>
-                    <div class="label">Months Archived</div>
-                </div>
-                <div class="stat-card">
-                    <div class="number">{total_papers_all:,}</div>
-                    <div class="label">Total Papers</div>
-                </div>
-                <div class="stat-card">
-                    <div class="number">{avg_papers:.0f}</div>
-                    <div class="label">Avg Papers/Month</div>
-                </div>
-            </div>
-            
-            <div class="month-list" id="monthList">
-    """
-    
-    for month in sorted_months:
-        data = metadata[month]
-        try:
-            month_obj = datetime.strptime(month, "%Y-%m")
-            month_name = month_obj.strftime("%B %Y")
-        except:
-            month_name = month
-        
-        html_content += f"""
-                <div class="month-item" data-month="{month}" data-name="{month_name.lower()}">
-                    <div class="month-info">
-                        <div class="month-title">📅 {month_name}</div>
-                        <div class="month-stats">
-                            <span>📊 {data['total_papers']} papers</span>
-                            <span>✅ {data['top_matches']} matches</span>
-                            <span>🚫 {data['excluded_keywords']} filtered</span>
-                        </div>
-                    </div>
-                    <a href="{month}.html" class="view-btn">View Report →</a>
-                </div>
-        """
-    
-    html_content += f"""
-            </div>
-            
-            <div class="chart-container">
-                <canvas id="papersChart"></canvas>
-            </div>
-        </div>
-        
-        <script>
-            // Chart.js configuration
-            const ctx = document.getElementById('papersChart').getContext('2d');
-            new Chart(ctx, {{
-                type: 'line',
-                data: {{
-                    labels: {json.dumps(chart_labels)},
-                    datasets: [{{
-                        label: 'Papers per Month',
-                        data: {json.dumps(chart_data)},
-                        borderColor: '#3498db',
-                        backgroundColor: 'rgba(52, 152, 219, 0.1)',
-                        tension: 0.4,
-                        fill: true
-                    }}]
-                }},
-                options: {{
-                    responsive: true,
-                    plugins: {{
-                        title: {{
-                            display: true,
-                            text: 'Papers Trend Over Time',
-                            font: {{ size: 16 }}
-                        }},
-                        legend: {{
-                            display: false
-                        }}
-                    }},
-                    scales: {{
-                        y: {{
-                            beginAtZero: true,
-                            title: {{
-                                display: true,
-                                text: 'Number of Papers'
-                            }}
-                        }}
-                    }}
-                }}
-            }});
-            
-            // Search functionality
-            function filterMonths() {{
-                const input = document.getElementById('searchInput');
-                const filter = input.value.toLowerCase();
-                const monthItems = document.querySelectorAll('.month-item');
-                
-                monthItems.forEach(item => {{
-                    const month = item.getAttribute('data-month');
-                    const name = item.getAttribute('data-name');
-                    if (month.includes(filter) || name.includes(filter)) {{
-                        item.classList.remove('hidden');
-                    }} else {{
-                        item.classList.add('hidden');
-                    }}
-                }});
-            }}
-            
-            // Reading List Counter
-            function updateReadingListCount() {{
-                const list = localStorage.getItem('arxivReadingList');
-                const count = list ? JSON.parse(list).length : 0;
-                const countElement = document.getElementById('readingListCount');
-                if (countElement) {{
-                    countElement.textContent = count;
-                }}
-            }}
-            
-            // Initialize on page load
-            document.addEventListener('DOMContentLoaded', updateReadingListCount);
-        </script>
-    </body>
-    </html>
-    """
-    
-    with open(index_path, "w") as f:
-        f.write(html_content)
-    
-    log(f"Archive index page saved to {os.path.abspath(index_path)}")
-
-def generate_reading_list_page():
-    """Generates the reading list page (client-side rendering from localStorage)."""
-    reading_list_path = os.path.join(REPORTS_DIR, "reading_list.html")
-    log(f"Generating reading list page: {reading_list_path}...")
-    
-    html_content = """
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Reading List - ArXiv Papers</title>
-        <style>
-            body {
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                max-width: 1000px;
-                margin: 0 auto;
-                padding: 20px;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                min-height: 100vh;
-            }
-            .container {
-                background: white;
-                border-radius: 12px;
-                padding: 30px;
-                box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            }
-            h1 {
-                text-align: center;
-                color: #2c3e50;
-                margin-bottom: 10px;
-            }
-            .subtitle {
-                text-align: center;
-                color: #7f8c8d;
-                margin-bottom: 30px;
-            }
-            .nav {
-                text-align: center;
-                margin-bottom: 20px;
-            }
-            .nav a {
-                margin: 0 10px;
-                text-decoration: none;
-                color: #3498db;
-                font-weight: 500;
-            }
-            .nav a:hover {
-                text-decoration: underline;
-            }
-            .actions {
-                text-align: center;
-                margin-bottom: 30px;
-            }
-            .clear-btn {
-                background: #e74c3c;
-                color: white;
-                border: none;
-                padding: 10px 20px;
-                border-radius: 5px;
-                cursor: pointer;
-                font-size: 1em;
-                font-weight: 500;
-            }
-            .clear-btn:hover {
-                background: #c0392b;
-            }
-            .paper {
-                background: white;
-                border: 2px solid #ecf0f1;
-                border-radius: 8px;
-                padding: 20px;
-                margin-bottom: 15px;
-                transition: all 0.3s;
-                border-left: 5px solid #3498db;
-            }
-            .paper:hover {
-                border-color: #3498db;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            }
-            .paper-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-                margin-bottom: 10px;
-            }
-            .paper-title {
-                font-size: 1.2em;
-                font-weight: 600;
-                color: #2c3e50;
-                flex: 1;
-                margin-right: 15px;
-            }
-            .paper-title a {
-                color: #2c3e50;
-                text-decoration: none;
-            }
-            .paper-title a:hover {
-                color: #3498db;
-            }
-            .score-badge {
-                background: #3498db;
-                color: white;
-                padding: 5px 10px;
-                border-radius: 15px;
-                font-weight: bold;
-                font-size: 0.9em;
-            }
-            .paper-meta {
-                color: #7f8c8d;
-                font-size: 0.9em;
-                margin-bottom: 10px;
-            }
-            .paper-meta span {
-                margin-right: 15px;
-            }
-            .remove-btn {
-                background: #e74c3c;
-                color: white;
-                border: none;
-                padding: 6px 12px;
-                border-radius: 4px;
-                cursor: pointer;
-                font-size: 0.85em;
-            }
-            .remove-btn:hover {
-                background: #c0392b;
-            }
-            .empty-state {
-                text-align: center;
-                padding: 60px 20px;
-                color: #7f8c8d;
-            }
-            .empty-state h2 {
-                color: #95a5a6;
-                margin-bottom: 10px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="nav">
-                <a href="index.html">📚 Archive Home</a>
-            </div>
-            
-            <h1>📖 Reading List</h1>
-            <div class="subtitle">Your Saved ArXiv Papers</div>
-            
-            <div class="actions">
-                <button class="clear-btn" onclick="clearReadingList()">🗑️ Clear All</button>
-            </div>
-            
-            <div id="readingListContainer"></div>
-        </div>
-        
-        <script>
-            function getReadingList() {
-                const list = localStorage.getItem('arxivReadingList');
-                return list ? JSON.parse(list) : [];
-            }
-            
-            function saveReadingList(list) {
-                localStorage.setItem('arxivReadingList', JSON.stringify(list));
-            }
-            
-            function removeFromReadingList(id) {
-                let readingList = getReadingList();
-                readingList = readingList.filter(item => item.id !== id);
-                saveReadingList(readingList);
-                renderReadingList();
-            }
-            
-            function clearReadingList() {
-                if (confirm('Are you sure you want to clear your entire reading list?')) {
-                    localStorage.removeItem('arxivReadingList');
-                    renderReadingList();
-                }
-            }
-            
-            function renderReadingList() {
-                const readingList = getReadingList();
-                const container = document.getElementById('readingListContainer');
-                
-                if (readingList.length === 0) {
-                    container.innerHTML = `
-                        <div class="empty-state">
-                            <h2>📭 Your reading list is empty</h2>
-                            <p>Add papers from the monthly reports to build your reading list!</p>
-                            <p><a href="index.html" style="color: #3498db;">Browse Archive →</a></p>
-                        </div>
-                    `;
-                    return;
-                }
-                
-                // Sort by added date (newest first)
-                readingList.sort((a, b) => new Date(b.addedDate) - new Date(a.addedDate));
-                
-                let html = '';
-                readingList.forEach(paper => {
-                    const addedDate = new Date(paper.addedDate).toLocaleDateString();
-                    const scoreColor = paper.score > 80 ? '#2ecc71' : paper.score > 50 ? '#f39c12' : '#e74c3c';
-                    
-                    html += `
-                        <div class="paper">
-                            <div class="paper-header">
-                                <div class="paper-title">
-                                    <a href="${paper.link}" target="_blank">${paper.title}</a>
-                                </div>
-                                <div class="score-badge" style="background-color: ${scoreColor}">${paper.score.toFixed(1)}</div>
-                            </div>
-                            <div class="paper-meta">
-                                <span>📅 ${paper.month}</span>
-                                <span>🕒 Added: ${addedDate}</span>
-                                <span><a href="${paper.link}" target="_blank">View on ArXiv →</a></span>
-                            </div>
-                            <button class="remove-btn" onclick="removeFromReadingList('${paper.id}')">Remove</button>
-                        </div>
-                    `;
-                });
-                
-                container.innerHTML = html;
-            }
-            
-            // Initialize on page load
-            document.addEventListener('DOMContentLoaded', renderReadingList);
-        </script>
-    </body>
-    </html>
-    """
-    
-    with open(reading_list_path, "w") as f:
-        f.write(html_content)
-    
-    log(f"Reading list page saved to {os.path.abspath(reading_list_path)}")
+# Note: generate_index_page and generate_reading_list_page are now imported from standalone scripts.
+# The internal definitions have been removed to ensure a single source of truth.
 
 
 
 
-# --- Main ---
+
+# --- Main Workflow ---
 def process_month(month_year=None):
     """
-    Main function to process arXiv papers for a specific month.
-    
+    The master workflow function to process arXiv papers for a specific month.
+    Handles fetching, filtering, scoring, report generation, and index updates.
+
     Args:
-        month_year: Month in YYYY-MM format. If None, uses current month.
+        month_year: Month in YYYY-MM format. If None, defaults to current month.
     """
     # Default to current month if not specified
     if month_year is None:
@@ -1396,7 +941,7 @@ def process_month(month_year=None):
     # 8. Generate reading list page
     generate_reading_list_page()
     
-    log(f"\n✅ Successfully processed {month_year}")
+    log(f"\n Successfully processed {month_year}")
     log(f"   Total papers: {total_papers}")
     log(f"   After filtering: {filtered_papers}")
     log(f"   Top matches: {len(results)}\n")
