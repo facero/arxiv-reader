@@ -2,7 +2,7 @@
 
 An intelligent arXiv paper recommendation system that uses **AI-powered hybrid scoring** (vector embeddings + LLM) to help researchers discover relevant papers in High Energy Astrophysics. The system builds a monthly archive with beautiful HTML reports and a personal reading list.
 
-![ArXiv Archive Index](screenshot.png)
+![ArXiv Archive Index](screenshot.jpg)
 
 ## 🎯 Project Overview
 
@@ -125,7 +125,7 @@ arxiv-reader/
 │   ├── reading_list.html       # Your reading list
 │   ├── 2026-01.html            # Monthly report
 │   ├── 2025-12.html            # Monthly report
-│   └── .archive_metadata.json  # Archive statistics
+│   └── archive_metadata.json  # Archive statistics
 └── scraper.log                  # Processing logs
 ```
 
