@@ -888,11 +888,14 @@
             showToast('Added to reading list! 📖');
 
             // Update button appearance
-            const buttons = document.querySelectorAll(`#paper-${id} .add-to-reading-list`);
-            buttons.forEach(btn => {
-                btn.classList.add('added');
-                btn.textContent = '✓ Added';
-            });
+            const paperCard = document.getElementById(`paper-${id}`);
+            if (paperCard) {
+                const buttons = paperCard.querySelectorAll('.add-to-reading-list');
+                buttons.forEach(btn => {
+                    btn.classList.add('added');
+                    btn.textContent = '✓ Added';
+                });
+            }
         }
 
         function updateReadingListCount() {
@@ -917,11 +920,14 @@
         function markAddedPapers() {
             const readingList = getReadingList();
             readingList.forEach(item => {
-                const buttons = document.querySelectorAll(`#paper-${item.id} .add-to-reading-list`);
-                buttons.forEach(btn => {
-                    btn.classList.add('added');
-                    btn.textContent = '✓ Added';
-                });
+                const paperCard = document.getElementById(`paper-${item.id}`);
+                if (paperCard) {
+                    const buttons = paperCard.querySelectorAll('.add-to-reading-list');
+                    buttons.forEach(btn => {
+                        btn.classList.add('added');
+                        btn.textContent = '✓ Added';
+                    });
+                }
             });
         }
 

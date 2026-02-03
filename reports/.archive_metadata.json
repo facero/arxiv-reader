@@ -40,5 +40,12 @@
     "filtered_papers": 304,
     "top_matches": 30,
     "excluded_keywords": 140
+  },
+  "2025-07": {
+    "processed_date": "2026-02-02T23:58:10.935574",
+    "total_papers": 689,
+    "filtered_papers": 509,
+    "top_matches": 30,
+    "excluded_keywords": 180
   }
 }

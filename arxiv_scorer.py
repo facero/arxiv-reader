@@ -10,14 +10,19 @@ import argparse
 import json
 from datetime import datetime
 
-# --- Configuration ---
+# --- LLM Configuration ---
 LMSTUDIO_BASE_URL = "http://localhost:1234/v1"
 CHAT_MODEL = "mistralai/ministral-3-3b"
 EMBEDDING_MODEL = "text-embedding-nomic-embed-text-v1.5"
+
+# --- Input Files ---
+ARXIV_BASE_URL = "https://arxiv.org/list/astro-ph.HE"
 BIBLIOGRAPHY_FILE = "my-bibtex-Feb-2026.bib"
 PERSONA_FILE = "research_persona.txt"
 IGNORED_KEYWORDS_FILE = "ignored-keywords.txt"
-TOP_K_CANDIDATES = 30  # Number of top papers to re-score with LLM
+
+# --- Output Files ---
+TOP_K_CANDIDATES = 30  # Number of top papers to re-score with LLM per month
 REPORTS_DIR = "reports"
 METADATA_FILE = os.path.join(REPORTS_DIR, ".archive_metadata.json")
 
@@ -543,11 +548,15 @@ def generate_html_report(results, month_year):
             showToast('Added to reading list! 📖');
             
             // Update button appearance
-            const buttons = document.querySelectorAll(`#paper-${id} .add-to-reading-list`);
-            buttons.forEach(btn => {
-                btn.classList.add('added');
-                btn.textContent = '✓ Added';
-            });
+            // Update button appearance
+            const paperCard = document.getElementById(`paper-${id}`);
+            if (paperCard) {
+                const buttons = paperCard.querySelectorAll('.add-to-reading-list');
+                buttons.forEach(btn => {
+                    btn.classList.add('added');
+                    btn.textContent = '✓ Added';
+                });
+            }
         }
         
         function updateReadingListCount() {
@@ -572,11 +581,14 @@ def generate_html_report(results, month_year):
         function markAddedPapers() {
             const readingList = getReadingList();
             readingList.forEach(item => {
-                const buttons = document.querySelectorAll(`#paper-${item.id} .add-to-reading-list`);
-                buttons.forEach(btn => {
-                    btn.classList.add('added');
-                    btn.textContent = '✓ Added';
-                });
+                const paperCard = document.getElementById(`paper-${item.id}`);
+                if (paperCard) {
+                    const buttons = paperCard.querySelectorAll('.add-to-reading-list');
+                    buttons.forEach(btn => {
+                        btn.classList.add('added');
+                        btn.textContent = '✓ Added';
+                    });
+                }
             });
         }
         
@@ -1208,7 +1220,7 @@ def main(month_year=None):
         return
 
     # 2. Fetch ArXiv
-    arxiv_url = f"https://arxiv.org/list/astro-ph.HE/{month_year}?skip=0&show=2000"
+    arxiv_url = f"{ARXIV_BASE_URL}/{month_year}?skip=0&show=2000"
     all_papers = fetch_arxiv_postings(arxiv_url)
     
     if not all_papers:
