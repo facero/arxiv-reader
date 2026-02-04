@@ -93,6 +93,10 @@ echo "blazar" >> ignored-keywords.txt
 # 2. Process December 2025
 python arxiv_scorer.py --month 2025-12
 
+# or multiple months
+python arxiv_scorer.py --month 2025-10 2025-11 2025-12
+
+
 # 3. Open the archive
 open reports/index.html
 ```
